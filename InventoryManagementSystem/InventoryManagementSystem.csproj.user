@@ -25,6 +25,9 @@
     <Compile Update="Controller\ProfilesFormController\StaffForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Controller\ProfilesFormController\SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Controller\ProfilesFormController\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>

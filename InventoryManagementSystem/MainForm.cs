@@ -27,12 +27,20 @@ namespace InventoryManagementSystem
 
             userMenuItem.Click += DoClickUserForm;
             staffMenuItem.Click += DoClickStaffForm;
+            supplierMenuItem.Click += DoClickSupplierForm;
 
             helpMenuItem.Click += DoClickHelpForm;
             aboutUsMenuItem.Click += DoClickAboutUsForm;
 
             tabform.DrawItem += DoDrawItem;
             tabform.MouseDown += DoCloseTab;
+        }
+
+        private void DoClickSupplierForm(object? sender, EventArgs e)
+        {
+            TabPage supplierFrmPage = new();
+            OpenTabPage(new SupplierForm(), supplierFrmPage);
+
         }
 
         private void DoClickAboutUsForm(object? sender, EventArgs e)

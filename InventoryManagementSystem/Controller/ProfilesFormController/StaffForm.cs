@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿
 namespace InventoryManagementSystem.Controller.ProfilesFormController
 {
     public partial class StaffForm : Form
@@ -15,6 +6,29 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
         public StaffForm()
         {
             InitializeComponent();
+
+            LoadData();
+
+
+            cboGender.DataSource = new List<string>() { "Male", "Female" };
+            cboGender.SelectedIndex = 0;
+
+            cboPosition.DataSource = new List<string>() { "Sale", "Accountant", "Manager" };
+            cboPosition.SelectedIndex = -1;
+
+
         }
+
+        #region click event
+
+        #endregion
+
+        #region method
+        private void LoadData()
+        {
+        }
+        #endregion
+
+
     }
 }

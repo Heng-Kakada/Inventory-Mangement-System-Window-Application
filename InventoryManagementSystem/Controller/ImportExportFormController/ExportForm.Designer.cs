@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pHead = new Panel();
             exportFormTitle = new Label();
             txtSearch = new TextBox();
@@ -49,6 +49,7 @@
             colSupplierId = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             panel4 = new Panel();
+            panel5 = new Panel();
             nudTotalItem = new NumericUpDown();
             lbTotalItem = new Label();
             lbDate = new Label();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudTotalItem).BeginInit();
             SuspendLayout();
             // 
@@ -184,14 +186,14 @@
             dgvInventory.AllowUserToAddRows = false;
             dgvInventory.AllowUserToDeleteRows = false;
             dgvInventory.BackgroundColor = SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 192, 0);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 192, 0);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvInventory.ColumnHeadersHeight = 40;
             dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvInventory.Columns.AddRange(new DataGridViewColumn[] { colId, colImportDate, colTotalCost, colTotalItem, colHandleBy, colSupplierId });
@@ -206,8 +208,8 @@
             // colId
             // 
             colId.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colId.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colId.DefaultCellStyle = dataGridViewCellStyle4;
             colId.FillWeight = 120F;
             colId.HeaderText = "ID";
             colId.Name = "colId";
@@ -263,10 +265,10 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(panel5);
             panel4.Controls.Add(nudTotalItem);
             panel4.Controls.Add(lbTotalItem);
             panel4.Controls.Add(lbDate);
-            panel4.Controls.Add(btnClear);
             panel4.Controls.Add(cboHandleBy);
             panel4.Controls.Add(lbTotalCost);
             panel4.Controls.Add(lbHandleBy);
@@ -278,6 +280,15 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(562, 725);
             panel4.TabIndex = 54;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(btnClear);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new Point(0, 512);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(562, 213);
+            panel5.TabIndex = 57;
             // 
             // nudTotalItem
             // 
@@ -318,7 +329,7 @@
             btnClear.Anchor = AnchorStyles.None;
             btnClear.BackColor = Color.LightSkyBlue;
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(93, 520);
+            btnClear.Location = new Point(93, 17);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(120, 60);
             btnClear.TabIndex = 53;
@@ -414,6 +425,7 @@
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nudTotalItem).EndInit();
             ResumeLayout(false);
         }
@@ -452,5 +464,6 @@
         private Label lbTotalItem;
         private NumericUpDown nudTotalItem;
         private TextBox txtName;
+        private Panel panel5;
     }
 }

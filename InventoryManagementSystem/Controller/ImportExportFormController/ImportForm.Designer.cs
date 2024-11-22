@@ -31,6 +31,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pHead = new Panel();
+            txtSearch = new TextBox();
+            lbSearch = new Label();
             importFormTitle = new Label();
             btnDelete = new Button();
             btnAdd = new Button();
@@ -59,8 +61,7 @@
             lbHandleBy = new Label();
             dtImportDate = new DateTimePicker();
             panel1 = new Panel();
-            txtSearch = new TextBox();
-            lbSearch = new Label();
+            panel5 = new Panel();
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
@@ -68,6 +69,7 @@
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudTotalItem).BeginInit();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // pHead
@@ -81,6 +83,29 @@
             pHead.Name = "pHead";
             pHead.Size = new Size(1800, 93);
             pHead.TabIndex = 0;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtSearch.BackColor = SystemColors.Control;
+            txtSearch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearch.Location = new Point(1327, 43);
+            txtSearch.Margin = new Padding(3, 2, 3, 2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "search ...";
+            txtSearch.Size = new Size(393, 26);
+            txtSearch.TabIndex = 13;
+            // 
+            // lbSearch
+            // 
+            lbSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbSearch.AutoSize = true;
+            lbSearch.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbSearch.Location = new Point(1251, 44);
+            lbSearch.Name = "lbSearch";
+            lbSearch.Size = new Size(70, 24);
+            lbSearch.TabIndex = 12;
+            lbSearch.Text = "Search";
             // 
             // importFormTitle
             // 
@@ -242,12 +267,12 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(panel5);
             panel4.Controls.Add(cboHandleBy);
             panel4.Controls.Add(lbSupplierId);
             panel4.Controls.Add(nudTotalItem);
             panel4.Controls.Add(lbTotalItem);
             panel4.Controls.Add(lbDate);
-            panel4.Controls.Add(btnClear);
             panel4.Controls.Add(lbTotalCost);
             panel4.Controls.Add(cboSupplierId);
             panel4.Controls.Add(txtTotalCost);
@@ -323,7 +348,7 @@
             btnClear.Anchor = AnchorStyles.None;
             btnClear.BackColor = Color.LightSkyBlue;
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(93, 503);
+            btnClear.Location = new Point(93, 22);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(120, 60);
             btnClear.TabIndex = 53;
@@ -398,28 +423,14 @@
             panel1.Size = new Size(80, 725);
             panel1.TabIndex = 1;
             // 
-            // txtSearch
+            // panel5
             // 
-            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtSearch.BackColor = SystemColors.Control;
-            txtSearch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(1327, 43);
-            txtSearch.Margin = new Padding(3, 2, 3, 2);
-            txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "search ...";
-            txtSearch.Size = new Size(393, 26);
-            txtSearch.TabIndex = 13;
-            // 
-            // lbSearch
-            // 
-            lbSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbSearch.AutoSize = true;
-            lbSearch.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbSearch.Location = new Point(1251, 44);
-            lbSearch.Name = "lbSearch";
-            lbSearch.Size = new Size(70, 24);
-            lbSearch.TabIndex = 12;
-            lbSearch.Text = "Search";
+            panel5.Controls.Add(btnClear);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new Point(0, 526);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(562, 199);
+            panel5.TabIndex = 61;
             // 
             // ImportForm
             // 
@@ -443,6 +454,7 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudTotalItem).EndInit();
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -483,5 +495,6 @@
         private ComboBox cboHandleBy;
         private TextBox txtSearch;
         private Label lbSearch;
+        private Panel panel5;
     }
 }

@@ -26,36 +26,39 @@
             panel1 = new Panel();
             panel3 = new Panel();
             lbCatID = new Label();
+            btnDelete = new Button();
             txtId = new TextBox();
+            btnUpdate = new Button();
             rtxtDesc = new RichTextBox();
+            btnInsert = new Button();
+            btnClear = new Button();
             panel7 = new Panel();
             lbCatName = new Label();
             panel4 = new Panel();
+            categoryFormTitle = new Label();
             lbCatDesc = new Label();
             txtName = new TextBox();
             txtPaymentID = new TextBox();
             label1 = new Label();
-            categoryFormTitle = new Label();
             panel2 = new Panel();
             dgvCategory = new DataGridView();
+            colId = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            colDesc = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
             panel9 = new Panel();
             panel5 = new Panel();
             txtSearch = new TextBox();
             lbSearch = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            btnDelete = new Button();
-            btnUpdate = new Button();
-            btnInsert = new Button();
-            btnClear = new Button();
-            colId = new DataGridViewTextBoxColumn();
-            colName = new DataGridViewTextBoxColumn();
-            colDesc = new DataGridViewTextBoxColumn();
+            panel8 = new Panel();
+            panel10 = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCategory).BeginInit();
             panel5.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -71,6 +74,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(panel10);
             panel3.Controls.Add(lbCatID);
             panel3.Controls.Add(txtId);
             panel3.Controls.Add(rtxtDesc);
@@ -87,49 +91,101 @@
             // 
             // lbCatID
             // 
+            lbCatID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbCatID.AutoSize = true;
             lbCatID.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbCatID.Location = new Point(169, 270);
+            lbCatID.Location = new Point(166, 242);
             lbCatID.Name = "lbCatID";
             lbCatID.Size = new Size(23, 20);
             lbCatID.TabIndex = 3;
             lbCatID.Text = "Id";
             // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.None;
+            btnDelete.BackColor = Color.Salmon;
+            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(91, 458);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(120, 60);
+            btnDelete.TabIndex = 6;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
             // txtId
             // 
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtId.BorderStyle = BorderStyle.FixedSingle;
             txtId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtId.Location = new Point(169, 297);
+            txtId.Location = new Point(166, 269);
             txtId.Margin = new Padding(3, 2, 3, 2);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(505, 26);
             txtId.TabIndex = 4;
             // 
+            // btnUpdate
+            // 
+            btnUpdate.Anchor = AnchorStyles.None;
+            btnUpdate.BackColor = Color.LightYellow;
+            btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUpdate.Location = new Point(91, 372);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(120, 60);
+            btnUpdate.TabIndex = 5;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            // 
             // rtxtDesc
             // 
+            rtxtDesc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             rtxtDesc.BackColor = SystemColors.Control;
             rtxtDesc.BorderStyle = BorderStyle.FixedSingle;
             rtxtDesc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rtxtDesc.Location = new Point(169, 419);
+            rtxtDesc.Location = new Point(166, 391);
             rtxtDesc.Name = "rtxtDesc";
             rtxtDesc.Size = new Size(505, 264);
             rtxtDesc.TabIndex = 8;
             rtxtDesc.Text = "";
             // 
+            // btnInsert
+            // 
+            btnInsert.Anchor = AnchorStyles.None;
+            btnInsert.BackColor = Color.LightGreen;
+            btnInsert.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInsert.Location = new Point(91, 282);
+            btnInsert.Name = "btnInsert";
+            btnInsert.Size = new Size(120, 60);
+            btnInsert.TabIndex = 4;
+            btnInsert.Text = "Insert";
+            btnInsert.UseVisualStyleBackColor = false;
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.None;
+            btnClear.BackColor = Color.LightSkyBlue;
+            btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClear.Location = new Point(91, 549);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(120, 60);
+            btnClear.TabIndex = 7;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            // 
             // panel7
             // 
             panel7.Dock = DockStyle.Left;
-            panel7.Location = new Point(0, 123);
+            panel7.Location = new Point(0, 79);
             panel7.Name = "panel7";
-            panel7.Size = new Size(126, 777);
+            panel7.Size = new Size(126, 821);
             panel7.TabIndex = 9;
             // 
             // lbCatName
             // 
+            lbCatName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbCatName.AutoSize = true;
             lbCatName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbCatName.Location = new Point(169, 329);
+            lbCatName.Location = new Point(166, 301);
             lbCatName.Name = "lbCatName";
             lbCatName.Size = new Size(51, 20);
             lbCatName.TabIndex = 5;
@@ -140,14 +196,26 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(729, 123);
+            panel4.Size = new Size(729, 79);
             panel4.TabIndex = 0;
+            // 
+            // categoryFormTitle
+            // 
+            categoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            categoryFormTitle.AutoSize = true;
+            categoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            categoryFormTitle.Location = new Point(15, 79);
+            categoryFormTitle.Name = "categoryFormTitle";
+            categoryFormTitle.Size = new Size(287, 31);
+            categoryFormTitle.TabIndex = 3;
+            categoryFormTitle.Text = "Category's Information";
             // 
             // lbCatDesc
             // 
+            lbCatDesc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbCatDesc.AutoSize = true;
             lbCatDesc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbCatDesc.Location = new Point(169, 390);
+            lbCatDesc.Location = new Point(166, 362);
             lbCatDesc.Name = "lbCatDesc";
             lbCatDesc.Size = new Size(89, 20);
             lbCatDesc.TabIndex = 7;
@@ -155,9 +223,10 @@
             // 
             // txtName
             // 
+            txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtName.BorderStyle = BorderStyle.FixedSingle;
             txtName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtName.Location = new Point(169, 356);
+            txtName.Location = new Point(166, 328);
             txtName.Margin = new Padding(3, 2, 3, 2);
             txtName.Name = "txtName";
             txtName.Size = new Size(505, 26);
@@ -182,17 +251,6 @@
             label1.Size = new Size(89, 19);
             label1.TabIndex = 3;
             label1.Text = "Payment ID";
-            // 
-            // categoryFormTitle
-            // 
-            categoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            categoryFormTitle.AutoSize = true;
-            categoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            categoryFormTitle.Location = new Point(749, 34);
-            categoryFormTitle.Name = "categoryFormTitle";
-            categoryFormTitle.Size = new Size(287, 31);
-            categoryFormTitle.TabIndex = 3;
-            categoryFormTitle.Text = "Category's Information";
             // 
             // panel2
             // 
@@ -231,23 +289,48 @@
             dgvCategory.RowHeadersVisible = false;
             dgvCategory.RowHeadersWidth = 51;
             dgvCategory.RowTemplate.Height = 29;
-            dgvCategory.Size = new Size(617, 533);
+            dgvCategory.Size = new Size(617, 584);
             dgvCategory.TabIndex = 49;
+            // 
+            // colId
+            // 
+            colId.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            colId.HeaderText = "ID";
+            colId.MinimumWidth = 6;
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            colId.Width = 51;
+            // 
+            // colName
+            // 
+            colName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colName.FillWeight = 64.93507F;
+            colName.HeaderText = "Name";
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // colDesc
+            // 
+            colDesc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colDesc.FillWeight = 135.064941F;
+            colDesc.HeaderText = "Description";
+            colDesc.Name = "colDesc";
+            colDesc.ReadOnly = true;
             // 
             // panel6
             // 
             panel6.Dock = DockStyle.Right;
             panel6.Location = new Point(617, 207);
             panel6.Name = "panel6";
-            panel6.Size = new Size(112, 533);
+            panel6.Size = new Size(112, 584);
             panel6.TabIndex = 52;
             // 
             // panel9
             // 
             panel9.Dock = DockStyle.Bottom;
-            panel9.Location = new Point(0, 740);
+            panel9.Location = new Point(0, 791);
             panel9.Name = "panel9";
-            panel9.Size = new Size(729, 160);
+            panel9.Size = new Size(729, 109);
             panel9.TabIndex = 51;
             // 
             // panel5
@@ -281,78 +364,26 @@
             lbSearch.TabIndex = 5;
             lbSearch.Text = "Search";
             // 
-            // btnDelete
+            // panel8
             // 
-            btnDelete.Anchor = AnchorStyles.None;
-            btnDelete.BackColor = Color.Salmon;
-            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(827, 473);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(120, 60);
-            btnDelete.TabIndex = 6;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
+            panel8.Controls.Add(categoryFormTitle);
+            panel8.Controls.Add(btnDelete);
+            panel8.Controls.Add(btnClear);
+            panel8.Controls.Add(btnInsert);
+            panel8.Controls.Add(btnUpdate);
+            panel8.Dock = DockStyle.Fill;
+            panel8.Location = new Point(729, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(342, 900);
+            panel8.TabIndex = 2;
             // 
-            // btnUpdate
+            // panel10
             // 
-            btnUpdate.Anchor = AnchorStyles.None;
-            btnUpdate.BackColor = Color.LightYellow;
-            btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(827, 387);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(120, 60);
-            btnUpdate.TabIndex = 5;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = false;
-            // 
-            // btnInsert
-            // 
-            btnInsert.Anchor = AnchorStyles.None;
-            btnInsert.BackColor = Color.LightGreen;
-            btnInsert.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInsert.Location = new Point(827, 297);
-            btnInsert.Name = "btnInsert";
-            btnInsert.Size = new Size(120, 60);
-            btnInsert.TabIndex = 4;
-            btnInsert.Text = "Insert";
-            btnInsert.UseVisualStyleBackColor = false;
-            // 
-            // btnClear
-            // 
-            btnClear.Anchor = AnchorStyles.None;
-            btnClear.BackColor = Color.LightSkyBlue;
-            btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(827, 564);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(120, 60);
-            btnClear.TabIndex = 7;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = false;
-            // 
-            // colId
-            // 
-            colId.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            colId.HeaderText = "ID";
-            colId.MinimumWidth = 6;
-            colId.Name = "colId";
-            colId.ReadOnly = true;
-            colId.Width = 51;
-            // 
-            // colName
-            // 
-            colName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colName.FillWeight = 64.93507F;
-            colName.HeaderText = "Name";
-            colName.Name = "colName";
-            colName.ReadOnly = true;
-            // 
-            // colDesc
-            // 
-            colDesc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colDesc.FillWeight = 135.064941F;
-            colDesc.HeaderText = "Description";
-            colDesc.Name = "colDesc";
-            colDesc.ReadOnly = true;
+            panel10.Dock = DockStyle.Bottom;
+            panel10.Location = new Point(126, 740);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(603, 160);
+            panel10.TabIndex = 10;
             // 
             // CategoryForm
             // 
@@ -360,11 +391,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1800, 900);
-            Controls.Add(categoryFormTitle);
-            Controls.Add(btnDelete);
-            Controls.Add(btnUpdate);
-            Controls.Add(btnInsert);
-            Controls.Add(btnClear);
+            Controls.Add(panel8);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -380,8 +407,9 @@
             ((System.ComponentModel.ISupportInitialize)dgvCategory).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -414,5 +442,7 @@
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colName;
         private DataGridViewTextBoxColumn colDesc;
+        private Panel panel8;
+        private Panel panel10;
     }
 }

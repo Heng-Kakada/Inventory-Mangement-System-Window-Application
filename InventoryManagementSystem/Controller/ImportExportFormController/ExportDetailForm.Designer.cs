@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pHead = new Panel();
             exportDetailFormTitle = new Label();
             pBottom = new Panel();
             pBody = new Panel();
             panel3 = new Panel();
             dgvExportDetail = new DataGridView();
-            panel2 = new Panel();
-            btnDelete = new Button();
-            textBox1 = new TextBox();
-            btnUpdate = new Button();
-            label1 = new Label();
-            btnAdd = new Button();
-            panel1 = new Panel();
             colId = new DataGridViewTextBoxColumn();
             colQtyExport = new DataGridViewTextBoxColumn();
             colUnitPrice = new DataGridViewTextBoxColumn();
@@ -50,11 +43,20 @@
             colExportId = new DataGridViewTextBoxColumn();
             colProductId = new DataGridViewTextBoxColumn();
             colInventoryId = new DataGridViewTextBoxColumn();
+            panel2 = new Panel();
+            btnDelete = new Button();
+            textBox1 = new TextBox();
+            btnUpdate = new Button();
+            label1 = new Label();
+            btnAdd = new Button();
+            panel1 = new Panel();
+            panel4 = new Panel();
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExportDetail).BeginInit();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // pHead
@@ -113,14 +115,14 @@
             dgvExportDetail.AllowUserToDeleteRows = false;
             dgvExportDetail.BackgroundColor = SystemColors.Control;
             dgvExportDetail.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 192, 0);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvExportDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 192, 0);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvExportDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvExportDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvExportDetail.Columns.AddRange(new DataGridViewColumn[] { colId, colQtyExport, colUnitPrice, colSubTotal, colExportId, colProductId, colInventoryId });
             dgvExportDetail.Dock = DockStyle.Fill;
@@ -131,91 +133,11 @@
             dgvExportDetail.Size = new Size(1452, 717);
             dgvExportDetail.TabIndex = 0;
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnDelete);
-            panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(btnUpdate);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(btnAdd);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(300, 717);
-            panel2.TabIndex = 2;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Anchor = AnchorStyles.None;
-            btnDelete.BackColor = Color.Salmon;
-            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(62, 410);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(120, 60);
-            btnDelete.TabIndex = 20;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = SystemColors.Control;
-            textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(15, 45);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "search ...";
-            textBox1.Size = new Size(269, 26);
-            textBox1.TabIndex = 22;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.Anchor = AnchorStyles.None;
-            btnUpdate.BackColor = Color.LightYellow;
-            btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(62, 297);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(120, 60);
-            btnUpdate.TabIndex = 19;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(20, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(70, 24);
-            label1.TabIndex = 21;
-            label1.Text = "Search";
-            // 
-            // btnAdd
-            // 
-            btnAdd.Anchor = AnchorStyles.None;
-            btnAdd.BackColor = Color.LightGreen;
-            btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(62, 187);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(120, 60);
-            btnAdd.TabIndex = 18;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1752, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(48, 717);
-            panel1.TabIndex = 1;
-            // 
             // colId
             // 
             colId.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colId.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colId.DefaultCellStyle = dataGridViewCellStyle4;
             colId.FillWeight = 120F;
             colId.HeaderText = "ID";
             colId.Name = "colId";
@@ -264,6 +186,95 @@
             colInventoryId.Name = "colInventoryId";
             colInventoryId.ReadOnly = true;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(btnDelete);
+            panel2.Controls.Add(btnUpdate);
+            panel2.Controls.Add(btnAdd);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(300, 717);
+            panel2.TabIndex = 2;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.None;
+            btnDelete.BackColor = Color.Salmon;
+            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(90, 420);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(120, 60);
+            btnDelete.TabIndex = 20;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.BackColor = SystemColors.Control;
+            textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(17, 56);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "search ...";
+            textBox1.Size = new Size(269, 26);
+            textBox1.TabIndex = 22;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Anchor = AnchorStyles.None;
+            btnUpdate.BackColor = Color.LightYellow;
+            btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUpdate.Location = new Point(90, 307);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(120, 60);
+            btnUpdate.TabIndex = 19;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(22, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(70, 24);
+            label1.TabIndex = 21;
+            label1.Text = "Search";
+            // 
+            // btnAdd
+            // 
+            btnAdd.Anchor = AnchorStyles.None;
+            btnAdd.BackColor = Color.LightGreen;
+            btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdd.Location = new Point(90, 197);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(120, 60);
+            btnAdd.TabIndex = 18;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(1752, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(48, 717);
+            panel1.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(label1);
+            panel4.Controls.Add(textBox1);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(300, 100);
+            panel4.TabIndex = 23;
+            // 
             // ExportDetailForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -283,7 +294,8 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvExportDetail).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -309,5 +321,6 @@
         private DataGridViewTextBoxColumn colExportId;
         private DataGridViewTextBoxColumn colProductId;
         private DataGridViewTextBoxColumn colInventoryId;
+        private Panel panel4;
     }
 }

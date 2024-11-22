@@ -47,6 +47,7 @@
             colTotalStock = new DataGridViewTextBoxColumn();
             colCat = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
+            panel4 = new Panel();
             btnDelete = new Button();
             textBox1 = new TextBox();
             btnUpdate = new Button();
@@ -58,6 +59,7 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProduct).BeginInit();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // pHead
@@ -200,10 +202,9 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(panel4);
             panel2.Controls.Add(btnDelete);
-            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(btnUpdate);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(btnAdd);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
@@ -211,12 +212,22 @@
             panel2.Size = new Size(300, 717);
             panel2.TabIndex = 2;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(label1);
+            panel4.Controls.Add(textBox1);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(300, 98);
+            panel4.TabIndex = 28;
+            // 
             // btnDelete
             // 
             btnDelete.Anchor = AnchorStyles.None;
             btnDelete.BackColor = Color.Salmon;
             btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(61, 409);
+            btnDelete.Location = new Point(79, 437);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(120, 60);
             btnDelete.TabIndex = 25;
@@ -228,7 +239,7 @@
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.BackColor = SystemColors.Control;
             textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(14, 44);
+            textBox1.Location = new Point(17, 53);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "search ...";
@@ -240,7 +251,7 @@
             btnUpdate.Anchor = AnchorStyles.None;
             btnUpdate.BackColor = Color.LightYellow;
             btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(61, 296);
+            btnUpdate.Location = new Point(79, 324);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(120, 60);
             btnUpdate.TabIndex = 24;
@@ -252,7 +263,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(19, 9);
+            label1.Location = new Point(22, 18);
             label1.Name = "label1";
             label1.Size = new Size(70, 24);
             label1.TabIndex = 26;
@@ -263,7 +274,7 @@
             btnAdd.Anchor = AnchorStyles.None;
             btnAdd.BackColor = Color.LightGreen;
             btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(61, 186);
+            btnAdd.Location = new Point(79, 214);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(120, 60);
             btnAdd.TabIndex = 23;
@@ -297,7 +308,8 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvProduct).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -323,5 +335,6 @@
         private Button btnUpdate;
         private Label label1;
         private Button btnAdd;
+        private Panel panel4;
     }
 }

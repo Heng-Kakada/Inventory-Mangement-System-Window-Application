@@ -31,8 +31,6 @@
             txtSearch = new TextBox();
             lbSearch = new Label();
             listStaff = new ListBox();
-            picbStaff = new PictureBox();
-            btnUpload = new Button();
             panel3 = new Panel();
             txtSalary = new TextBox();
             lbName = new Label();
@@ -53,9 +51,10 @@
             txtAddress = new TextBox();
             lbWorkPhone = new Label();
             btnClear = new Button();
+            panel2 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picbStaff).BeginInit();
             panel3.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // staffFormTitle
@@ -63,7 +62,7 @@
             staffFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             staffFormTitle.AutoSize = true;
             staffFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            staffFormTitle.Location = new Point(786, 45);
+            staffFormTitle.Location = new Point(136, 44);
             staffFormTitle.Name = "staffFormTitle";
             staffFormTitle.Size = new Size(233, 31);
             staffFormTitle.TabIndex = 2;
@@ -74,7 +73,7 @@
             btnDelete.Anchor = AnchorStyles.None;
             btnDelete.BackColor = Color.Salmon;
             btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(877, 620);
+            btnDelete.Location = new Point(197, 520);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(120, 60);
             btnDelete.TabIndex = 2;
@@ -86,7 +85,7 @@
             btnUpdate.Anchor = AnchorStyles.None;
             btnUpdate.BackColor = Color.LightYellow;
             btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(877, 536);
+            btnUpdate.Location = new Point(197, 436);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(120, 60);
             btnUpdate.TabIndex = 1;
@@ -98,7 +97,7 @@
             btnInsert.Anchor = AnchorStyles.None;
             btnInsert.BackColor = Color.LightGreen;
             btnInsert.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInsert.Location = new Point(877, 451);
+            btnInsert.Location = new Point(197, 351);
             btnInsert.Name = "btnInsert";
             btnInsert.Size = new Size(120, 60);
             btnInsert.TabIndex = 0;
@@ -112,13 +111,14 @@
             panel1.Controls.Add(lbSearch);
             panel1.Controls.Add(listStaff);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1096, 0);
+            panel1.Location = new Point(1125, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(704, 900);
+            panel1.Size = new Size(675, 900);
             panel1.TabIndex = 2;
             // 
             // txtSearch
             // 
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtSearch.BackColor = SystemColors.Control;
             txtSearch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearch.Location = new Point(21, 149);
@@ -140,7 +140,7 @@
             // 
             // listStaff
             // 
-            listStaff.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listStaff.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listStaff.BackColor = SystemColors.Control;
             listStaff.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listStaff.FormattingEnabled = true;
@@ -148,35 +148,12 @@
             listStaff.Location = new Point(21, 191);
             listStaff.Margin = new Padding(3, 2, 3, 2);
             listStaff.Name = "listStaff";
-            listStaff.Size = new Size(563, 644);
+            listStaff.Size = new Size(534, 644);
             listStaff.TabIndex = 1;
-            // 
-            // picbStaff
-            // 
-            picbStaff.BorderStyle = BorderStyle.FixedSingle;
-            picbStaff.Location = new Point(563, 228);
-            picbStaff.Margin = new Padding(3, 2, 3, 2);
-            picbStaff.Name = "picbStaff";
-            picbStaff.Size = new Size(152, 213);
-            picbStaff.SizeMode = PictureBoxSizeMode.StretchImage;
-            picbStaff.TabIndex = 31;
-            picbStaff.TabStop = false;
-            // 
-            // btnUpload
-            // 
-            btnUpload.Anchor = AnchorStyles.None;
-            btnUpload.Location = new Point(591, 457);
-            btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(100, 40);
-            btnUpload.TabIndex = 18;
-            btnUpload.Text = "Upload Photo";
-            btnUpload.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
             panel3.Controls.Add(txtSalary);
-            panel3.Controls.Add(picbStaff);
-            panel3.Controls.Add(btnUpload);
             panel3.Controls.Add(lbName);
             panel3.Controls.Add(txtName);
             panel3.Controls.Add(lbGender);
@@ -197,18 +174,19 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(816, 900);
+            panel3.Size = new Size(616, 900);
             panel3.TabIndex = 20;
             // 
             // txtSalary
             // 
+            txtSalary.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtSalary.Font = new Font("Microsoft Sans Serif", 12F);
             txtSalary.Location = new Point(116, 720);
             txtSalary.Margin = new Padding(3, 2, 3, 2);
             txtSalary.Name = "txtSalary";
             txtSalary.PlaceholderText = "0.00";
             txtSalary.ReadOnly = true;
-            txtSalary.Size = new Size(340, 26);
+            txtSalary.Size = new Size(459, 26);
             txtSalary.TabIndex = 38;
             // 
             // lbName
@@ -225,12 +203,12 @@
             // 
             // txtName
             // 
-            txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtName.BackColor = SystemColors.Control;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtName.Location = new Point(116, 193);
             txtName.Name = "txtName";
-            txtName.Size = new Size(340, 29);
+            txtName.Size = new Size(459, 29);
             txtName.TabIndex = 1;
             // 
             // lbGender
@@ -247,24 +225,24 @@
             // 
             // dtHireDate
             // 
-            dtHireDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            dtHireDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtHireDate.CalendarFont = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtHireDate.CalendarMonthBackground = SystemColors.Control;
             dtHireDate.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtHireDate.Location = new Point(116, 651);
             dtHireDate.Name = "dtHireDate";
-            dtHireDate.Size = new Size(340, 22);
+            dtHireDate.Size = new Size(459, 22);
             dtHireDate.TabIndex = 17;
             // 
             // cboGender
             // 
-            cboGender.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            cboGender.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cboGender.BackColor = SystemColors.Control;
             cboGender.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboGender.FormattingEnabled = true;
             cboGender.Location = new Point(116, 251);
             cboGender.Name = "cboGender";
-            cboGender.Size = new Size(340, 28);
+            cboGender.Size = new Size(459, 28);
             cboGender.TabIndex = 3;
             // 
             // lbHiredDate
@@ -293,13 +271,13 @@
             // 
             // dtDob
             // 
-            dtDob.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            dtDob.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtDob.CalendarFont = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtDob.CalendarMonthBackground = SystemColors.Control;
             dtDob.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtDob.Location = new Point(116, 317);
             dtDob.Name = "dtDob";
-            dtDob.Size = new Size(340, 22);
+            dtDob.Size = new Size(459, 22);
             dtDob.TabIndex = 5;
             // 
             // lbSalary
@@ -328,23 +306,23 @@
             // 
             // textBox2
             // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox2.BackColor = SystemColors.Control;
             textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox2.Location = new Point(116, 585);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(340, 29);
+            textBox2.Size = new Size(459, 29);
             textBox2.TabIndex = 13;
             // 
             // cboPosition
             // 
-            cboPosition.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            cboPosition.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cboPosition.BackColor = SystemColors.Control;
             cboPosition.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboPosition.FormattingEnabled = true;
             cboPosition.Location = new Point(116, 383);
             cboPosition.Name = "cboPosition";
-            cboPosition.Size = new Size(340, 28);
+            cboPosition.Size = new Size(459, 28);
             cboPosition.TabIndex = 7;
             // 
             // lbPhone
@@ -373,22 +351,22 @@
             // 
             // textBox1
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.BackColor = SystemColors.Control;
             textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(116, 517);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(340, 29);
+            textBox1.Size = new Size(459, 29);
             textBox1.TabIndex = 11;
             // 
             // txtAddress
             // 
-            txtAddress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            txtAddress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtAddress.BackColor = SystemColors.Control;
             txtAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtAddress.Location = new Point(116, 447);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(340, 29);
+            txtAddress.Size = new Size(459, 29);
             txtAddress.TabIndex = 9;
             // 
             // lbWorkPhone
@@ -408,12 +386,25 @@
             btnClear.Anchor = AnchorStyles.None;
             btnClear.BackColor = Color.LightSkyBlue;
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(877, 704);
+            btnClear.Location = new Point(197, 604);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(120, 60);
             btnClear.TabIndex = 21;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnClear);
+            panel2.Controls.Add(staffFormTitle);
+            panel2.Controls.Add(btnInsert);
+            panel2.Controls.Add(btnUpdate);
+            panel2.Controls.Add(btnDelete);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(616, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(509, 900);
+            panel2.TabIndex = 21;
             // 
             // StaffForm
             // 
@@ -421,13 +412,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1800, 900);
-            Controls.Add(btnClear);
+            Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(staffFormTitle);
             Controls.Add(panel3);
-            Controls.Add(btnDelete);
-            Controls.Add(btnUpdate);
-            Controls.Add(btnInsert);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "StaffForm";
@@ -435,11 +422,11 @@
             Text = "StaffForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picbStaff).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -465,13 +452,12 @@
         private Label lbPhone;
         private TextBox textBox1;
         private Label lbWorkPhone;
-        private Button btnUpload;
         private Panel panel3;
         private ListBox listStaff;
         private TextBox txtSearch;
         private Label lbSearch;
-        private PictureBox picbStaff;
         private Button btnClear;
         private TextBox txtSalary;
+        private Panel panel2;
     }
 }

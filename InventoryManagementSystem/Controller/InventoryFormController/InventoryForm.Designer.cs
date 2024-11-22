@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             pHead = new Panel();
             inventoryFormTitle = new Label();
             pBottom = new Panel();
@@ -118,14 +118,14 @@
             dgvInventory.AllowUserToDeleteRows = false;
             dgvInventory.BackgroundColor = SystemColors.Control;
             dgvInventory.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(0, 192, 0);
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 192, 0);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvInventory.Columns.AddRange(new DataGridViewColumn[] { colId, colUnitCost, colCurrentStock, colInitQty, colNote, colExpireDate, colLastUpdate, colImportId, colProductId });
             dgvInventory.Dock = DockStyle.Fill;
@@ -139,8 +139,8 @@
             // colId
             // 
             colId.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle12.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colId.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colId.DefaultCellStyle = dataGridViewCellStyle2;
             colId.FillWeight = 120F;
             colId.HeaderText = "ID";
             colId.Name = "colId";
@@ -150,8 +150,8 @@
             // colUnitCost
             // 
             colUnitCost.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colUnitCost.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colUnitCost.DefaultCellStyle = dataGridViewCellStyle3;
             colUnitCost.FillWeight = 80F;
             colUnitCost.HeaderText = "Unit Cost";
             colUnitCost.Name = "colUnitCost";
@@ -160,8 +160,8 @@
             // colCurrentStock
             // 
             colCurrentStock.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle14.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colCurrentStock.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colCurrentStock.DefaultCellStyle = dataGridViewCellStyle4;
             colCurrentStock.HeaderText = "Current Stock";
             colCurrentStock.Name = "colCurrentStock";
             colCurrentStock.ReadOnly = true;
@@ -182,8 +182,8 @@
             // colExpireDate
             // 
             colExpireDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colExpireDate.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colExpireDate.DefaultCellStyle = dataGridViewCellStyle5;
             colExpireDate.HeaderText = "Expired Date";
             colExpireDate.Name = "colExpireDate";
             colExpireDate.ReadOnly = true;
@@ -221,7 +221,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Anchor = AnchorStyles.Left;
+            btnDelete.Anchor = AnchorStyles.None;
             btnDelete.BackColor = Color.Salmon;
             btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDelete.Location = new Point(59, 413);
@@ -233,7 +233,7 @@
             // 
             // textBox1
             // 
-            textBox1.Anchor = AnchorStyles.Right;
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.BackColor = SystemColors.Control;
             textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(12, 48);
@@ -245,7 +245,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Anchor = AnchorStyles.Left;
+            btnUpdate.Anchor = AnchorStyles.None;
             btnUpdate.BackColor = Color.LightYellow;
             btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUpdate.Location = new Point(59, 300);
@@ -257,7 +257,7 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(17, 13);
@@ -268,7 +268,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Anchor = AnchorStyles.Left;
+            btnAdd.Anchor = AnchorStyles.None;
             btnAdd.BackColor = Color.LightGreen;
             btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdd.Location = new Point(59, 190);

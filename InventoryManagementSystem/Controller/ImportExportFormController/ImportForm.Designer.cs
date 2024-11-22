@@ -60,11 +60,13 @@
             label1 = new Label();
             lbTotalCost = new Label();
             panel1 = new Panel();
+            panel4 = new Panel();
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // pHead
@@ -118,7 +120,7 @@
             btnDelete.Anchor = AnchorStyles.Left;
             btnDelete.BackColor = Color.Salmon;
             btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(642, 375);
+            btnDelete.Location = new Point(659, 401);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(120, 60);
             btnDelete.TabIndex = 9;
@@ -130,7 +132,7 @@
             btnAdd.Anchor = AnchorStyles.Left;
             btnAdd.BackColor = Color.LightGreen;
             btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(642, 189);
+            btnAdd.Location = new Point(659, 215);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(120, 60);
             btnAdd.TabIndex = 7;
@@ -142,7 +144,7 @@
             btnUpdate.Anchor = AnchorStyles.Left;
             btnUpdate.BackColor = Color.LightYellow;
             btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(642, 278);
+            btnUpdate.Location = new Point(659, 304);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(120, 60);
             btnUpdate.TabIndex = 8;
@@ -173,9 +175,9 @@
             // 
             panel3.Controls.Add(dgvInventory);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(855, 0);
+            panel3.Location = new Point(877, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(865, 725);
+            panel3.Size = new Size(843, 725);
             panel3.TabIndex = 3;
             // 
             // dgvInventory
@@ -199,7 +201,7 @@
             dgvInventory.Location = new Point(0, 0);
             dgvInventory.Name = "dgvInventory";
             dgvInventory.ReadOnly = true;
-            dgvInventory.Size = new Size(865, 725);
+            dgvInventory.Size = new Size(843, 725);
             dgvInventory.TabIndex = 0;
             // 
             // colId
@@ -250,32 +252,22 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(btnClear);
-            panel2.Controls.Add(comboBox1);
-            panel2.Controls.Add(cboContractID);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(lbDate);
-            panel2.Controls.Add(dtImportDate);
-            panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(txtRentalPrice);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(lbTotalCost);
+            panel2.Controls.Add(panel4);
             panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(btnUpdate);
             panel2.Controls.Add(btnAdd);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(855, 725);
+            panel2.Size = new Size(877, 725);
             panel2.TabIndex = 2;
             // 
             // btnClear
             // 
-            btnClear.Anchor = AnchorStyles.Left;
+            btnClear.Anchor = AnchorStyles.None;
             btnClear.BackColor = Color.LightSkyBlue;
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(69, 484);
+            btnClear.Location = new Point(93, 520);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(120, 60);
             btnClear.TabIndex = 53;
@@ -284,24 +276,26 @@
             // 
             // comboBox1
             // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.Font = new Font("Microsoft Sans Serif", 12F);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(69, 394);
+            comboBox1.Location = new Point(93, 430);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(433, 28);
+            comboBox1.Size = new Size(390, 28);
             comboBox1.TabIndex = 52;
             // 
             // cboContractID
             // 
+            cboContractID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cboContractID.DropDownStyle = ComboBoxStyle.DropDownList;
             cboContractID.Font = new Font("Microsoft Sans Serif", 12F);
             cboContractID.FormattingEnabled = true;
-            cboContractID.Location = new Point(69, 320);
+            cboContractID.Location = new Point(93, 356);
             cboContractID.Margin = new Padding(3, 2, 3, 2);
             cboContractID.Name = "cboContractID";
-            cboContractID.Size = new Size(433, 28);
+            cboContractID.Size = new Size(390, 28);
             cboContractID.TabIndex = 51;
             // 
             // label4
@@ -310,7 +304,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(69, 372);
+            label4.Location = new Point(93, 408);
             label4.Name = "label4";
             label4.Size = new Size(81, 20);
             label4.TabIndex = 50;
@@ -322,7 +316,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(69, 298);
+            label3.Location = new Point(93, 334);
             label3.Name = "label3";
             label3.Size = new Size(81, 20);
             label3.TabIndex = 48;
@@ -334,7 +328,7 @@
             lbDate.AutoSize = true;
             lbDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbDate.ForeColor = Color.Black;
-            lbDate.Location = new Point(69, 85);
+            lbDate.Location = new Point(93, 121);
             lbDate.Name = "lbDate";
             lbDate.Size = new Size(44, 20);
             lbDate.TabIndex = 39;
@@ -342,35 +336,38 @@
             // 
             // dtImportDate
             // 
+            dtImportDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtImportDate.CustomFormat = " yyyy/MM/dd";
             dtImportDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtImportDate.Format = DateTimePickerFormat.Custom;
-            dtImportDate.Location = new Point(69, 107);
+            dtImportDate.Location = new Point(93, 143);
             dtImportDate.Margin = new Padding(3, 2, 3, 2);
             dtImportDate.Name = "dtImportDate";
-            dtImportDate.Size = new Size(433, 26);
+            dtImportDate.Size = new Size(390, 26);
             dtImportDate.TabIndex = 38;
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Font = new Font("Microsoft Sans Serif", 12F);
-            textBox1.Location = new Point(69, 251);
+            textBox1.Location = new Point(93, 287);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "0.00";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(433, 26);
+            textBox1.Size = new Size(390, 26);
             textBox1.TabIndex = 37;
             // 
             // txtRentalPrice
             // 
+            txtRentalPrice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtRentalPrice.Font = new Font("Microsoft Sans Serif", 12F);
-            txtRentalPrice.Location = new Point(69, 179);
+            txtRentalPrice.Location = new Point(93, 215);
             txtRentalPrice.Margin = new Padding(3, 2, 3, 2);
             txtRentalPrice.Name = "txtRentalPrice";
             txtRentalPrice.PlaceholderText = "0.00";
             txtRentalPrice.ReadOnly = true;
-            txtRentalPrice.Size = new Size(433, 26);
+            txtRentalPrice.Size = new Size(390, 26);
             txtRentalPrice.TabIndex = 36;
             // 
             // label1
@@ -379,7 +376,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(69, 229);
+            label1.Location = new Point(93, 265);
             label1.Name = "label1";
             label1.Size = new Size(81, 20);
             label1.TabIndex = 12;
@@ -391,7 +388,7 @@
             lbTotalCost.AutoSize = true;
             lbTotalCost.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbTotalCost.ForeColor = Color.Black;
-            lbTotalCost.Location = new Point(69, 157);
+            lbTotalCost.Location = new Point(93, 193);
             lbTotalCost.Name = "lbTotalCost";
             lbTotalCost.Size = new Size(81, 20);
             lbTotalCost.TabIndex = 10;
@@ -404,6 +401,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(80, 725);
             panel1.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(lbDate);
+            panel4.Controls.Add(btnClear);
+            panel4.Controls.Add(lbTotalCost);
+            panel4.Controls.Add(comboBox1);
+            panel4.Controls.Add(label1);
+            panel4.Controls.Add(cboContractID);
+            panel4.Controls.Add(txtRentalPrice);
+            panel4.Controls.Add(label4);
+            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(dtImportDate);
+            panel4.Dock = DockStyle.Left;
+            panel4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(562, 725);
+            panel4.TabIndex = 54;
             // 
             // ImportForm
             // 
@@ -424,7 +441,8 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -460,5 +478,6 @@
         private Label lbDate;
         private DateTimePicker dtImportDate;
         private Button btnClear;
+        private Panel panel4;
     }
 }

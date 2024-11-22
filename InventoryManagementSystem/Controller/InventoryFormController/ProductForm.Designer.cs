@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             pHead = new Panel();
             productFormTitle = new Label();
             pBottom = new Panel();
@@ -47,12 +47,12 @@
             colTotalStock = new DataGridViewTextBoxColumn();
             colCat = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
-            panel1 = new Panel();
             btnDelete = new Button();
             textBox1 = new TextBox();
             btnUpdate = new Button();
             label1 = new Label();
             btnAdd = new Button();
+            panel1 = new Panel();
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
@@ -116,14 +116,14 @@
             dgvProduct.AllowUserToDeleteRows = false;
             dgvProduct.BackgroundColor = SystemColors.Control;
             dgvProduct.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(0, 192, 0);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 192, 0);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProduct.Columns.AddRange(new DataGridViewColumn[] { colId, colBar, colName, colSalePrice, colUOM, colTotalStock, colCat });
             dgvProduct.Dock = DockStyle.Fill;
@@ -137,8 +137,8 @@
             // colId
             // 
             colId.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colId.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colId.DefaultCellStyle = dataGridViewCellStyle2;
             colId.FillWeight = 120F;
             colId.HeaderText = "ID";
             colId.Name = "colId";
@@ -148,8 +148,8 @@
             // colBar
             // 
             colBar.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colBar.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colBar.DefaultCellStyle = dataGridViewCellStyle3;
             colBar.FillWeight = 80F;
             colBar.HeaderText = "BarCode";
             colBar.Name = "colBar";
@@ -158,8 +158,8 @@
             // colName
             // 
             colName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colName.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colName.DefaultCellStyle = dataGridViewCellStyle4;
             colName.HeaderText = "Name";
             colName.Name = "colName";
             colName.ReadOnly = true;
@@ -167,8 +167,8 @@
             // colSalePrice
             // 
             colSalePrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colSalePrice.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colSalePrice.DefaultCellStyle = dataGridViewCellStyle5;
             colSalePrice.HeaderText = "SalePrice";
             colSalePrice.Name = "colSalePrice";
             colSalePrice.ReadOnly = true;
@@ -211,17 +211,9 @@
             panel2.Size = new Size(300, 717);
             panel2.TabIndex = 2;
             // 
-            // panel1
-            // 
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1752, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(48, 717);
-            panel1.TabIndex = 1;
-            // 
             // btnDelete
             // 
-            btnDelete.Anchor = AnchorStyles.Left;
+            btnDelete.Anchor = AnchorStyles.None;
             btnDelete.BackColor = Color.Salmon;
             btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDelete.Location = new Point(59, 408);
@@ -233,7 +225,7 @@
             // 
             // textBox1
             // 
-            textBox1.Anchor = AnchorStyles.Right;
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.BackColor = SystemColors.Control;
             textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(12, 43);
@@ -245,7 +237,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Anchor = AnchorStyles.Left;
+            btnUpdate.Anchor = AnchorStyles.None;
             btnUpdate.BackColor = Color.LightYellow;
             btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUpdate.Location = new Point(59, 295);
@@ -257,7 +249,7 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(17, 8);
@@ -268,7 +260,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Anchor = AnchorStyles.Left;
+            btnAdd.Anchor = AnchorStyles.None;
             btnAdd.BackColor = Color.LightGreen;
             btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdd.Location = new Point(59, 185);
@@ -277,6 +269,14 @@
             btnAdd.TabIndex = 23;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(1752, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(48, 717);
+            panel1.TabIndex = 1;
             // 
             // ProductForm
             // 

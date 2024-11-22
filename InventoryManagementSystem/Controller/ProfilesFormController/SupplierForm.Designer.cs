@@ -30,6 +30,7 @@
             btnUpdate = new Button();
             btnInsert = new Button();
             panel1 = new Panel();
+            panel6 = new Panel();
             dgvSupplier = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
@@ -56,9 +57,11 @@
             lbContactPerson = new Label();
             btnClear = new Button();
             panel2 = new Panel();
-            panel6 = new Panel();
+            txtSearch = new TextBox();
+            lbSearch = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSupplier).BeginInit();
+            panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -122,6 +125,14 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(751, 900);
             panel1.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            panel6.Dock = DockStyle.Bottom;
+            panel6.Location = new Point(0, 821);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(718, 79);
+            panel6.TabIndex = 3;
             // 
             // dgvSupplier
             // 
@@ -203,6 +214,8 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(txtSearch);
+            panel4.Controls.Add(lbSearch);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
@@ -415,13 +428,28 @@
             panel2.Size = new Size(381, 900);
             panel2.TabIndex = 22;
             // 
-            // panel6
+            // txtSearch
             // 
-            panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 821);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(718, 79);
-            panel6.TabIndex = 3;
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtSearch.BackColor = SystemColors.Control;
+            txtSearch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearch.Location = new Point(325, 56);
+            txtSearch.Margin = new Padding(3, 2, 3, 2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "search ...";
+            txtSearch.Size = new Size(393, 26);
+            txtSearch.TabIndex = 24;
+            // 
+            // lbSearch
+            // 
+            lbSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbSearch.AutoSize = true;
+            lbSearch.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbSearch.Location = new Point(249, 57);
+            lbSearch.Name = "lbSearch";
+            lbSearch.Size = new Size(70, 24);
+            lbSearch.TabIndex = 23;
+            lbSearch.Text = "Search";
             // 
             // SupplierForm
             // 
@@ -439,6 +467,8 @@
             Text = "SupplierForm";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvSupplier).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
@@ -479,5 +509,7 @@
         private DataGridViewTextBoxColumn colPaymentMethod;
         private DataGridViewTextBoxColumn colPaymentTerm;
         private Panel panel6;
+        private TextBox txtSearch;
+        private Label lbSearch;
     }
 }

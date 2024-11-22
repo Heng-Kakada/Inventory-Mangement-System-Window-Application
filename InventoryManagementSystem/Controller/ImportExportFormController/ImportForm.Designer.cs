@@ -32,8 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pHead = new Panel();
             importFormTitle = new Label();
-            txtSearch = new TextBox();
-            lbSearch = new Label();
             btnDelete = new Button();
             btnAdd = new Button();
             btnUpdate = new Button();
@@ -48,32 +46,35 @@
             colHandleBy = new DataGridViewTextBoxColumn();
             colSupplierId = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
-            btnClear = new Button();
-            comboBox1 = new ComboBox();
-            cboContractID = new ComboBox();
-            label4 = new Label();
-            label3 = new Label();
-            lbDate = new Label();
-            dtImportDate = new DateTimePicker();
-            textBox1 = new TextBox();
-            txtRentalPrice = new TextBox();
-            label1 = new Label();
-            lbTotalCost = new Label();
-            panel1 = new Panel();
             panel4 = new Panel();
+            cboHandleBy = new ComboBox();
+            lbSupplierId = new Label();
+            nudTotalItem = new NumericUpDown();
+            lbTotalItem = new Label();
+            lbDate = new Label();
+            btnClear = new Button();
+            lbTotalCost = new Label();
+            cboSupplierId = new ComboBox();
+            txtTotalCost = new TextBox();
+            lbHandleBy = new Label();
+            dtImportDate = new DateTimePicker();
+            panel1 = new Panel();
+            txtSearch = new TextBox();
+            lbSearch = new Label();
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudTotalItem).BeginInit();
             SuspendLayout();
             // 
             // pHead
             // 
-            pHead.Controls.Add(importFormTitle);
             pHead.Controls.Add(txtSearch);
             pHead.Controls.Add(lbSearch);
+            pHead.Controls.Add(importFormTitle);
             pHead.Dock = DockStyle.Top;
             pHead.Location = new Point(0, 0);
             pHead.Margin = new Padding(3, 2, 3, 2);
@@ -91,29 +92,6 @@
             importFormTitle.Size = new Size(273, 33);
             importFormTitle.TabIndex = 12;
             importFormTitle.Text = "Import's Information";
-            // 
-            // txtSearch
-            // 
-            txtSearch.Anchor = AnchorStyles.Right;
-            txtSearch.BackColor = SystemColors.Control;
-            txtSearch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(1327, 50);
-            txtSearch.Margin = new Padding(3, 2, 3, 2);
-            txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "search ...";
-            txtSearch.Size = new Size(393, 26);
-            txtSearch.TabIndex = 11;
-            // 
-            // lbSearch
-            // 
-            lbSearch.Anchor = AnchorStyles.None;
-            lbSearch.AutoSize = true;
-            lbSearch.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbSearch.Location = new Point(1377, 18);
-            lbSearch.Name = "lbSearch";
-            lbSearch.Size = new Size(70, 24);
-            lbSearch.TabIndex = 10;
-            lbSearch.Text = "Search";
             // 
             // btnDelete
             // 
@@ -262,129 +240,99 @@
             panel2.Size = new Size(877, 725);
             panel2.TabIndex = 2;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(cboHandleBy);
+            panel4.Controls.Add(lbSupplierId);
+            panel4.Controls.Add(nudTotalItem);
+            panel4.Controls.Add(lbTotalItem);
+            panel4.Controls.Add(lbDate);
+            panel4.Controls.Add(btnClear);
+            panel4.Controls.Add(lbTotalCost);
+            panel4.Controls.Add(cboSupplierId);
+            panel4.Controls.Add(txtTotalCost);
+            panel4.Controls.Add(lbHandleBy);
+            panel4.Controls.Add(dtImportDate);
+            panel4.Dock = DockStyle.Left;
+            panel4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(562, 725);
+            panel4.TabIndex = 54;
+            // 
+            // cboHandleBy
+            // 
+            cboHandleBy.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboHandleBy.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboHandleBy.Font = new Font("Microsoft Sans Serif", 12F);
+            cboHandleBy.FormattingEnabled = true;
+            cboHandleBy.Location = new Point(93, 358);
+            cboHandleBy.Margin = new Padding(3, 2, 3, 2);
+            cboHandleBy.Name = "cboHandleBy";
+            cboHandleBy.Size = new Size(390, 28);
+            cboHandleBy.TabIndex = 60;
+            // 
+            // lbSupplierId
+            // 
+            lbSupplierId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbSupplierId.AutoSize = true;
+            lbSupplierId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbSupplierId.ForeColor = Color.Black;
+            lbSupplierId.Location = new Point(93, 396);
+            lbSupplierId.Name = "lbSupplierId";
+            lbSupplierId.Size = new Size(88, 20);
+            lbSupplierId.TabIndex = 59;
+            lbSupplierId.Text = "Supplier ID";
+            // 
+            // nudTotalItem
+            // 
+            nudTotalItem.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            nudTotalItem.BackColor = SystemColors.Control;
+            nudTotalItem.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nudTotalItem.Location = new Point(93, 295);
+            nudTotalItem.Name = "nudTotalItem";
+            nudTotalItem.Size = new Size(390, 26);
+            nudTotalItem.TabIndex = 58;
+            // 
+            // lbTotalItem
+            // 
+            lbTotalItem.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbTotalItem.AutoSize = true;
+            lbTotalItem.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbTotalItem.ForeColor = Color.Black;
+            lbTotalItem.Location = new Point(93, 272);
+            lbTotalItem.Name = "lbTotalItem";
+            lbTotalItem.Size = new Size(80, 20);
+            lbTotalItem.TabIndex = 57;
+            lbTotalItem.Text = "Total Item";
+            // 
+            // lbDate
+            // 
+            lbDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbDate.AutoSize = true;
+            lbDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbDate.ForeColor = Color.Black;
+            lbDate.Location = new Point(93, 122);
+            lbDate.Name = "lbDate";
+            lbDate.Size = new Size(44, 20);
+            lbDate.TabIndex = 39;
+            lbDate.Text = "Date";
+            // 
             // btnClear
             // 
             btnClear.Anchor = AnchorStyles.None;
             btnClear.BackColor = Color.LightSkyBlue;
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(93, 520);
+            btnClear.Location = new Point(93, 503);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(120, 60);
             btnClear.TabIndex = 53;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Microsoft Sans Serif", 12F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(93, 430);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(390, 28);
-            comboBox1.TabIndex = 52;
-            // 
-            // cboContractID
-            // 
-            cboContractID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            cboContractID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboContractID.Font = new Font("Microsoft Sans Serif", 12F);
-            cboContractID.FormattingEnabled = true;
-            cboContractID.Location = new Point(93, 356);
-            cboContractID.Margin = new Padding(3, 2, 3, 2);
-            cboContractID.Name = "cboContractID";
-            cboContractID.Size = new Size(390, 28);
-            cboContractID.TabIndex = 51;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(93, 408);
-            label4.Name = "label4";
-            label4.Size = new Size(81, 20);
-            label4.TabIndex = 50;
-            label4.Text = "Total Cost";
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(93, 334);
-            label3.Name = "label3";
-            label3.Size = new Size(81, 20);
-            label3.TabIndex = 48;
-            label3.Text = "Total Cost";
-            // 
-            // lbDate
-            // 
-            lbDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            lbDate.AutoSize = true;
-            lbDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbDate.ForeColor = Color.Black;
-            lbDate.Location = new Point(93, 121);
-            lbDate.Name = "lbDate";
-            lbDate.Size = new Size(44, 20);
-            lbDate.TabIndex = 39;
-            lbDate.Text = "Date";
-            // 
-            // dtImportDate
-            // 
-            dtImportDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtImportDate.CustomFormat = " yyyy/MM/dd";
-            dtImportDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtImportDate.Format = DateTimePickerFormat.Custom;
-            dtImportDate.Location = new Point(93, 143);
-            dtImportDate.Margin = new Padding(3, 2, 3, 2);
-            dtImportDate.Name = "dtImportDate";
-            dtImportDate.Size = new Size(390, 26);
-            dtImportDate.TabIndex = 38;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Font = new Font("Microsoft Sans Serif", 12F);
-            textBox1.Location = new Point(93, 287);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "0.00";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(390, 26);
-            textBox1.TabIndex = 37;
-            // 
-            // txtRentalPrice
-            // 
-            txtRentalPrice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtRentalPrice.Font = new Font("Microsoft Sans Serif", 12F);
-            txtRentalPrice.Location = new Point(93, 215);
-            txtRentalPrice.Margin = new Padding(3, 2, 3, 2);
-            txtRentalPrice.Name = "txtRentalPrice";
-            txtRentalPrice.PlaceholderText = "0.00";
-            txtRentalPrice.ReadOnly = true;
-            txtRentalPrice.Size = new Size(390, 26);
-            txtRentalPrice.TabIndex = 36;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(93, 265);
-            label1.Name = "label1";
-            label1.Size = new Size(81, 20);
-            label1.TabIndex = 12;
-            label1.Text = "Total Cost";
-            // 
             // lbTotalCost
             // 
-            lbTotalCost.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbTotalCost.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbTotalCost.AutoSize = true;
             lbTotalCost.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbTotalCost.ForeColor = Color.Black;
@@ -394,6 +342,54 @@
             lbTotalCost.TabIndex = 10;
             lbTotalCost.Text = "Total Cost";
             // 
+            // cboSupplierId
+            // 
+            cboSupplierId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboSupplierId.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSupplierId.Font = new Font("Microsoft Sans Serif", 12F);
+            cboSupplierId.FormattingEnabled = true;
+            cboSupplierId.Location = new Point(93, 423);
+            cboSupplierId.Margin = new Padding(3, 2, 3, 2);
+            cboSupplierId.Name = "cboSupplierId";
+            cboSupplierId.Size = new Size(390, 28);
+            cboSupplierId.TabIndex = 52;
+            // 
+            // txtTotalCost
+            // 
+            txtTotalCost.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtTotalCost.Font = new Font("Microsoft Sans Serif", 12F);
+            txtTotalCost.Location = new Point(93, 215);
+            txtTotalCost.Margin = new Padding(3, 2, 3, 2);
+            txtTotalCost.Name = "txtTotalCost";
+            txtTotalCost.PlaceholderText = "0.00";
+            txtTotalCost.ReadOnly = true;
+            txtTotalCost.Size = new Size(390, 26);
+            txtTotalCost.TabIndex = 36;
+            // 
+            // lbHandleBy
+            // 
+            lbHandleBy.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbHandleBy.AutoSize = true;
+            lbHandleBy.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbHandleBy.ForeColor = Color.Black;
+            lbHandleBy.Location = new Point(93, 334);
+            lbHandleBy.Name = "lbHandleBy";
+            lbHandleBy.Size = new Size(82, 20);
+            lbHandleBy.TabIndex = 48;
+            lbHandleBy.Text = "Handle By";
+            // 
+            // dtImportDate
+            // 
+            dtImportDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtImportDate.CustomFormat = " yyyy/MM/dd";
+            dtImportDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtImportDate.Format = DateTimePickerFormat.Custom;
+            dtImportDate.Location = new Point(93, 144);
+            dtImportDate.Margin = new Padding(3, 2, 3, 2);
+            dtImportDate.Name = "dtImportDate";
+            dtImportDate.Size = new Size(390, 26);
+            dtImportDate.TabIndex = 38;
+            // 
             // panel1
             // 
             panel1.Dock = DockStyle.Right;
@@ -402,25 +398,28 @@
             panel1.Size = new Size(80, 725);
             panel1.TabIndex = 1;
             // 
-            // panel4
+            // txtSearch
             // 
-            panel4.Controls.Add(lbDate);
-            panel4.Controls.Add(btnClear);
-            panel4.Controls.Add(lbTotalCost);
-            panel4.Controls.Add(comboBox1);
-            panel4.Controls.Add(label1);
-            panel4.Controls.Add(cboContractID);
-            panel4.Controls.Add(txtRentalPrice);
-            panel4.Controls.Add(label4);
-            panel4.Controls.Add(textBox1);
-            panel4.Controls.Add(label3);
-            panel4.Controls.Add(dtImportDate);
-            panel4.Dock = DockStyle.Left;
-            panel4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(562, 725);
-            panel4.TabIndex = 54;
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtSearch.BackColor = SystemColors.Control;
+            txtSearch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearch.Location = new Point(1327, 43);
+            txtSearch.Margin = new Padding(3, 2, 3, 2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "search ...";
+            txtSearch.Size = new Size(393, 26);
+            txtSearch.TabIndex = 13;
+            // 
+            // lbSearch
+            // 
+            lbSearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbSearch.AutoSize = true;
+            lbSearch.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbSearch.Location = new Point(1251, 44);
+            lbSearch.Name = "lbSearch";
+            lbSearch.Size = new Size(70, 24);
+            lbSearch.TabIndex = 12;
+            lbSearch.Text = "Search";
             // 
             // ImportForm
             // 
@@ -443,6 +442,7 @@
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudTotalItem).EndInit();
             ResumeLayout(false);
         }
 
@@ -455,8 +455,6 @@
         private Button btnDelete;
         private Button btnAdd;
         private Button btnUpdate;
-        private TextBox txtSearch;
-        private Label lbSearch;
         private Label importFormTitle;
         private Panel panel3;
         private Panel panel2;
@@ -469,15 +467,21 @@
         private DataGridViewTextBoxColumn colSupplierId;
         private Label lbTotalCost;
         private TextBox textBox1;
-        private TextBox txtRentalPrice;
+        private TextBox txtTotalCost;
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox cboSupplierId;
         private ComboBox cboContractID;
         private Label label4;
-        private Label label3;
+        private Label lbHandleBy;
         private Label lbDate;
         private DateTimePicker dtImportDate;
         private Button btnClear;
         private Panel panel4;
+        private NumericUpDown nudTotalItem;
+        private Label lbTotalItem;
+        private Label lbSupplierId;
+        private ComboBox cboHandleBy;
+        private TextBox txtSearch;
+        private Label lbSearch;
     }
 }

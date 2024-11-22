@@ -60,6 +60,7 @@
             txtTotalCost = new TextBox();
             dtExportDate = new DateTimePicker();
             panel1 = new Panel();
+            panel6 = new Panel();
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
@@ -283,6 +284,7 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(panel6);
             panel5.Controls.Add(btnClear);
             panel5.Dock = DockStyle.Bottom;
             panel5.Location = new Point(0, 512);
@@ -295,7 +297,7 @@
             btnClear.Anchor = AnchorStyles.None;
             btnClear.BackColor = Color.LightSkyBlue;
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(70, 30);
+            btnClear.Location = new Point(93, 21);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(120, 60);
             btnClear.TabIndex = 53;
@@ -404,6 +406,14 @@
             panel1.Size = new Size(80, 725);
             panel1.TabIndex = 1;
             // 
+            // panel6
+            // 
+            panel6.Dock = DockStyle.Left;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(91, 213);
+            panel6.TabIndex = 54;
+            // 
             // ExportForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -465,5 +475,6 @@
         private NumericUpDown nudTotalItem;
         private TextBox txtName;
         private Panel panel5;
+        private Panel panel6;
     }
 }

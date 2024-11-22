@@ -49,27 +49,27 @@
             colSupplierId = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             panel4 = new Panel();
+            panel5 = new Panel();
+            btnClear = new Button();
             cboHandleBy = new ComboBox();
             lbSupplierId = new Label();
             nudTotalItem = new NumericUpDown();
             lbTotalItem = new Label();
             lbDate = new Label();
-            btnClear = new Button();
             lbTotalCost = new Label();
             cboSupplierId = new ComboBox();
             txtTotalCost = new TextBox();
             lbHandleBy = new Label();
             dtImportDate = new DateTimePicker();
             panel1 = new Panel();
-            panel5 = new Panel();
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudTotalItem).BeginInit();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudTotalItem).BeginInit();
             SuspendLayout();
             // 
             // pHead
@@ -112,7 +112,7 @@
             importFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             importFormTitle.AutoSize = true;
             importFormTitle.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            importFormTitle.Location = new Point(69, 32);
+            importFormTitle.Location = new Point(70, 30);
             importFormTitle.Name = "importFormTitle";
             importFormTitle.Size = new Size(273, 33);
             importFormTitle.TabIndex = 12;
@@ -285,6 +285,27 @@
             panel4.Size = new Size(562, 725);
             panel4.TabIndex = 54;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(btnClear);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new Point(0, 526);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(562, 199);
+            panel5.TabIndex = 61;
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.None;
+            btnClear.BackColor = Color.LightSkyBlue;
+            btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClear.Location = new Point(93, 22);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(120, 60);
+            btnClear.TabIndex = 53;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            // 
             // cboHandleBy
             // 
             cboHandleBy.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -342,18 +363,6 @@
             lbDate.Size = new Size(44, 20);
             lbDate.TabIndex = 39;
             lbDate.Text = "Date";
-            // 
-            // btnClear
-            // 
-            btnClear.Anchor = AnchorStyles.None;
-            btnClear.BackColor = Color.LightSkyBlue;
-            btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(93, 22);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(120, 60);
-            btnClear.TabIndex = 53;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = false;
             // 
             // lbTotalCost
             // 
@@ -423,15 +432,6 @@
             panel1.Size = new Size(80, 725);
             panel1.TabIndex = 1;
             // 
-            // panel5
-            // 
-            panel5.Controls.Add(btnClear);
-            panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 526);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(562, 199);
-            panel5.TabIndex = 61;
-            // 
             // ImportForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -453,8 +453,8 @@
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudTotalItem).EndInit();
             panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)nudTotalItem).EndInit();
             ResumeLayout(false);
         }
 

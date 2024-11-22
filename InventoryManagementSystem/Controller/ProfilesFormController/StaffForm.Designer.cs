@@ -32,6 +32,7 @@
             lbSearch = new Label();
             listStaff = new ListBox();
             panel3 = new Panel();
+            panel4 = new Panel();
             txtSalary = new TextBox();
             lbName = new Label();
             txtName = new TextBox();
@@ -62,7 +63,7 @@
             staffFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             staffFormTitle.AutoSize = true;
             staffFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            staffFormTitle.Location = new Point(136, 44);
+            staffFormTitle.Location = new Point(70, 30);
             staffFormTitle.Name = "staffFormTitle";
             staffFormTitle.Size = new Size(233, 31);
             staffFormTitle.TabIndex = 2;
@@ -153,6 +154,8 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(panel4);
+            panel3.Controls.Add(staffFormTitle);
             panel3.Controls.Add(txtSalary);
             panel3.Controls.Add(lbName);
             panel3.Controls.Add(txtName);
@@ -177,11 +180,19 @@
             panel3.Size = new Size(616, 900);
             panel3.TabIndex = 20;
             // 
+            // panel4
+            // 
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(0, 783);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(616, 117);
+            panel4.TabIndex = 39;
+            // 
             // txtSalary
             // 
             txtSalary.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtSalary.Font = new Font("Microsoft Sans Serif", 12F);
-            txtSalary.Location = new Point(116, 720);
+            txtSalary.Location = new Point(114, 702);
             txtSalary.Margin = new Padding(3, 2, 3, 2);
             txtSalary.Name = "txtSalary";
             txtSalary.PlaceholderText = "0.00";
@@ -191,11 +202,11 @@
             // 
             // lbName
             // 
-            lbName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbName.AutoSize = true;
             lbName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbName.ForeColor = Color.Black;
-            lbName.Location = new Point(116, 167);
+            lbName.Location = new Point(114, 149);
             lbName.Name = "lbName";
             lbName.Size = new Size(51, 20);
             lbName.TabIndex = 0;
@@ -206,18 +217,18 @@
             txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtName.BackColor = SystemColors.Control;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtName.Location = new Point(116, 193);
+            txtName.Location = new Point(114, 175);
             txtName.Name = "txtName";
             txtName.Size = new Size(459, 29);
             txtName.TabIndex = 1;
             // 
             // lbGender
             // 
-            lbGender.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbGender.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbGender.AutoSize = true;
             lbGender.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbGender.ForeColor = Color.Black;
-            lbGender.Location = new Point(116, 228);
+            lbGender.Location = new Point(114, 210);
             lbGender.Name = "lbGender";
             lbGender.Size = new Size(63, 20);
             lbGender.TabIndex = 2;
@@ -229,7 +240,7 @@
             dtHireDate.CalendarFont = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtHireDate.CalendarMonthBackground = SystemColors.Control;
             dtHireDate.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtHireDate.Location = new Point(116, 651);
+            dtHireDate.Location = new Point(114, 633);
             dtHireDate.Name = "dtHireDate";
             dtHireDate.Size = new Size(459, 22);
             dtHireDate.TabIndex = 17;
@@ -240,18 +251,18 @@
             cboGender.BackColor = SystemColors.Control;
             cboGender.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboGender.FormattingEnabled = true;
-            cboGender.Location = new Point(116, 251);
+            cboGender.Location = new Point(114, 233);
             cboGender.Name = "cboGender";
             cboGender.Size = new Size(459, 28);
             cboGender.TabIndex = 3;
             // 
             // lbHiredDate
             // 
-            lbHiredDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbHiredDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbHiredDate.AutoSize = true;
             lbHiredDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbHiredDate.ForeColor = Color.Black;
-            lbHiredDate.Location = new Point(116, 628);
+            lbHiredDate.Location = new Point(114, 610);
             lbHiredDate.Name = "lbHiredDate";
             lbHiredDate.Size = new Size(86, 20);
             lbHiredDate.TabIndex = 16;
@@ -259,11 +270,11 @@
             // 
             // lbDob
             // 
-            lbDob.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbDob.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbDob.AutoSize = true;
             lbDob.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbDob.ForeColor = Color.Black;
-            lbDob.Location = new Point(116, 294);
+            lbDob.Location = new Point(114, 276);
             lbDob.Name = "lbDob";
             lbDob.Size = new Size(102, 20);
             lbDob.TabIndex = 4;
@@ -275,18 +286,18 @@
             dtDob.CalendarFont = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtDob.CalendarMonthBackground = SystemColors.Control;
             dtDob.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtDob.Location = new Point(116, 317);
+            dtDob.Location = new Point(114, 299);
             dtDob.Name = "dtDob";
             dtDob.Size = new Size(459, 22);
             dtDob.TabIndex = 5;
             // 
             // lbSalary
             // 
-            lbSalary.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbSalary.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbSalary.AutoSize = true;
             lbSalary.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbSalary.ForeColor = Color.Black;
-            lbSalary.Location = new Point(116, 689);
+            lbSalary.Location = new Point(114, 671);
             lbSalary.Name = "lbSalary";
             lbSalary.Size = new Size(53, 20);
             lbSalary.TabIndex = 14;
@@ -294,11 +305,11 @@
             // 
             // lbPosition
             // 
-            lbPosition.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbPosition.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbPosition.AutoSize = true;
             lbPosition.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbPosition.ForeColor = Color.Black;
-            lbPosition.Location = new Point(116, 360);
+            lbPosition.Location = new Point(114, 342);
             lbPosition.Name = "lbPosition";
             lbPosition.Size = new Size(65, 20);
             lbPosition.TabIndex = 6;
@@ -309,7 +320,7 @@
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox2.BackColor = SystemColors.Control;
             textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(116, 585);
+            textBox2.Location = new Point(114, 567);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(459, 29);
             textBox2.TabIndex = 13;
@@ -320,18 +331,18 @@
             cboPosition.BackColor = SystemColors.Control;
             cboPosition.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboPosition.FormattingEnabled = true;
-            cboPosition.Location = new Point(116, 383);
+            cboPosition.Location = new Point(114, 365);
             cboPosition.Name = "cboPosition";
             cboPosition.Size = new Size(459, 28);
             cboPosition.TabIndex = 7;
             // 
             // lbPhone
             // 
-            lbPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbPhone.AutoSize = true;
             lbPhone.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbPhone.ForeColor = Color.Black;
-            lbPhone.Location = new Point(116, 559);
+            lbPhone.Location = new Point(114, 541);
             lbPhone.Name = "lbPhone";
             lbPhone.Size = new Size(96, 20);
             lbPhone.TabIndex = 12;
@@ -339,11 +350,11 @@
             // 
             // lbAddress
             // 
-            lbAddress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbAddress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbAddress.AutoSize = true;
             lbAddress.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbAddress.ForeColor = Color.Black;
-            lbAddress.Location = new Point(116, 424);
+            lbAddress.Location = new Point(114, 406);
             lbAddress.Name = "lbAddress";
             lbAddress.Size = new Size(68, 20);
             lbAddress.TabIndex = 8;
@@ -354,7 +365,7 @@
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.BackColor = SystemColors.Control;
             textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(116, 517);
+            textBox1.Location = new Point(114, 499);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(459, 29);
             textBox1.TabIndex = 11;
@@ -364,18 +375,18 @@
             txtAddress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtAddress.BackColor = SystemColors.Control;
             txtAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtAddress.Location = new Point(116, 447);
+            txtAddress.Location = new Point(114, 429);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(459, 29);
             txtAddress.TabIndex = 9;
             // 
             // lbWorkPhone
             // 
-            lbWorkPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lbWorkPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbWorkPhone.AutoSize = true;
             lbWorkPhone.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbWorkPhone.ForeColor = Color.Black;
-            lbWorkPhone.Location = new Point(116, 491);
+            lbWorkPhone.Location = new Point(114, 473);
             lbWorkPhone.Name = "lbWorkPhone";
             lbWorkPhone.Size = new Size(71, 20);
             lbWorkPhone.TabIndex = 10;
@@ -396,7 +407,6 @@
             // panel2
             // 
             panel2.Controls.Add(btnClear);
-            panel2.Controls.Add(staffFormTitle);
             panel2.Controls.Add(btnInsert);
             panel2.Controls.Add(btnUpdate);
             panel2.Controls.Add(btnDelete);
@@ -425,7 +435,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -459,5 +468,6 @@
         private Button btnClear;
         private TextBox txtSalary;
         private Panel panel2;
+        private Panel panel4;
     }
 }

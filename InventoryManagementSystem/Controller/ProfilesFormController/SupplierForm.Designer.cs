@@ -71,7 +71,7 @@
             supplierFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             supplierFormTitle.AutoSize = true;
             supplierFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            supplierFormTitle.Location = new Point(30, 49);
+            supplierFormTitle.Location = new Point(70, 30);
             supplierFormTitle.Name = "supplierFormTitle";
             supplierFormTitle.Size = new Size(275, 31);
             supplierFormTitle.TabIndex = 2;
@@ -247,6 +247,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(supplierFormTitle);
             panel3.Controls.Add(lbPaymentTerm);
             panel3.Controls.Add(dtPaymentTerm);
             panel3.Controls.Add(lbPaymentMethod);
@@ -440,7 +441,6 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(supplierFormTitle);
             panel2.Controls.Add(btnClear);
             panel2.Controls.Add(btnInsert);
             panel2.Controls.Add(btnDelete);
@@ -472,7 +472,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 

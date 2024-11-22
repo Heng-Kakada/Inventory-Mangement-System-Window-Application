@@ -50,7 +50,7 @@
             userFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             userFormTitle.AutoSize = true;
             userFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userFormTitle.Location = new Point(127, 44);
+            userFormTitle.Location = new Point(70, 30);
             userFormTitle.Name = "userFormTitle";
             userFormTitle.Size = new Size(234, 31);
             userFormTitle.TabIndex = 2;
@@ -141,6 +141,7 @@
             // panel3
             // 
             panel3.Controls.Add(lbUserName);
+            panel3.Controls.Add(userFormTitle);
             panel3.Controls.Add(txtUserName);
             panel3.Controls.Add(lbStaffId);
             panel3.Controls.Add(cboStaffId);
@@ -234,7 +235,6 @@
             // panel2
             // 
             panel2.Controls.Add(btnClear);
-            panel2.Controls.Add(userFormTitle);
             panel2.Controls.Add(btnInsert);
             panel2.Controls.Add(btnUpdate);
             panel2.Controls.Add(btnDelete);
@@ -263,7 +263,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 

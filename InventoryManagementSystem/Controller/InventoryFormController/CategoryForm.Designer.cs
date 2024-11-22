@@ -25,21 +25,22 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel3 = new Panel();
+            panel10 = new Panel();
             lbCatID = new Label();
-            btnDelete = new Button();
             txtId = new TextBox();
-            btnUpdate = new Button();
             rtxtDesc = new RichTextBox();
-            btnInsert = new Button();
-            btnClear = new Button();
             panel7 = new Panel();
             lbCatName = new Label();
             panel4 = new Panel();
-            categoryFormTitle = new Label();
             lbCatDesc = new Label();
             txtName = new TextBox();
             txtPaymentID = new TextBox();
             label1 = new Label();
+            btnDelete = new Button();
+            btnUpdate = new Button();
+            btnInsert = new Button();
+            btnClear = new Button();
+            categoryFormTitle = new Label();
             panel2 = new Panel();
             dgvCategory = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
@@ -52,9 +53,9 @@
             lbSearch = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel8 = new Panel();
-            panel10 = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            panel4.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCategory).BeginInit();
             panel5.SuspendLayout();
@@ -69,7 +70,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(729, 900);
+            panel1.Size = new Size(676, 900);
             panel1.TabIndex = 0;
             // 
             // panel3
@@ -86,8 +87,16 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(729, 900);
+            panel3.Size = new Size(676, 900);
             panel3.TabIndex = 5;
+            // 
+            // panel10
+            // 
+            panel10.Dock = DockStyle.Bottom;
+            panel10.Location = new Point(126, 740);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(550, 160);
+            panel10.TabIndex = 10;
             // 
             // lbCatID
             // 
@@ -100,18 +109,6 @@
             lbCatID.TabIndex = 3;
             lbCatID.Text = "Id";
             // 
-            // btnDelete
-            // 
-            btnDelete.Anchor = AnchorStyles.None;
-            btnDelete.BackColor = Color.Salmon;
-            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(91, 458);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(120, 60);
-            btnDelete.TabIndex = 6;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
-            // 
             // txtId
             // 
             txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -121,20 +118,8 @@
             txtId.Margin = new Padding(3, 2, 3, 2);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(505, 26);
+            txtId.Size = new Size(452, 26);
             txtId.TabIndex = 4;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.Anchor = AnchorStyles.None;
-            btnUpdate.BackColor = Color.LightYellow;
-            btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(91, 372);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(120, 60);
-            btnUpdate.TabIndex = 5;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = false;
             // 
             // rtxtDesc
             // 
@@ -144,40 +129,16 @@
             rtxtDesc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rtxtDesc.Location = new Point(166, 391);
             rtxtDesc.Name = "rtxtDesc";
-            rtxtDesc.Size = new Size(505, 264);
+            rtxtDesc.Size = new Size(452, 264);
             rtxtDesc.TabIndex = 8;
             rtxtDesc.Text = "";
-            // 
-            // btnInsert
-            // 
-            btnInsert.Anchor = AnchorStyles.None;
-            btnInsert.BackColor = Color.LightGreen;
-            btnInsert.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInsert.Location = new Point(91, 282);
-            btnInsert.Name = "btnInsert";
-            btnInsert.Size = new Size(120, 60);
-            btnInsert.TabIndex = 4;
-            btnInsert.Text = "Insert";
-            btnInsert.UseVisualStyleBackColor = false;
-            // 
-            // btnClear
-            // 
-            btnClear.Anchor = AnchorStyles.None;
-            btnClear.BackColor = Color.LightSkyBlue;
-            btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(91, 549);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(120, 60);
-            btnClear.TabIndex = 7;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
             panel7.Dock = DockStyle.Left;
-            panel7.Location = new Point(0, 79);
+            panel7.Location = new Point(0, 94);
             panel7.Name = "panel7";
-            panel7.Size = new Size(126, 821);
+            panel7.Size = new Size(126, 806);
             panel7.TabIndex = 9;
             // 
             // lbCatName
@@ -193,22 +154,12 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(categoryFormTitle);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(729, 79);
+            panel4.Size = new Size(676, 94);
             panel4.TabIndex = 0;
-            // 
-            // categoryFormTitle
-            // 
-            categoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            categoryFormTitle.AutoSize = true;
-            categoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            categoryFormTitle.Location = new Point(15, 79);
-            categoryFormTitle.Name = "categoryFormTitle";
-            categoryFormTitle.Size = new Size(287, 31);
-            categoryFormTitle.TabIndex = 3;
-            categoryFormTitle.Text = "Category's Information";
             // 
             // lbCatDesc
             // 
@@ -229,7 +180,7 @@
             txtName.Location = new Point(166, 328);
             txtName.Margin = new Padding(3, 2, 3, 2);
             txtName.Name = "txtName";
-            txtName.Size = new Size(505, 26);
+            txtName.Size = new Size(452, 26);
             txtName.TabIndex = 6;
             // 
             // txtPaymentID
@@ -251,6 +202,65 @@
             label1.Size = new Size(89, 19);
             label1.TabIndex = 3;
             label1.Text = "Payment ID";
+            // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.None;
+            btnDelete.BackColor = Color.Salmon;
+            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(117, 458);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(120, 60);
+            btnDelete.TabIndex = 6;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Anchor = AnchorStyles.None;
+            btnUpdate.BackColor = Color.LightYellow;
+            btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUpdate.Location = new Point(117, 372);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(120, 60);
+            btnUpdate.TabIndex = 5;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btnInsert
+            // 
+            btnInsert.Anchor = AnchorStyles.None;
+            btnInsert.BackColor = Color.LightGreen;
+            btnInsert.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInsert.Location = new Point(117, 282);
+            btnInsert.Name = "btnInsert";
+            btnInsert.Size = new Size(120, 60);
+            btnInsert.TabIndex = 4;
+            btnInsert.Text = "Insert";
+            btnInsert.UseVisualStyleBackColor = false;
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.None;
+            btnClear.BackColor = Color.LightSkyBlue;
+            btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClear.Location = new Point(117, 549);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(120, 60);
+            btnClear.TabIndex = 7;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            // 
+            // categoryFormTitle
+            // 
+            categoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            categoryFormTitle.AutoSize = true;
+            categoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            categoryFormTitle.Location = new Point(70, 30);
+            categoryFormTitle.Name = "categoryFormTitle";
+            categoryFormTitle.Size = new Size(287, 31);
+            categoryFormTitle.TabIndex = 3;
+            categoryFormTitle.Text = "Category's Information";
             // 
             // panel2
             // 
@@ -366,24 +376,15 @@
             // 
             // panel8
             // 
-            panel8.Controls.Add(categoryFormTitle);
             panel8.Controls.Add(btnDelete);
             panel8.Controls.Add(btnClear);
             panel8.Controls.Add(btnInsert);
             panel8.Controls.Add(btnUpdate);
             panel8.Dock = DockStyle.Fill;
-            panel8.Location = new Point(729, 0);
+            panel8.Location = new Point(676, 0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(342, 900);
+            panel8.Size = new Size(395, 900);
             panel8.TabIndex = 2;
-            // 
-            // panel10
-            // 
-            panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(126, 740);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(603, 160);
-            panel10.TabIndex = 10;
             // 
             // CategoryForm
             // 
@@ -403,12 +404,13 @@
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCategory).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel8.ResumeLayout(false);
-            panel8.PerformLayout();
             ResumeLayout(false);
         }
 

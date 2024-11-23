@@ -12,9 +12,37 @@ namespace InventoryManagementSystem.Controller.InventoryFormController.Inventory
 {
     public partial class SubInventory : Form
     {
+
+        private static SubInventory instance = null!;
+
         public SubInventory()
         {
             InitializeComponent();
         }
+
+        #region SingleTon For Only Show One Form
+        public static SubInventory GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new SubInventory();
+            }
+            return instance;
+        }
+        public new void Show()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = this;
+                base.Show();
+            }
+            else
+            {
+                // Bring the existing form to the front if already open
+                instance.BringToFront();
+            }
+        }
+        #endregion
+
     }
 }

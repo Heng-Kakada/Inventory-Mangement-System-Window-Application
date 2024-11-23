@@ -8,7 +8,7 @@ namespace IMS_Services.Entities;
 
 public class Inventory
 {
-    public int InvID {get; set; }
+    public int ID {get; set; }
     public decimal UnitCost { get; set; }
     public DateTime ExpirationDate { get; set; }
     public short CurrentStock { get; set; }

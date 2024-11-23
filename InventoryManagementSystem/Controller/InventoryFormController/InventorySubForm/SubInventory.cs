@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InventoryManagementSystem.Controller
+namespace InventoryManagementSystem.Controller.InventoryFormController.InventorySubForm
 {
-    public partial class ProductForm : Form
+    public partial class SubInventory : Form
     {
-        public ProductForm()
+        public SubInventory()
         {
             InitializeComponent();
         }
-
     }
 }

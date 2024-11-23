@@ -41,9 +41,9 @@
             exportLogMenuItem = new ToolStripMenuItem();
             exportHistoryMenuItem = new ToolStripMenuItem();
             profilesMenuItemBar = new ToolStripMenuItem();
-            userMenuItem = new ToolStripMenuItem();
+            supplierMenuItem = new ToolStripMenuItem();
             staffMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem1 = new ToolStripMenuItem();
+            userMenuItem = new ToolStripMenuItem();
             settingMenuItemBar = new ToolStripMenuItem();
             helpMenuItem = new ToolStripMenuItem();
             aboutUsMenuItem = new ToolStripMenuItem();
@@ -54,12 +54,12 @@
             // 
             tabform.Dock = DockStyle.Fill;
             tabform.DrawMode = TabDrawMode.OwnerDrawFixed;
-            tabform.Location = new Point(0, 53);
+            tabform.Location = new Point(0, 47);
             tabform.Margin = new Padding(0);
             tabform.Name = "tabform";
             tabform.Padding = new Point(20, 4);
             tabform.SelectedIndex = 0;
-            tabform.Size = new Size(1178, 796);
+            tabform.Size = new Size(1178, 632);
             tabform.TabIndex = 0;
             // 
             // menubar
@@ -67,11 +67,11 @@
             menubar.BackColor = SystemColors.ActiveCaption;
             menubar.Font = new Font("Segoe UI", 10F);
             menubar.ImageScalingSize = new Size(20, 20);
-            menubar.Items.AddRange(new ToolStripItem[] { homeMenuItemBar, inventoryMenuItemBar, importExportMenuItemBar, profilesMenuItemBar, toolStripMenuItem1, settingMenuItemBar });
+            menubar.Items.AddRange(new ToolStripItem[] { homeMenuItemBar, inventoryMenuItemBar, importExportMenuItemBar, profilesMenuItemBar, settingMenuItemBar });
             menubar.Location = new Point(0, 0);
             menubar.Name = "menubar";
-            menubar.Padding = new Padding(5, 5, 0, 5);
-            menubar.Size = new Size(1178, 53);
+            menubar.Padding = new Padding(5, 4, 0, 4);
+            menubar.Size = new Size(1178, 47);
             menubar.TabIndex = 1;
             menubar.Text = "menu";
             // 
@@ -79,118 +79,121 @@
             // 
             homeMenuItemBar.Name = "homeMenuItemBar";
             homeMenuItemBar.Padding = new Padding(5, 8, 5, 8);
-            homeMenuItemBar.Size = new Size(70, 43);
+            homeMenuItemBar.Size = new Size(60, 39);
             homeMenuItemBar.Text = "Home";
             // 
             // inventoryMenuItemBar
             // 
             inventoryMenuItemBar.DropDownItems.AddRange(new ToolStripItem[] { categoryMenuItem, productMenuItem, inventoryMenuItem });
             inventoryMenuItemBar.Name = "inventoryMenuItemBar";
-            inventoryMenuItemBar.Size = new Size(96, 43);
+            inventoryMenuItemBar.Size = new Size(80, 39);
             inventoryMenuItemBar.Text = "Inventory";
             // 
             // categoryMenuItem
             // 
             categoryMenuItem.Name = "categoryMenuItem";
-            categoryMenuItem.Size = new Size(166, 28);
+            categoryMenuItem.Size = new Size(137, 24);
             categoryMenuItem.Text = "Category";
             // 
             // productMenuItem
             // 
             productMenuItem.Name = "productMenuItem";
-            productMenuItem.Size = new Size(166, 28);
+            productMenuItem.Size = new Size(137, 24);
             productMenuItem.Text = "Product";
             // 
             // inventoryMenuItem
             // 
             inventoryMenuItem.Name = "inventoryMenuItem";
-            inventoryMenuItem.Size = new Size(166, 28);
+            inventoryMenuItem.Size = new Size(137, 24);
             inventoryMenuItem.Text = "Inventory";
             // 
             // importExportMenuItemBar
             // 
             importExportMenuItemBar.DropDownItems.AddRange(new ToolStripItem[] { importMenuItem, exportMenuItem });
             importExportMenuItemBar.Name = "importExportMenuItemBar";
-            importExportMenuItemBar.Size = new Size(142, 43);
+            importExportMenuItemBar.Size = new Size(115, 39);
             importExportMenuItemBar.Text = "Import / Export";
             // 
             // importMenuItem
             // 
             importMenuItem.Name = "importMenuItem";
-            importMenuItem.Size = new Size(146, 28);
+            importMenuItem.Size = new Size(120, 24);
             importMenuItem.Text = "Import";
             // 
             // exportMenuItem
             // 
             exportMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exportLogMenuItem, exportHistoryMenuItem });
             exportMenuItem.Name = "exportMenuItem";
-            exportMenuItem.Size = new Size(146, 28);
+            exportMenuItem.Size = new Size(120, 24);
             exportMenuItem.Text = "Export";
             // 
             // exportLogMenuItem
             // 
             exportLogMenuItem.Name = "exportLogMenuItem";
-            exportLogMenuItem.Size = new Size(201, 28);
+            exportLogMenuItem.Size = new Size(165, 24);
             exportLogMenuItem.Text = "Export Log";
             // 
             // exportHistoryMenuItem
             // 
             exportHistoryMenuItem.Name = "exportHistoryMenuItem";
-            exportHistoryMenuItem.Size = new Size(201, 28);
+            exportHistoryMenuItem.Size = new Size(165, 24);
             exportHistoryMenuItem.Text = "Export History";
             // 
             // profilesMenuItemBar
             // 
-            profilesMenuItemBar.DropDownItems.AddRange(new ToolStripItem[] { userMenuItem, staffMenuItem });
+            profilesMenuItemBar.DropDownItems.AddRange(new ToolStripItem[] { supplierMenuItem, staffMenuItem, userMenuItem });
             profilesMenuItemBar.Name = "profilesMenuItemBar";
-            profilesMenuItemBar.Size = new Size(79, 43);
+            profilesMenuItemBar.Size = new Size(65, 39);
             profilesMenuItemBar.Text = "Profiles";
             // 
-            // userMenuItem
+            // supplierMenuItem
             // 
-            userMenuItem.Name = "userMenuItem";
-            userMenuItem.Size = new Size(128, 28);
-            userMenuItem.Text = "User";
+            supplierMenuItem.Name = "supplierMenuItem";
+            supplierMenuItem.Size = new Size(127, 24);
+            supplierMenuItem.Text = "Supplier";
             // 
             // staffMenuItem
             // 
             staffMenuItem.Name = "staffMenuItem";
-            staffMenuItem.Size = new Size(128, 28);
+            staffMenuItem.Size = new Size(127, 24);
             staffMenuItem.Text = "Staff";
             // 
-            // toolStripMenuItem1
+            // userMenuItem
             // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(14, 43);
+            userMenuItem.Name = "userMenuItem";
+            userMenuItem.Size = new Size(127, 24);
+            userMenuItem.Text = "User";
             // 
             // settingMenuItemBar
             // 
             settingMenuItemBar.DropDownItems.AddRange(new ToolStripItem[] { helpMenuItem, aboutUsMenuItem });
             settingMenuItemBar.Name = "settingMenuItemBar";
-            settingMenuItemBar.Size = new Size(78, 43);
+            settingMenuItemBar.Size = new Size(64, 39);
             settingMenuItemBar.Text = "Setting";
             // 
             // helpMenuItem
             // 
             helpMenuItem.Name = "helpMenuItem";
-            helpMenuItem.Size = new Size(165, 28);
+            helpMenuItem.Size = new Size(136, 24);
             helpMenuItem.Text = "Help";
             // 
             // aboutUsMenuItem
             // 
             aboutUsMenuItem.Name = "aboutUsMenuItem";
-            aboutUsMenuItem.Size = new Size(165, 28);
+            aboutUsMenuItem.Size = new Size(136, 24);
             aboutUsMenuItem.Text = "About Us";
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1178, 849);
+            ClientSize = new Size(1178, 679);
             Controls.Add(tabform);
             Controls.Add(menubar);
+            Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -209,7 +212,6 @@
         private ToolStripMenuItem inventoryMenuItemBar;
         private ToolStripMenuItem productMenuItem;
         private ToolStripMenuItem categoryMenuItem;
-        private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem settingMenuItemBar;
         private ToolStripMenuItem helpMenuItem;
         private ToolStripMenuItem aboutUsMenuItem;
@@ -222,5 +224,6 @@
         private ToolStripMenuItem userMenuItem;
         private ToolStripMenuItem staffMenuItem;
         private ToolStripMenuItem exportHistoryMenuItem;
+        private ToolStripMenuItem supplierMenuItem;
     }
 }

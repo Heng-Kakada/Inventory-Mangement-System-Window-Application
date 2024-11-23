@@ -32,6 +32,10 @@
             lbSearch = new Label();
             listStaff = new ListBox();
             panel3 = new Panel();
+            txtId = new TextBox();
+            mtxtPersonalTel = new MaskedTextBox();
+            mtxtWorkTel = new MaskedTextBox();
+            chkStoppedWork = new CheckBox();
             panel4 = new Panel();
             txtSalary = new TextBox();
             lbName = new Label();
@@ -44,11 +48,9 @@
             dtDob = new DateTimePicker();
             lbSalary = new Label();
             lbPosition = new Label();
-            textBox2 = new TextBox();
             cboPosition = new ComboBox();
             lbPhone = new Label();
             lbAddress = new Label();
-            textBox1 = new TextBox();
             txtAddress = new TextBox();
             lbWorkPhone = new Label();
             btnClear = new Button();
@@ -143,17 +145,21 @@
             // 
             listStaff.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listStaff.BackColor = SystemColors.Control;
-            listStaff.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listStaff.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listStaff.FormattingEnabled = true;
-            listStaff.ItemHeight = 20;
+            listStaff.ItemHeight = 24;
             listStaff.Location = new Point(21, 191);
             listStaff.Margin = new Padding(3, 2, 3, 2);
             listStaff.Name = "listStaff";
-            listStaff.Size = new Size(534, 644);
+            listStaff.Size = new Size(534, 628);
             listStaff.TabIndex = 1;
             // 
             // panel3
             // 
+            panel3.Controls.Add(txtId);
+            panel3.Controls.Add(mtxtPersonalTel);
+            panel3.Controls.Add(mtxtWorkTel);
+            panel3.Controls.Add(chkStoppedWork);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(staffFormTitle);
             panel3.Controls.Add(txtSalary);
@@ -167,11 +173,9 @@
             panel3.Controls.Add(dtDob);
             panel3.Controls.Add(lbSalary);
             panel3.Controls.Add(lbPosition);
-            panel3.Controls.Add(textBox2);
             panel3.Controls.Add(cboPosition);
             panel3.Controls.Add(lbPhone);
             panel3.Controls.Add(lbAddress);
-            panel3.Controls.Add(textBox1);
             panel3.Controls.Add(txtAddress);
             panel3.Controls.Add(lbWorkPhone);
             panel3.Dock = DockStyle.Left;
@@ -179,6 +183,47 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(616, 900);
             panel3.TabIndex = 20;
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(114, 113);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(96, 23);
+            txtId.TabIndex = 43;
+            txtId.Visible = false;
+            // 
+            // mtxtPersonalTel
+            // 
+            mtxtPersonalTel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mtxtPersonalTel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mtxtPersonalTel.InsertKeyMode = InsertKeyMode.Insert;
+            mtxtPersonalTel.Location = new Point(115, 565);
+            mtxtPersonalTel.Margin = new Padding(3, 2, 3, 2);
+            mtxtPersonalTel.Mask = "(855) ##-###-####";
+            mtxtPersonalTel.Name = "mtxtPersonalTel";
+            mtxtPersonalTel.Size = new Size(458, 26);
+            mtxtPersonalTel.TabIndex = 42;
+            // 
+            // mtxtWorkTel
+            // 
+            mtxtWorkTel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mtxtWorkTel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mtxtWorkTel.Location = new Point(115, 495);
+            mtxtWorkTel.Margin = new Padding(3, 2, 3, 2);
+            mtxtWorkTel.Mask = "(855) ##-###-####";
+            mtxtWorkTel.Name = "mtxtWorkTel";
+            mtxtWorkTel.Size = new Size(458, 26);
+            mtxtWorkTel.TabIndex = 41;
+            // 
+            // chkStoppedWork
+            // 
+            chkStoppedWork.AutoSize = true;
+            chkStoppedWork.Location = new Point(115, 747);
+            chkStoppedWork.Name = "chkStoppedWork";
+            chkStoppedWork.Size = new Size(101, 19);
+            chkStoppedWork.TabIndex = 40;
+            chkStoppedWork.Text = "Stopped Work";
+            chkStoppedWork.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -196,7 +241,6 @@
             txtSalary.Margin = new Padding(3, 2, 3, 2);
             txtSalary.Name = "txtSalary";
             txtSalary.PlaceholderText = "0.00";
-            txtSalary.ReadOnly = true;
             txtSalary.Size = new Size(459, 26);
             txtSalary.TabIndex = 38;
             // 
@@ -315,16 +359,6 @@
             lbPosition.TabIndex = 6;
             lbPosition.Text = "Position";
             // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.BackColor = SystemColors.Control;
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(114, 567);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(459, 29);
-            textBox2.TabIndex = 13;
-            // 
             // cboPosition
             // 
             cboPosition.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -359,16 +393,6 @@
             lbAddress.Size = new Size(68, 20);
             lbAddress.TabIndex = 8;
             lbAddress.Text = "Address";
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = SystemColors.Control;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(114, 499);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(459, 29);
-            textBox1.TabIndex = 11;
             // 
             // txtAddress
             // 
@@ -457,9 +481,7 @@
         private DateTimePicker dtHireDate;
         private Label lbHiredDate;
         private Label lbSalary;
-        private TextBox textBox2;
         private Label lbPhone;
-        private TextBox textBox1;
         private Label lbWorkPhone;
         private Panel panel3;
         private ListBox listStaff;
@@ -469,5 +491,9 @@
         private TextBox txtSalary;
         private Panel panel2;
         private Panel panel4;
+        private CheckBox chkStoppedWork;
+        private MaskedTextBox mtxtPersonalTel;
+        private MaskedTextBox mtxtWorkTel;
+        private TextBox txtId;
     }
 }

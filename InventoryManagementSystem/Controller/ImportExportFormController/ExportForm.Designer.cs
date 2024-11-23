@@ -50,6 +50,7 @@
             panel2 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
+            panel6 = new Panel();
             btnClear = new Button();
             nudTotalItem = new NumericUpDown();
             lbTotalItem = new Label();
@@ -60,7 +61,6 @@
             txtTotalCost = new TextBox();
             dtExportDate = new DateTimePicker();
             panel1 = new Panel();
-            panel6 = new Panel();
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
@@ -119,7 +119,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Anchor = AnchorStyles.Left;
+            btnDelete.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             btnDelete.BackColor = Color.Salmon;
             btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDelete.Location = new Point(659, 401);
@@ -131,7 +131,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Anchor = AnchorStyles.Left;
+            btnAdd.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             btnAdd.BackColor = Color.LightGreen;
             btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdd.Location = new Point(659, 215);
@@ -143,7 +143,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Anchor = AnchorStyles.Left;
+            btnUpdate.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             btnUpdate.BackColor = Color.LightYellow;
             btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUpdate.Location = new Point(659, 304);
@@ -292,12 +292,19 @@
             panel5.Size = new Size(562, 213);
             panel5.TabIndex = 57;
             // 
+            // panel6
+            // 
+            panel6.Dock = DockStyle.Left;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(75, 213);
+            panel6.TabIndex = 54;
+            // 
             // btnClear
             // 
-            btnClear.Anchor = AnchorStyles.None;
             btnClear.BackColor = Color.LightSkyBlue;
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(93, 21);
+            btnClear.Location = new Point(93, 34);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(120, 60);
             btnClear.TabIndex = 53;
@@ -405,14 +412,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(80, 725);
             panel1.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            panel6.Dock = DockStyle.Left;
-            panel6.Location = new Point(0, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(91, 213);
-            panel6.TabIndex = 54;
             // 
             // ExportForm
             // 

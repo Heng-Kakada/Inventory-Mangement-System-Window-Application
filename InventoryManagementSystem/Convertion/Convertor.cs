@@ -1,4 +1,5 @@
-﻿using IMS_Services.EnumUtils;
+﻿using IMS_Services.Entities;
+using IMS_Services.EnumUtils;
 using InventoryManagementSystem.Utils;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -38,6 +39,10 @@ public static class Convertor
     {
         return (EnumGender)Casting.CastCombobox(control).SelectedIndex;
     }
+    public static EnumUOM ConvertToEnumUOM(Control control)
+    {
+        return (EnumUOM)Casting.CastCombobox(control).SelectedIndex!;
+    }
     public static string? ConvertToStringFromCbo(Control control)
     {
         if (control is ComboBox) {
@@ -54,6 +59,11 @@ public static class Convertor
 
     public static bool ConvertToBooleanFromCheckBox(Control control) {
          return Casting.CastCheckbox(control).Checked;
+    }
+
+    public static byte ConvertToCategoryID(Control control)
+    {
+        return (Casting.CastCombobox(control).SelectedItem as Category)!.ID;
     }
 
 }

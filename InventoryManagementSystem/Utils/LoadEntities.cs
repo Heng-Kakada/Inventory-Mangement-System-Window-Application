@@ -35,5 +35,16 @@ public static class LoadEntities
         }
 
     } 
+    
+    public static void LoadProductFromObject(Control[] controls, Product product)
+    {
+        controls[0].Text = product.ID.ToString();
+        controls[1].Text = product.Name;
+        controls[2].Text = product.Barcode;
+        controls[3].Text = product.SalePrice.ToString();
+        Casting.CastCombobox(controls[4]).SelectedItem = product.UOM;
+        Casting.CastNumericUpDown(controls[5]).Value = product.TotalStock;
+        Casting.CastCombobox(controls[6]).SelectedValue = product.CategoryID;
+    }
 
 }

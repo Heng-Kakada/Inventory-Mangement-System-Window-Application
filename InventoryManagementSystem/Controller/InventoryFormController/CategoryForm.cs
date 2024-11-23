@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryManagementSystem.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InventoryManagementSystem.Controller
+namespace InventoryManagementSystem.Controller;
+
+public partial class CategoryForm : Form
 {
-    public partial class CategoryForm : Form
+    public CategoryForm()
     {
-        public CategoryForm()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    
     }
 }

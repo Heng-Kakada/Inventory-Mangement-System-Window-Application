@@ -2,5 +2,5 @@
 
 public enum EnumUOM
 {
-    Package = 1, Pcs = 2, Box = 3   
+    Package = 0, Pcs = 1, Box = 2   
 }

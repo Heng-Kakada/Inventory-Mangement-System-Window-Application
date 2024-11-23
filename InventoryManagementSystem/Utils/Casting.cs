@@ -30,4 +30,14 @@ public class Casting
         }
         throw new Exception("Problem While Converting To DateTime ....");
     }
+
+    public static NumericUpDown CastNumericUpDown(Control control)
+    {
+        if (control is NumericUpDown)
+        {
+            NumericUpDown numericUpDown = (NumericUpDown)control;
+            return numericUpDown;
+        }
+        throw new Exception("Problem while converting to NumericUpDown...");
+    }
 }

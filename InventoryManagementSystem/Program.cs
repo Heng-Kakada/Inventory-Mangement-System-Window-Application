@@ -1,9 +1,12 @@
+using IMS_Services.Entities;
 using IMS_Services.Manager;
 using IMS_Services.Utils;
 using Microsoft.Data.SqlClient;
+using System;
 
 namespace InventoryManagementSystem;
 
+public delegate void PersonEventHandler(object? sender);
 public static class Program
 {
     /// <summary>

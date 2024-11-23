@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace InventoryManagementSystem.Controller
+﻿namespace InventoryManagementSystem.Controller
 {
     public partial class CategoryForm : Form
     {
+        private Control[] controls;
+
         public CategoryForm()
         {
             InitializeComponent();

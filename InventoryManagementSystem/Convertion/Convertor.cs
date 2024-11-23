@@ -34,9 +34,21 @@ public static class Convertor
         }
         throw new Exception("Problem While Converting ...");
     }
+    public static byte ConvertToByte(Control control)
+    {
+        if (byte.TryParse(control.Text.Trim(), out byte data))
+        {
+            return data;
+        }
+        throw new Exception("Problem While Converting ...");
+    }
     public static EnumGender ConvertToEnumGender(Control control)
     {
         return (EnumGender)Casting.CastCombobox(control).SelectedIndex;
+    }
+    public static EnumPaymentMethod ConvertToEnumPaymentMethod(Control control)
+    {
+        return (EnumPaymentMethod)Casting.CastCombobox(control).SelectedIndex;
     }
     public static string? ConvertToStringFromCbo(Control control)
     {
@@ -46,14 +58,11 @@ public static class Convertor
         }
         throw new Exception("Problem While Converting To String From Combo Box ....");
     }
-
     public static DateTime ConvertToDateTime(Control control)
     {
         return Casting.CastDateTimePicker(control).Value;
     }
-
     public static bool ConvertToBooleanFromCheckBox(Control control) {
          return Casting.CastCheckbox(control).Checked;
     }
-
 }

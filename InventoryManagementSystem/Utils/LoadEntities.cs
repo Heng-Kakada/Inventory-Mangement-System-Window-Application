@@ -33,7 +33,38 @@ public static class LoadEntities
         catch(Exception ex) {
             MessageBox.Show(ex.Message);
         }
-
     } 
+
+
+    public static void LoadSupplierFromDataGrid(Control[] controls, DataGridView dgv)
+    {
+        if (dgv.CurrentRow == null) return;
+        byte selectedId = (byte)dgv.CurrentRow.Cells[0].Value;
+
+        try
+        {
+            Supplier supplier = SupplierServices.GetById(selectedId);
+
+            if (supplier == null) return;
+
+            controls[0].Text = supplier.ID.ToString();
+            controls[1].Text = supplier.Name;
+            controls[2].Text = supplier.Email;
+            controls[3].Text = supplier.Address;
+            controls[4].Text = supplier.Phone;
+            Casting.CastCombobox(controls[5]).SelectedItem = supplier.PaymentMethod;
+            controls[6].Text = supplier.PaymentTerm.ToString();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+
+    }
+
+
+
+
+
 
 }

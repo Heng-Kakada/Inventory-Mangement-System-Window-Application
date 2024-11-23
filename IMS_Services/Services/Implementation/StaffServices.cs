@@ -199,8 +199,6 @@ public class StaffServices : ICRUDServices<Staff, short>
                     throw new Exception($"Failed in updating new Staff > {ex.Message}");
 
                 }
-
-            
         }
     }
 }

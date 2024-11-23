@@ -2,6 +2,6 @@
 
 public enum EnumPaymentMethod
 {
-    ABA = 1, ACELEDA = 2, Cash = 3
+    ABA = 0, ACELEDA = 1, Cash = 2
 }
 

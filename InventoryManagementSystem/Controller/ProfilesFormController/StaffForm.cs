@@ -34,7 +34,6 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                 txtSalary,
                 chkStoppedWork,
                 listStaff
-                
             };
 
             cboGender.DataSource = Enum.GetValues<EnumGender>();
@@ -43,7 +42,6 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
             cboPosition.DataSource = new List<string>() { "Sale", "Accountant", "Manager", "Software Engineer" };
             cboPosition.SelectedIndex = 0;
 
-
             btnInsert.Click += DoClickInsertStaff;
             btnUpdate.Click += DoClickUpdateStaff;
             btnClear.Click += DoClickClearStaff;
@@ -51,7 +49,6 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
 
             listStaff.Click += DoClickListStaff;
             txtSearch.TextChanged += DoSearchTextChange;
-
         }
 
         #region click event

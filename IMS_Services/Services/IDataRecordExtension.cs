@@ -62,4 +62,61 @@ public static class IDataRecordExtension
             StoppedWork = stoppedWork,
         };
     }
+
+    public static Supplier ToSupplier(this IDataRecord record)
+    {
+        int index = record.GetOrdinal("SupplierID");
+        byte id = record.GetByte(index);
+
+        index = record.GetOrdinal("SupplierName");
+        string name = record.GetString(index);
+
+        index = record.GetOrdinal("Email");
+        string email = record.GetString(index);
+
+        index = record.GetOrdinal("Address");
+        string address = record.GetString(index);
+
+        index = record.GetOrdinal("Phone");
+        string phone = record.GetString(index);
+
+        index = record.GetOrdinal("PaymentMethod");
+        EnumPaymentMethod paymentMethod = (EnumPaymentMethod)record.GetByte(index);
+
+        index = record.GetOrdinal("PaymentTerm");
+        byte paymentTerm = record.GetByte(index);
+
+        return new Supplier()
+        {
+            ID = id,
+            Name = name,
+            Email = email,
+            Phone = phone,
+            Address = address,
+            PaymentMethod = paymentMethod,
+            PaymentTerm = paymentTerm,
+        };
+    }
+
+    public static Category ToCategory(this IDataRecord record) {
+
+        int index = record.GetOrdinal("SupplierID");
+        byte id = record.GetByte(index);
+
+        index = record.GetOrdinal("CategoryName");
+        string name = record.GetString(index);
+
+        index = record.GetOrdinal("CategoryDesc");
+        string desc = record.GetString(index);
+
+        return new Category()
+        {
+            ID=id,
+            Name = name,
+            Description = desc,
+        };
+    }
+
+
+
 }

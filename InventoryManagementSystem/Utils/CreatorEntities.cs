@@ -8,8 +8,7 @@ public static class CreatorEntities
 {
     public static Staff CreateStaff(Control[] controls)
     {
-
-        Staff staff = new Staff()
+        return new Staff()
         {
             StaffName = Convertor.ConvertToString(controls[1]),
             Gender = Convertor.ConvertToEnumGender(controls[2]),
@@ -22,7 +21,19 @@ public static class CreatorEntities
             Salary = Convertor.ConvertToDecimal(controls[9]),
             StoppedWork = Convertor.ConvertToBooleanFromCheckBox(controls[10]),
         };
-        return staff;
+    }
+    public static Supplier CreateSupplier(Control[] controls)
+    {
+
+        return new Supplier()
+        {
+           Name = Convertor.ConvertToString(controls[1]),
+           Email = Convertor.ConvertToString(controls[2]),
+           Address = Convertor.ConvertToString(controls[3]),
+           Phone = Convertor.ConvertToString(controls[4]),
+           PaymentMethod = Convertor.ConvertToEnumPaymentMethod(controls[5]),
+           PaymentTerm = Convertor.ConvertToByte(controls[6])
+        };
     }
 
 

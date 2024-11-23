@@ -34,7 +34,6 @@
             dgvSupplier = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
-            colContact = new DataGridViewTextBoxColumn();
             colPhone = new DataGridViewTextBoxColumn();
             colPaymentMethod = new DataGridViewTextBoxColumn();
             colPaymentTerm = new DataGridViewTextBoxColumn();
@@ -43,20 +42,19 @@
             txtSearch = new TextBox();
             lbSearch = new Label();
             panel3 = new Panel();
+            txtId = new TextBox();
+            txtPaymentTerm = new TextBox();
             lbPaymentTerm = new Label();
-            dtPaymentTerm = new DateTimePicker();
             lbPaymentMethod = new Label();
             cboPaymentMethod = new ComboBox();
             lbPhone = new Label();
             mtxtPhone = new MaskedTextBox();
-            textBox2 = new TextBox();
+            txtAddress = new TextBox();
             lbAddress = new Label();
             txtEmail = new TextBox();
             lbEmail = new Label();
-            textBox3 = new TextBox();
             lbName = new Label();
             txtName = new TextBox();
-            lbContactPerson = new Label();
             btnClear = new Button();
             panel2 = new Panel();
             panel1.SuspendLayout();
@@ -149,10 +147,11 @@
             dgvSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvSupplier.ColumnHeadersHeight = 40;
             dgvSupplier.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvSupplier.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colContact, colPhone, colPaymentMethod, colPaymentTerm });
+            dgvSupplier.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colPhone, colPaymentMethod, colPaymentTerm });
             dgvSupplier.Dock = DockStyle.Fill;
             dgvSupplier.GridColor = SystemColors.Control;
             dgvSupplier.Location = new Point(0, 100);
+            dgvSupplier.MultiSelect = false;
             dgvSupplier.Name = "dgvSupplier";
             dgvSupplier.ReadOnly = true;
             dgvSupplier.Size = new Size(718, 800);
@@ -175,13 +174,6 @@
             colName.HeaderText = "Name";
             colName.Name = "colName";
             colName.ReadOnly = true;
-            // 
-            // colContact
-            // 
-            colContact.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colContact.HeaderText = "Contact Person";
-            colContact.Name = "colContact";
-            colContact.ReadOnly = true;
             // 
             // colPhone
             // 
@@ -247,26 +239,46 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(txtId);
+            panel3.Controls.Add(txtPaymentTerm);
             panel3.Controls.Add(supplierFormTitle);
             panel3.Controls.Add(lbPaymentTerm);
-            panel3.Controls.Add(dtPaymentTerm);
             panel3.Controls.Add(lbPaymentMethod);
             panel3.Controls.Add(cboPaymentMethod);
             panel3.Controls.Add(lbPhone);
             panel3.Controls.Add(mtxtPhone);
-            panel3.Controls.Add(textBox2);
+            panel3.Controls.Add(txtAddress);
             panel3.Controls.Add(lbAddress);
             panel3.Controls.Add(txtEmail);
             panel3.Controls.Add(lbEmail);
-            panel3.Controls.Add(textBox3);
             panel3.Controls.Add(lbName);
             panel3.Controls.Add(txtName);
-            panel3.Controls.Add(lbContactPerson);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(619, 900);
             panel3.TabIndex = 20;
+            // 
+            // txtId
+            // 
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtId.BackColor = SystemColors.Control;
+            txtId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(99, 140);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(429, 29);
+            txtId.TabIndex = 50;
+            txtId.Visible = false;
+            // 
+            // txtPaymentTerm
+            // 
+            txtPaymentTerm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtPaymentTerm.BackColor = SystemColors.Control;
+            txtPaymentTerm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPaymentTerm.Location = new Point(99, 563);
+            txtPaymentTerm.Name = "txtPaymentTerm";
+            txtPaymentTerm.Size = new Size(429, 29);
+            txtPaymentTerm.TabIndex = 49;
             // 
             // lbPaymentTerm
             // 
@@ -274,22 +286,11 @@
             lbPaymentTerm.AutoSize = true;
             lbPaymentTerm.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbPaymentTerm.ForeColor = Color.Black;
-            lbPaymentTerm.Location = new Point(97, 529);
+            lbPaymentTerm.Location = new Point(99, 540);
             lbPaymentTerm.Name = "lbPaymentTerm";
             lbPaymentTerm.Size = new Size(111, 20);
             lbPaymentTerm.TabIndex = 48;
             lbPaymentTerm.Text = "Payment Term";
-            // 
-            // dtPaymentTerm
-            // 
-            dtPaymentTerm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtPaymentTerm.CalendarFont = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtPaymentTerm.CalendarMonthBackground = SystemColors.Control;
-            dtPaymentTerm.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtPaymentTerm.Location = new Point(97, 552);
-            dtPaymentTerm.Name = "dtPaymentTerm";
-            dtPaymentTerm.Size = new Size(405, 22);
-            dtPaymentTerm.TabIndex = 49;
             // 
             // lbPaymentMethod
             // 
@@ -297,7 +298,7 @@
             lbPaymentMethod.AutoSize = true;
             lbPaymentMethod.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbPaymentMethod.ForeColor = Color.Black;
-            lbPaymentMethod.Location = new Point(97, 464);
+            lbPaymentMethod.Location = new Point(99, 468);
             lbPaymentMethod.Name = "lbPaymentMethod";
             lbPaymentMethod.Size = new Size(129, 20);
             lbPaymentMethod.TabIndex = 46;
@@ -309,9 +310,9 @@
             cboPaymentMethod.BackColor = SystemColors.Control;
             cboPaymentMethod.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboPaymentMethod.FormattingEnabled = true;
-            cboPaymentMethod.Location = new Point(97, 487);
+            cboPaymentMethod.Location = new Point(99, 491);
             cboPaymentMethod.Name = "cboPaymentMethod";
-            cboPaymentMethod.Size = new Size(405, 28);
+            cboPaymentMethod.Size = new Size(429, 28);
             cboPaymentMethod.TabIndex = 47;
             // 
             // lbPhone
@@ -320,7 +321,7 @@
             lbPhone.AutoSize = true;
             lbPhone.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbPhone.ForeColor = Color.Black;
-            lbPhone.Location = new Point(97, 402);
+            lbPhone.Location = new Point(99, 398);
             lbPhone.Name = "lbPhone";
             lbPhone.Size = new Size(55, 20);
             lbPhone.TabIndex = 45;
@@ -331,22 +332,22 @@
             mtxtPhone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mtxtPhone.BackColor = SystemColors.Control;
             mtxtPhone.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            mtxtPhone.Location = new Point(97, 424);
+            mtxtPhone.Location = new Point(99, 420);
             mtxtPhone.Margin = new Padding(3, 2, 3, 2);
             mtxtPhone.Mask = "(855) ##-###-####";
             mtxtPhone.Name = "mtxtPhone";
-            mtxtPhone.Size = new Size(405, 26);
+            mtxtPhone.Size = new Size(429, 26);
             mtxtPhone.TabIndex = 44;
             // 
-            // textBox2
+            // txtAddress
             // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.BackColor = SystemColors.Control;
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(97, 360);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(405, 29);
-            textBox2.TabIndex = 43;
+            txtAddress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtAddress.BackColor = SystemColors.Control;
+            txtAddress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAddress.Location = new Point(99, 355);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(429, 29);
+            txtAddress.TabIndex = 43;
             // 
             // lbAddress
             // 
@@ -354,7 +355,7 @@
             lbAddress.AutoSize = true;
             lbAddress.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbAddress.ForeColor = Color.Black;
-            lbAddress.Location = new Point(97, 337);
+            lbAddress.Location = new Point(99, 332);
             lbAddress.Name = "lbAddress";
             lbAddress.Size = new Size(68, 20);
             lbAddress.TabIndex = 42;
@@ -365,10 +366,10 @@
             txtEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtEmail.BackColor = SystemColors.Control;
             txtEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEmail.Location = new Point(97, 295);
+            txtEmail.Location = new Point(99, 285);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "exmaple@gmail.com";
-            txtEmail.Size = new Size(405, 29);
+            txtEmail.Size = new Size(429, 29);
             txtEmail.TabIndex = 41;
             // 
             // lbEmail
@@ -377,21 +378,11 @@
             lbEmail.AutoSize = true;
             lbEmail.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbEmail.ForeColor = Color.Black;
-            lbEmail.Location = new Point(97, 272);
+            lbEmail.Location = new Point(99, 262);
             lbEmail.Name = "lbEmail";
             lbEmail.Size = new Size(48, 20);
             lbEmail.TabIndex = 40;
             lbEmail.Text = "Email";
-            // 
-            // textBox3
-            // 
-            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.BackColor = SystemColors.Control;
-            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(97, 232);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(405, 29);
-            textBox3.TabIndex = 39;
             // 
             // lbName
             // 
@@ -399,7 +390,7 @@
             lbName.AutoSize = true;
             lbName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbName.ForeColor = Color.Black;
-            lbName.Location = new Point(97, 148);
+            lbName.Location = new Point(99, 194);
             lbName.Name = "lbName";
             lbName.Size = new Size(51, 20);
             lbName.TabIndex = 0;
@@ -410,22 +401,10 @@
             txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtName.BackColor = SystemColors.Control;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtName.Location = new Point(97, 174);
+            txtName.Location = new Point(99, 220);
             txtName.Name = "txtName";
-            txtName.Size = new Size(405, 29);
+            txtName.Size = new Size(429, 29);
             txtName.TabIndex = 1;
-            // 
-            // lbContactPerson
-            // 
-            lbContactPerson.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbContactPerson.AutoSize = true;
-            lbContactPerson.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbContactPerson.ForeColor = Color.Black;
-            lbContactPerson.Location = new Point(97, 209);
-            lbContactPerson.Name = "lbContactPerson";
-            lbContactPerson.Size = new Size(119, 20);
-            lbContactPerson.TabIndex = 2;
-            lbContactPerson.Text = "Contact Person";
             // 
             // btnClear
             // 
@@ -477,7 +456,6 @@
 
         #endregion
         private Label supplierFormTitle;
-        private Label lbContactPerson;
         private TextBox txtName;
         private Label lbName;
         private Panel panel1;
@@ -486,8 +464,7 @@
         private Button btnUpdate;
         private Panel panel3;
         private Button btnClear;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox txtAddress;
         private Label lbAddress;
         private TextBox txtEmail;
         private Label lbEmail;
@@ -497,18 +474,18 @@
         private Label lbPaymentMethod;
         private ComboBox cboPaymentMethod;
         private Label lbPaymentTerm;
-        private DateTimePicker dtPaymentTerm;
         private Panel panel5;
         private Panel panel4;
         private DataGridView dgvSupplier;
-        private DataGridViewTextBoxColumn colId;
-        private DataGridViewTextBoxColumn colName;
-        private DataGridViewTextBoxColumn colContact;
-        private DataGridViewTextBoxColumn colPhone;
-        private DataGridViewTextBoxColumn colPaymentMethod;
-        private DataGridViewTextBoxColumn colPaymentTerm;
         private Panel panel6;
         private TextBox txtSearch;
         private Label lbSearch;
+        private TextBox txtPaymentTerm;
+        private TextBox txtId;
+        private DataGridViewTextBoxColumn colId;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn colPhone;
+        private DataGridViewTextBoxColumn colPaymentMethod;
+        private DataGridViewTextBoxColumn colPaymentTerm;
     }
 }

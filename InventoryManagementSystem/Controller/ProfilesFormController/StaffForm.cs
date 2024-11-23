@@ -5,6 +5,7 @@ using IMS_Services.EnumUtils;
 using IMS_Services.Services.Implementation;
 using InventoryManagementSystem.Utils;
 using InventoryManagementSystem.Validation;
+using Microsoft.IdentityModel.Tokens;
 
 
 namespace InventoryManagementSystem.Controller.ProfilesFormController
@@ -18,8 +19,10 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
         {
             InitializeComponent();
             LoadData(); 
+
             controls = new Control[]
             {
+                txtId,
                 txtName,
                 cboGender,
                 dtDob,
@@ -30,10 +33,9 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                 dtHireDate,
                 txtSalary,
                 chkStoppedWork,
-                txtId,
-                listStaff,
+                listStaff
+                
             };
-
 
             cboGender.DataSource = Enum.GetValues<EnumGender>();
             cboGender.SelectedIndex = 0;
@@ -59,13 +61,13 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
 
             try
             {
-                if(txtId.Text == null || txtId.Text == "")
+                if(txtId.Text.IsNullOrEmpty())
                 {
-                    MessageBox.Show("Please Choose Staff You Want To Delete First ...");
+                    MessageBox.Show("Please Choose Staff You Want To Delete First ...", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                DialogResult result = MessageBox.Show($"Are you sure you want to delete the staff member with ID {txtId}?","Confirm Deletion",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete the staff member with ID {txtId.Text}?","Confirm Deletion",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     bool isDeleted = StaffServices.Delete(short.Parse(txtId.Text));
@@ -91,8 +93,10 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
+
                 Util.ClearControls(controls);
                 LoadData();
+                btnInsert.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -108,11 +112,13 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                 {
                     // create instance staff
                     Staff staff = CreatorEntities.CreateStaff(controls);
+
                     // assign staff id for staff
                     staff.StaffId = short.Parse(txtId.Text);
                     
                     // add staff to database
                     bool effected = StaffServices.Update(staff);
+
                     if (effected)
                     {
                         MessageBox.Show($"Staff ID : {txtId.Text} Info Updated!", "Updating", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -123,6 +129,7 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                     {
                         MessageBox.Show($"Error Updating Data", "Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                     btnInsert.Enabled = true;
                 }
                 else
@@ -144,14 +151,18 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                 {
                     // create instance staff
                     Staff staff = CreatorEntities.CreateStaff(controls);
+
                     // add staff to database
-                    short insertedId = StaffServices.Add(staff);
+                    StaffServices.Add(staff);
+
                     //clear control
                     Util.ClearControls(controls);
+
                     // LoadData
                     LoadData();
+
                     // show message to user
-                    MessageBox.Show($"Staff Added!\nID : {insertedId}", "Creating", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Staff Added!", "Creating", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else
@@ -201,7 +212,6 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
             foreach (var staff in result) {
                 listStaff.Items.Add(staff.StaffId + "." + staff.StaffName);
             }
-
         }
 
         #endregion
@@ -212,7 +222,7 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
         private bool IsStaffValid()
         {
             bool isVilid = true;
-            isVilid = Validator.IsValidData(controls);
+            isVilid = Validator.IsValidData(controls.Skip(1).ToArray());
             return isVilid;
         }
 

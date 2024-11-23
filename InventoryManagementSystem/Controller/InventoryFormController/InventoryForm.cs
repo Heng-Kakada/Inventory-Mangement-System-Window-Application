@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+using InventoryManagementSystem.Controller.InventoryFormController.InventorySubForm;
 
 namespace InventoryManagementSystem.Controller.InventoryFormController
 {
@@ -15,6 +8,16 @@ namespace InventoryManagementSystem.Controller.InventoryFormController
         public InventoryForm()
         {
             InitializeComponent();
+
+            btnAdd.Click += DoClickAddInventory;
+
+
+        }
+
+        private void DoClickAddInventory(object? sender, EventArgs e)
+        {
+            SubInventory subInventory = new SubInventory();
+            subInventory.Show();
         }
     }
 }

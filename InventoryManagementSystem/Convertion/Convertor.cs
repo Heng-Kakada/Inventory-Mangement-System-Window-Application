@@ -38,7 +38,6 @@ public static class Convertor
     {
         return (EnumGender)Casting.CastCombobox(control).SelectedIndex;
     }
-
     public static string? ConvertToStringFromCbo(Control control)
     {
         if (control is ComboBox) {

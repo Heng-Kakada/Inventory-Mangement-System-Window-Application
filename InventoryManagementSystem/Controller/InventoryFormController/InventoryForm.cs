@@ -11,7 +11,6 @@ namespace InventoryManagementSystem.Controller.InventoryFormController
 
             btnAdd.Click += DoClickAddInventory;
 
-
         }
 
         private void DoClickAddInventory(object? sender, EventArgs e)

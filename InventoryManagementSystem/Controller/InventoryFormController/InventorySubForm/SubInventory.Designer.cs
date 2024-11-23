@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            SubInventoryFormTitle = new Label();
             panel3 = new Panel();
+            btnAdd = new Button();
+            btnSubmit = new Button();
             panel5 = new Panel();
+            txtId = new TextBox();
             txtUnitCost = new TextBox();
             rtxtNote = new RichTextBox();
             lbProductId = new Label();
@@ -64,8 +68,8 @@
             colExpireDate = new DataGridViewTextBoxColumn();
             colProductId = new DataGridViewTextBoxColumn();
             panel7 = new Panel();
-            SubInventoryFormTitle = new Label();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudInitQty).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudCurrentStock).BeginInit();
@@ -84,16 +88,54 @@
             panel1.Size = new Size(1184, 59);
             panel1.TabIndex = 0;
             // 
+            // SubInventoryFormTitle
+            // 
+            SubInventoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SubInventoryFormTitle.AutoSize = true;
+            SubInventoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SubInventoryFormTitle.Location = new Point(85, 13);
+            SubInventoryFormTitle.Name = "SubInventoryFormTitle";
+            SubInventoryFormTitle.Size = new Size(302, 31);
+            SubInventoryFormTitle.TabIndex = 3;
+            SubInventoryFormTitle.Text = "Add && Update Inventory";
+            // 
             // panel3
             // 
+            panel3.Controls.Add(btnAdd);
+            panel3.Controls.Add(btnSubmit);
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 603);
             panel3.Name = "panel3";
             panel3.Size = new Size(1184, 58);
             panel3.TabIndex = 2;
             // 
+            // btnAdd
+            // 
+            btnAdd.Anchor = AnchorStyles.None;
+            btnAdd.BackColor = Color.LightGreen;
+            btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdd.Location = new Point(86, 6);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(109, 44);
+            btnAdd.TabIndex = 82;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // btnSubmit
+            // 
+            btnSubmit.Anchor = AnchorStyles.None;
+            btnSubmit.BackColor = Color.LightGoldenrodYellow;
+            btnSubmit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSubmit.Location = new Point(226, 6);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(109, 44);
+            btnSubmit.TabIndex = 81;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = false;
+            // 
             // panel5
             // 
+            panel5.Controls.Add(txtId);
             panel5.Controls.Add(txtUnitCost);
             panel5.Controls.Add(rtxtNote);
             panel5.Controls.Add(lbProductId);
@@ -115,6 +157,17 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(666, 544);
             panel5.TabIndex = 1;
+            // 
+            // txtId
+            // 
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtId.BackColor = SystemColors.Control;
+            txtId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(85, 3);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(224, 29);
+            txtId.TabIndex = 81;
+            txtId.Visible = false;
             // 
             // txtUnitCost
             // 
@@ -335,24 +388,24 @@
             dgvInventory.AllowUserToDeleteRows = false;
             dgvInventory.BackgroundColor = SystemColors.Control;
             dgvInventory.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(0, 192, 0);
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 192, 0);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvInventory.Columns.AddRange(new DataGridViewColumn[] { colId, colUnitCost, colCurrentStock, colInitQty, colExpireDate, colProductId });
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = SystemColors.Window;
-            dataGridViewCellStyle18.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle18.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.False;
-            dgvInventory.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvInventory.DefaultCellStyle = dataGridViewCellStyle6;
             dgvInventory.Dock = DockStyle.Fill;
             dgvInventory.GridColor = SystemColors.Control;
             dgvInventory.Location = new Point(0, 0);
@@ -364,8 +417,8 @@
             // colId
             // 
             colId.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle14.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colId.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colId.DefaultCellStyle = dataGridViewCellStyle2;
             colId.FillWeight = 120F;
             colId.HeaderText = "ID";
             colId.Name = "colId";
@@ -375,8 +428,8 @@
             // colUnitCost
             // 
             colUnitCost.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colUnitCost.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colUnitCost.DefaultCellStyle = dataGridViewCellStyle3;
             colUnitCost.FillWeight = 80F;
             colUnitCost.HeaderText = "Unit Cost";
             colUnitCost.Name = "colUnitCost";
@@ -385,8 +438,8 @@
             // colCurrentStock
             // 
             colCurrentStock.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle16.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colCurrentStock.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colCurrentStock.DefaultCellStyle = dataGridViewCellStyle4;
             colCurrentStock.HeaderText = "Current Stock";
             colCurrentStock.Name = "colCurrentStock";
             colCurrentStock.ReadOnly = true;
@@ -401,8 +454,8 @@
             // colExpireDate
             // 
             colExpireDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle17.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colExpireDate.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colExpireDate.DefaultCellStyle = dataGridViewCellStyle5;
             colExpireDate.HeaderText = "Expired Date";
             colExpireDate.Name = "colExpireDate";
             colExpireDate.ReadOnly = true;
@@ -422,17 +475,6 @@
             panel7.Size = new Size(41, 544);
             panel7.TabIndex = 0;
             // 
-            // SubInventoryFormTitle
-            // 
-            SubInventoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SubInventoryFormTitle.AutoSize = true;
-            SubInventoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SubInventoryFormTitle.Location = new Point(85, 13);
-            SubInventoryFormTitle.Name = "SubInventoryFormTitle";
-            SubInventoryFormTitle.Size = new Size(302, 31);
-            SubInventoryFormTitle.TabIndex = 3;
-            SubInventoryFormTitle.Text = "Add && Update Inventory";
-            // 
             // SubInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -449,6 +491,7 @@
             Text = "Inventory Adding & Updating";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudInitQty).EndInit();
@@ -492,5 +535,8 @@
         private DataGridViewTextBoxColumn colProductId;
         private TextBox txtUnitCost;
         private Label SubInventoryFormTitle;
+        private Button btnAdd;
+        private Button btnSubmit;
+        private TextBox txtId;
     }
 }

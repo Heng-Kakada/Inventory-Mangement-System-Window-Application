@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using InventoryManagementSystem.Controller.ImportExportFormController.SubImportExportForm;
+
 
 namespace InventoryManagementSystem.Controller.ImportExportFormController
 {
@@ -15,6 +8,19 @@ namespace InventoryManagementSystem.Controller.ImportExportFormController
         public ExportDetailForm()
         {
             InitializeComponent();
+
+
+
+            btnAdd.Click += DoClickAddExportDetail;
+
+
+
+        }
+
+        private void DoClickAddExportDetail(object? sender, EventArgs e)
+        {
+            SubExportDetail subExportDetail = new SubExportDetail();
+            subExportDetail.Show();
         }
     }
 }

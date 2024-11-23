@@ -26,7 +26,9 @@
             panel1 = new Panel();
             SubProductFormTitle = new Label();
             panel3 = new Panel();
+            btnSubmit = new Button();
             panel5 = new Panel();
+            txtId = new TextBox();
             nudTotalStock = new NumericUpDown();
             lbTotalStock = new Label();
             lbBarCode = new Label();
@@ -42,6 +44,7 @@
             panel4 = new Panel();
             panel6 = new Panel();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudTotalStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudUnitOfMeasure).BeginInit();
@@ -71,14 +74,28 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(btnSubmit);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 603);
+            panel3.Location = new Point(0, 541);
             panel3.Name = "panel3";
-            panel3.Size = new Size(584, 58);
+            panel3.Size = new Size(584, 120);
             panel3.TabIndex = 2;
+            // 
+            // btnSubmit
+            // 
+            btnSubmit.Anchor = AnchorStyles.None;
+            btnSubmit.BackColor = Color.LightGoldenrodYellow;
+            btnSubmit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSubmit.Location = new Point(438, 38);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(120, 60);
+            btnSubmit.TabIndex = 80;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
+            panel5.Controls.Add(txtId);
             panel5.Controls.Add(nudTotalStock);
             panel5.Controls.Add(lbTotalStock);
             panel5.Controls.Add(lbBarCode);
@@ -94,8 +111,19 @@
             panel5.Dock = DockStyle.Left;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(595, 544);
+            panel5.Size = new Size(595, 482);
             panel5.TabIndex = 1;
+            // 
+            // txtId
+            // 
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtId.BackColor = SystemColors.Control;
+            txtId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(121, 45);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(76, 29);
+            txtId.TabIndex = 80;
+            txtId.Visible = false;
             // 
             // nudTotalStock
             // 
@@ -208,7 +236,6 @@
             lbSalePrice.Size = new Size(80, 20);
             lbSalePrice.TabIndex = 59;
             lbSalePrice.Text = "Sale Price";
-            lbSalePrice.Click += lbUnitCost_Click;
             // 
             // lbName
             // 
@@ -240,7 +267,7 @@
             panel4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel4.Location = new Point(0, 59);
             panel4.Name = "panel4";
-            panel4.Size = new Size(584, 544);
+            panel4.Size = new Size(584, 482);
             panel4.TabIndex = 3;
             // 
             // panel6
@@ -248,7 +275,7 @@
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(595, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(0, 544);
+            panel6.Size = new Size(0, 482);
             panel6.TabIndex = 3;
             // 
             // SubProduct
@@ -267,6 +294,7 @@
             Text = "Product Adding & Updating";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudTotalStock).EndInit();
@@ -296,5 +324,7 @@
         private TextBox txtBarCode;
         private NumericUpDown nudTotalStock;
         private Label lbTotalStock;
+        private Button btnSubmit;
+        private TextBox txtId;
     }
 }

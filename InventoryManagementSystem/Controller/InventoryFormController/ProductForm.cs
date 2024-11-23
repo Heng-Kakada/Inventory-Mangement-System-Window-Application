@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryManagementSystem.Controller.InventoryFormController.InventorySubForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,18 @@ namespace InventoryManagementSystem.Controller
         public ProductForm()
         {
             InitializeComponent();
+
+
+            btnAdd.Click += DoClickAddProduct;
+
         }
+
+        private void DoClickAddProduct(object? sender, EventArgs e)
+        {
+            SubProduct subProduct = new SubProduct();
+            subProduct.Show();
+        }
+
 
     }
 }

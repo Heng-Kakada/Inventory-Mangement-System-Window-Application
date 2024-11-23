@@ -1,27 +1,24 @@
-﻿
+﻿using InventoryManagementSystem.Controller.InventoryFormController.InventorySubForm;
 
-using InventoryManagementSystem.Controller.ImportExportFormController.SubImportExportForm;
-
-namespace InventoryManagementSystem.Controller.InventoryFormController.InventorySubForm
+namespace InventoryManagementSystem.Controller.ImportExportFormController.SubImportExportForm
 {
-    public partial class SubProduct : Form
+    public partial class SubExportDetail : Form
     {
 
+        private static SubExportDetail instance = null!;
 
-        private static SubProduct instance = null!;
-
-        public SubProduct()
+        public SubExportDetail()
         {
             InitializeComponent();
         }
 
 
         #region SingleTon For Only Show One Form
-        public static SubProduct GetInstance()
+        public static SubExportDetail GetInstance()
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new SubProduct();
+                instance = new SubExportDetail();
             }
             return instance;
         }
@@ -39,7 +36,6 @@ namespace InventoryManagementSystem.Controller.InventoryFormController.Inventory
             }
         }
         #endregion
-
 
 
     }

@@ -55,10 +55,10 @@ public class ProductServices : ICRUDServices<Product, int>
             }
         }
     }
-
+    
     public static IEnumerable<Product> GetAll()
     {
-        string query = "SELECT * FROM tbProduct;";
+        string query = "SELECT * FROM tbProduct";
 
         using (SqlCommand cmd = new SqlCommand(query, connection.GetConnection()))
         {

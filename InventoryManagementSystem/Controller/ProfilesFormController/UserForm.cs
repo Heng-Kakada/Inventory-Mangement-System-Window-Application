@@ -8,7 +8,11 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
 {
     public partial class UserForm : Form
     {
+
+        public static event CountEventHandler? countEventHandler;
+
         private Control[] controls;
+        
         public UserForm()
         {
             InitializeComponent();
@@ -75,6 +79,7 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                             "Success",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+                        countEventHandler!.Invoke(this);
                     }
                     else
                     {
@@ -159,6 +164,8 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                     LoadData();
 
                     MessageBox.Show($"User Added!", "Creating", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    countEventHandler!.Invoke(this);
 
                 }
                 else

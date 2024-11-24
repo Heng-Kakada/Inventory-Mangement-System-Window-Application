@@ -9,6 +9,8 @@ namespace InventoryManagementSystem.Controller.ImportExportFormController;
 
 public partial class ImportForm : Form
 {
+
+    public static event CountEventHandler? countEventHandler;
     private Control[] controls;
 
     public ImportForm()
@@ -38,7 +40,6 @@ public partial class ImportForm : Form
 
         dgvImport.Click += DoClickDataGridView;
 
-
     }
 
 
@@ -61,7 +62,7 @@ public partial class ImportForm : Form
                 LoadData();
 
                 MessageBox.Show($"Import Added!", "Creating", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                countEventHandler!.Invoke(this);
             }
             else
             {
@@ -134,6 +135,7 @@ public partial class ImportForm : Form
                 if (isDeleted)
                 {
                     MessageBox.Show($"Import with ID {id} has been successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    countEventHandler!.Invoke(this);
                 }
                 else
                 {

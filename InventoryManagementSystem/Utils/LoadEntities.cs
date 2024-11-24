@@ -46,6 +46,17 @@ public static class LoadEntities
         Casting.CastCombobox(controls[6]).SelectedValue = product.CategoryID;
     }
 
+    public static void LoadInvnetoryFromObject(Control[] controls, Inventory inventory)
+    {
+        controls[0].Text = inventory.ID.ToString();
+        Casting.CastCombobox(controls[1]).SelectedItem = inventory.ImportID;
+        controls[2].Text = inventory.Note;
+        controls[3].Text = inventory.UnitCost.ToString();
+        Casting.CastNumericUpDown(controls[4]).Value = inventory.InitialQty;
+        Casting.CastNumericUpDown(controls[5]).Value = inventory.CurrentStock;
+        Casting.CastDateTimePicker(controls[6]).Value = inventory.ExpirationDate;
+        Casting.CastCombobox(controls[7]).SelectedValue = inventory.ProductID;
+    }
 
     public static void LoadSupplierFromDataGrid(Control[] controls, DataGridView dgv)
     {

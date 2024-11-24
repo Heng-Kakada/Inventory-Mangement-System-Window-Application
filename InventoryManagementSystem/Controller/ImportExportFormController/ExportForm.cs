@@ -18,7 +18,7 @@ namespace InventoryManagementSystem.Controller.ImportExportFormController
     {
 
         private Control[] controls;
-
+        public static event CountEventHandler? countEventHandler;
 
         public ExportForm()
         {
@@ -63,6 +63,7 @@ namespace InventoryManagementSystem.Controller.ImportExportFormController
                     LoadData();
 
                     MessageBox.Show($"Export Added!", "Creating", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    countEventHandler!.Invoke(this);
                 }
                 else
                 {
@@ -133,6 +134,7 @@ namespace InventoryManagementSystem.Controller.ImportExportFormController
                     if (isDeleted)
                     {
                         MessageBox.Show($"Export with ID {id} has been successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        countEventHandler!.Invoke(this);
                     }
                     else
                     {

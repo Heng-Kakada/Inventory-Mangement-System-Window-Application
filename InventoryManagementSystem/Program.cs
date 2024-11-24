@@ -6,7 +6,11 @@ using System;
 
 namespace InventoryManagementSystem;
 
-public delegate void PersonEventHandler(object? sender);
+public delegate void ProductEventHandler(object? sender);
+public delegate void InventoryEventHandler(object? sender);
+public delegate void CountEventHandler(object? sender);
+
+
 public static class Program
 {
     /// <summary>

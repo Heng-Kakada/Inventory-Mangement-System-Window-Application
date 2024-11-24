@@ -77,6 +77,15 @@ public static class Convertor
     {
         return (Casting.CastCombobox(control).SelectedItem as Category)!.ID;
     }
+    public static int ConvertToProductID(Control control)
+    {
+        if (control is ComboBox)
+        {
+            ComboBox castCbo = (ComboBox)control;
+            return (int)castCbo.SelectedValue!;
+        }
+        throw new Exception("Problem While Converting To ProductID From Combo Box ....");
+    }
 
     public static short ConvertToHandleByID(Control control)
     {

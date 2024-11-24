@@ -4,24 +4,21 @@ using IMS_Services.Entities;
 using IMS_Services.EnumUtils;
 using IMS_Services.Services.Implementation;
 using InventoryManagementSystem.Validation;
-using InventoryManagementSystem.Controller.ImportExportFormController.SubImportExportForm;
 using InventoryManagementSystem.Utils;
-using System.Windows.Forms;
+
 
 namespace InventoryManagementSystem.Controller.InventoryFormController.InventorySubForm
 {
     public partial class SubProduct : Form
     {
 
-        public event PersonEventHandler? PersonModified;
+        public event ProductEventHandler? ProductModified;
 
         private static SubProduct instance = null!;
         
         private Control[] controls;
         
         public static Product? product { get; set; } = null;
-
-
 
         public SubProduct()
         {
@@ -45,13 +42,14 @@ namespace InventoryManagementSystem.Controller.InventoryFormController.Inventory
 
 
             if (product == null)
+
                 btnSubmit.Click += DoClickAdd;
+
             else if (product != null)
             {
                 LoadEntities.LoadProductFromObject(controls, product!);
                 btnSubmit.Click += DoClickUpdate;
             }
-
         }
 
 
@@ -63,17 +61,16 @@ namespace InventoryManagementSystem.Controller.InventoryFormController.Inventory
             {
                 if (IsProductValid())
                 {
-                    // create instance product
+                    
                     Product product = CreatorEntities.CreateProduct(controls);
 
-                    // add product to database
                     ProductServices.Add(product);
 
-                    //clear control
+                    
                     Util.ClearControls(controls);
 
-                    PersonModified?.Invoke(this);
-                    // show message to user
+                    ProductModified?.Invoke(this);
+                    
                     MessageBox.Show($"Product Added!", "Creating", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -108,7 +105,7 @@ namespace InventoryManagementSystem.Controller.InventoryFormController.Inventory
                     {
                         MessageBox.Show($"Product ID : {txtId.Text} Info Updated!", "Updating", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Util.ClearControls(controls);
-                        PersonModified?.Invoke(this);
+                        ProductModified?.Invoke(this);
                     }
                     else
                     {

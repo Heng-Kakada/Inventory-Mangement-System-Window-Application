@@ -16,7 +16,6 @@ namespace InventoryManagementSystem.Controller
             btnUpdate.Click += DoClickUpdateProduct;
             btnDelete.Click += DoClickDeleteProduct;
             
-            
             dgvProduct.Click += DoClickDataGridView;
 
         }
@@ -75,17 +74,20 @@ namespace InventoryManagementSystem.Controller
             }
 
             Product product = ProductServices.GetById((int)dgvProduct.CurrentRow.Cells[0].Value);
+
             SubProduct.product = product;
+
             SubProduct subProduct = new SubProduct();
             
-            subProduct.PersonModified += (sender) => LoadData();
+            subProduct.ProductModified += (sender) => LoadData();
+
             subProduct.Show();
         }
 
         private void DoClickAddProduct(object? sender, EventArgs e)
         {
             SubProduct subProduct = new SubProduct();
-            subProduct.PersonModified += (sender) => LoadData();
+            subProduct.ProductModified += (sender) => LoadData();
             subProduct.Show();
         }
         #endregion

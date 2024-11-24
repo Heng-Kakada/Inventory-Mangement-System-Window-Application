@@ -29,7 +29,7 @@ namespace InventoryManagementSystem
             staffMenuItem.Click += DoClickStaffForm;
             supplierMenuItem.Click += DoClickSupplierForm;
 
-            helpMenuItem.Click += DoClickHelpForm;
+            
             aboutUsMenuItem.Click += DoClickAboutUsForm;
 
             tabform.DrawItem += DoDrawItem;
@@ -49,12 +49,7 @@ namespace InventoryManagementSystem
             aboutForm.Show();
         }
 
-        private void DoClickHelpForm(object? sender, EventArgs e)
-        {
-            HelpForm help = new HelpForm();
-            help.Show();
-
-        }
+        
 
         private void DoClickStaffForm(object? sender, EventArgs e)
         {

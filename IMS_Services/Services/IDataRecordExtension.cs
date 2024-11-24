@@ -131,8 +131,6 @@ public static class IDataRecordExtension
         };
     }
 
-
-
     public static Supplier ToSupplier(this IDataRecord record)
     {
         int index = record.GetOrdinal("SupplierID");
@@ -252,4 +250,32 @@ public static class IDataRecordExtension
         };
     }
 
+    public static User ToUser(this IDataRecord record)
+    {
+
+        int index = record.GetOrdinal("UserID");
+        short id = record.GetInt16(index);
+
+        index = record.GetOrdinal("UserName");
+        String un = record.GetString(index);
+
+        index = record.GetOrdinal("Password");
+        String pass = record.GetString(index);
+
+        index = record.GetOrdinal("StaffID");
+        short sid = record.GetInt16(index);
+
+
+
+        return new User()
+        {
+            ID = id,
+            Username = un,
+            Password = pass,
+            StaffID = sid,
+        };
+    }
+
+
 }
+

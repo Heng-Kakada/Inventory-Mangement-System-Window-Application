@@ -148,6 +148,26 @@ public static class LoadEntities
 
     }
 
+    public static void LoadUserFromListStaff(Control[] controls, ListBox listBox)
+    {
+        if (listBox.SelectedItem == null) return;
+        string? data = listBox.SelectedItem.ToString();
+        if (data == null) return;
+        short.TryParse(data.Split('.')[0], out short userId);
+        try
+        {
+            User user = (User)UserServices.GetById(userId);
 
+            controls[0].Text = user.ID.ToString();
+            controls[1].Text = user.Username;
+            controls[2].Text = user.Password;
+            Casting.CastCombobox(controls[3]).SelectedValue = user.StaffID;
+            
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+    }
 
 }

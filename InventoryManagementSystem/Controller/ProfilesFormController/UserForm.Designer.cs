@@ -32,10 +32,11 @@
             lbSearch = new Label();
             listUser = new ListBox();
             panel3 = new Panel();
+            txtId = new TextBox();
             lbUserName = new Label();
             txtUserName = new TextBox();
             lbStaffId = new Label();
-            cboStaffId = new ComboBox();
+            cboStaff = new ComboBox();
             lbPassword = new Label();
             txtPassword = new TextBox();
             btnClear = new Button();
@@ -140,11 +141,12 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(txtId);
             panel3.Controls.Add(lbUserName);
             panel3.Controls.Add(userFormTitle);
             panel3.Controls.Add(txtUserName);
             panel3.Controls.Add(lbStaffId);
-            panel3.Controls.Add(cboStaffId);
+            panel3.Controls.Add(cboStaff);
             panel3.Controls.Add(lbPassword);
             panel3.Controls.Add(txtPassword);
             panel3.Dock = DockStyle.Left;
@@ -152,6 +154,17 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(660, 900);
             panel3.TabIndex = 20;
+            // 
+            // txtId
+            // 
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtId.BackColor = SystemColors.Control;
+            txtId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(116, 232);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(503, 29);
+            txtId.TabIndex = 10;
+            txtId.Visible = false;
             // 
             // lbUserName
             // 
@@ -187,16 +200,16 @@
             lbStaffId.TabIndex = 6;
             lbStaffId.Text = "Staff ID";
             // 
-            // cboStaffId
+            // cboStaff
             // 
-            cboStaffId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            cboStaffId.BackColor = SystemColors.Control;
-            cboStaffId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboStaffId.FormattingEnabled = true;
-            cboStaffId.Location = new Point(116, 470);
-            cboStaffId.Name = "cboStaffId";
-            cboStaffId.Size = new Size(503, 28);
-            cboStaffId.TabIndex = 7;
+            cboStaff.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboStaff.BackColor = SystemColors.Control;
+            cboStaff.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboStaff.FormattingEnabled = true;
+            cboStaff.Location = new Point(116, 470);
+            cboStaff.Name = "cboStaff";
+            cboStaff.Size = new Size(503, 28);
+            cboStaff.TabIndex = 7;
             // 
             // lbPassword
             // 
@@ -276,7 +289,7 @@
         private Button btnUpdate;
         private TextBox txtPassword;
         private Label lbPassword;
-        private ComboBox cboStaffId;
+        private ComboBox cboStaff;
         private Label lbStaffId;
         private Panel panel3;
         private ListBox listUser;
@@ -284,5 +297,6 @@
         private Label lbSearch;
         private Button btnClear;
         private Panel panel2;
+        private TextBox txtId;
     }
 }

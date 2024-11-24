@@ -84,5 +84,15 @@ public static class CreatorEntities
         };
     }
 
+    public static User CreateUser(Control[] controls)
+    {
+        return new User()
+        {
+            Username = Convertor.ConvertToString(controls[1]),
+            Password = Convertor.ConvertToString(controls[2]),
+            StaffID = Convertor.ConvertToHandleByID(controls[3]),
+        };
+    }
+
 
 }

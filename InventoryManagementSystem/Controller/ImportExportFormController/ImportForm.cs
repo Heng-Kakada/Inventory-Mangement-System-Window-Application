@@ -43,14 +43,6 @@ public partial class ImportForm : Form
 
 
 
-
-
-
-
-
-
-
-
     #region Event
 
     private void DoClickInsertImport(object? sender, EventArgs e)

@@ -256,6 +256,7 @@
             nudInitQty.BackColor = SystemColors.Control;
             nudInitQty.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nudInitQty.Location = new Point(86, 330);
+            nudInitQty.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudInitQty.Name = "nudInitQty";
             nudInitQty.Size = new Size(223, 26);
             nudInitQty.TabIndex = 66;
@@ -278,6 +279,7 @@
             nudCurrentStock.BackColor = SystemColors.Control;
             nudCurrentStock.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nudCurrentStock.Location = new Point(86, 260);
+            nudCurrentStock.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudCurrentStock.Name = "nudCurrentStock";
             nudCurrentStock.Size = new Size(223, 26);
             nudCurrentStock.TabIndex = 64;

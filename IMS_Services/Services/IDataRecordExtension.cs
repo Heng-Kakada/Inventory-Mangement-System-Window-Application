@@ -220,4 +220,36 @@ public static class IDataRecordExtension
         };
     }
 
+    public static Export ToExport(this IDataRecord record)
+    {
+
+        int index = record.GetOrdinal("ExportID");
+        int id = record.GetInt32(index);
+
+        index = record.GetOrdinal("ExportDate");
+        DateTime date = record.GetDateTime(index);
+
+        
+
+        index = record.GetOrdinal("TotalItems");
+        short ti = record.GetInt16(index);
+
+        index = record.GetOrdinal("TotalCost");
+        decimal tc = record.GetDecimal(index);
+
+        index = record.GetOrdinal("HandledBy");
+        short h = record.GetInt16(index);
+
+
+
+        return new Export()
+        {
+            ID = id,
+            ExportDate = date,
+            TotalCost = tc,
+            TotalItem = ti,
+            HandledBy = h,
+        };
+    }
+
 }

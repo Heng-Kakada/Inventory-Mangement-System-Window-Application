@@ -73,6 +73,16 @@ public static class CreatorEntities
         };
     }
 
+    public static Export CreateExport(Control[] controls)
+    {
+        return new Export()
+        {
+            ExportDate = Convertor.ConvertToDateTime(controls[1]),
+            TotalItem = Convertor.ConvertToShort(controls[2]),
+            TotalCost = Convertor.ConvertToDecimal(controls[3]),
+            HandledBy = Convertor.ConvertToHandleByID(controls[4]),
+        };
+    }
 
 
 }

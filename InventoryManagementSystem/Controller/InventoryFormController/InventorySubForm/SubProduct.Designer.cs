@@ -141,6 +141,7 @@
             nudTotalStock.BackColor = SystemColors.Control;
             nudTotalStock.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nudTotalStock.Location = new Point(121, 346);
+            nudTotalStock.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudTotalStock.Name = "nudTotalStock";
             nudTotalStock.Size = new Size(290, 26);
             nudTotalStock.TabIndex = 79;

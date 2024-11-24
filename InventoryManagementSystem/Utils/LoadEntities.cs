@@ -123,7 +123,30 @@ public static class LoadEntities
 
     }
 
+    public static void LoadExportFromDataGrid(Control[] controls, DataGridView dgv)
+    {
+        if (dgv.CurrentRow == null) return;
+        int selectedId = (int)dgv.CurrentRow.Cells[0].Value;
 
+        try
+        {
+            Export export = ExportServices.GetById(selectedId);
+
+            if (export == null) return;
+
+            controls[0].Text = export.ID.ToString();
+            Casting.CastDateTimePicker(controls[1]).Value = export.ExportDate;
+            Casting.CastNumericUpDown(controls[2]).Value = export.TotalItem;
+            controls[3].Text = export.TotalCost.ToString();
+            Casting.CastCombobox(controls[4]).SelectedValue = export.HandledBy;
+            
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+
+    }
 
 
 

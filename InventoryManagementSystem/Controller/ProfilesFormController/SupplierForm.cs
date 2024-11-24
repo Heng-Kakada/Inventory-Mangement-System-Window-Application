@@ -41,19 +41,28 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
 
 
             dgvSupplier.Click += DoClickDataGridView;
-
+            txtSearch.TextChanged += DoSearchTextChange;
         }
 
 
-
-
-
-
-
-
-
-
         #region Click Event
+
+        private void DoSearchTextChange(object? sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                LoadData();
+                return;
+            };
+
+            var result = SupplierServices.GetByName(txtSearch.Text);
+            dgvSupplier.Rows.Clear();
+            foreach (var supplier in result)
+            {
+                AddToView(supplier);
+            }
+        }
+
 
         private void DoClickDeleteSupplier(object? sender, EventArgs e)
         {
@@ -109,13 +118,13 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
             {
                 if (IsSupplierValid())
                 {
-                    
+
                     Supplier supplier = CreatorEntities.CreateSupplier(controls);
 
-                    
+
                     SupplierServices.Add(supplier);
 
-                    
+
                     Util.ClearControls(controls);
                     cboPaymentMethod.SelectedIndex = 0;
                     LoadData();
@@ -141,10 +150,11 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
                 if (IsSupplierValid())
                 {
 
-                    MessageBox.Show(cboPaymentMethod.SelectedIndex.ToString());
 
                     Supplier supplier = CreatorEntities.CreateSupplier(controls);
+                    
                     supplier.ID = byte.Parse(txtId.Text);
+
                     bool effected = SupplierServices.Update(supplier);
 
                     if (effected)
@@ -181,7 +191,7 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
 
         private void DoClickClear(object? sender, EventArgs e)
         {
-            
+
             Util.ClearControls(controls);
             cboPaymentMethod.SelectedIndex = 0;
             btnInsert.Enabled = true;
@@ -191,32 +201,33 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
 
         #region
 
-            private void LoadData()
-            {
-                dgvSupplier.Rows.Clear();
-                
-                var result = SupplierServices.GetAll();
-                foreach (var supplier in result)
-                {
-                   AddToView(supplier);
-                }
-            }
+        private void LoadData()
+        {
+            dgvSupplier.Rows.Clear();
 
-            private void AddToView(Supplier supplier)
+            var result = SupplierServices.GetAll();
+            foreach (var supplier in result)
             {
-                dgvSupplier.Rows.Add(supplier.ID, supplier.Name, supplier.Phone, supplier.PaymentMethod, supplier.PaymentTerm);
+                AddToView(supplier);
             }
+        }
+
+        private void AddToView(Supplier supplier)
+        {
+            dgvSupplier.Rows.Add(supplier.ID, supplier.Name, supplier.Phone, supplier.PaymentMethod, supplier.PaymentTerm);
+        }
 
         #endregion
 
         #region Validation
-            private bool IsSupplierValid()
-            {
-                bool isVilid = true;
-                isVilid = Validator.IsValidData(controls.Skip(1).ToArray());
-                return isVilid;
-            }
+        private bool IsSupplierValid()
+        {
+            bool isVilid = true;
+            isVilid = Validator.IsValidData(controls.Skip(1).ToArray());
+            return isVilid;
+        }
         #endregion
 
+        
     }
 }

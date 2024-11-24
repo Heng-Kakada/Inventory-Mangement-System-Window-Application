@@ -36,5 +36,43 @@ public static class CreatorEntities
         };
     }
 
+    public static Product CreateProduct(Control[] controls)
+    {
+        return new Product()
+        {
+            Name = Convertor.ConvertToString(controls[1]),
+            Barcode = Convertor.ConvertToString(controls[2]),
+            SalePrice = Convertor.ConvertToDecimal(controls[3]),
+            UOM = Convertor.ConvertToEnumUOM(controls[4]),
+            TotalStock = Convertor.ConvertToShort(controls[5]),
+            CategoryID = Convertor.ConvertToCategoryID(controls[6]),
+        };
+    }
+
+
+    public static Category CreateCategory(Control[] controls)
+    {
+        return new Category()
+        {
+            Name = Convertor.ConvertToString(controls[1]),
+            Description = Convertor.ConvertToString(controls[2]),
+        };
+
+    }
+
+
+    public static Import CreateImport(Control[] controls)
+    {
+        return new Import()
+        {
+            ImportDate = Convertor.ConvertToDateTime(controls[1]),
+            TotalCost = Convertor.ConvertToDecimal(controls[2]),
+            TotalItem = Convertor.ConvertToShort(controls[3]),
+            HandledBy = Convertor.ConvertToHandleByID(controls[4]),
+            SupplierID = Convertor.ConvertToSupplierID(controls[5]),
+        };
+    }
+
+
 
 }

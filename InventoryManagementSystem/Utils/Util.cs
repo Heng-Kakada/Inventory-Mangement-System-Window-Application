@@ -10,6 +10,9 @@ public static class Util
         if (control is TextBox textBox)
         {
             textBox.Text = "";
+        } else if (control is RichTextBox richText)
+        {
+            richText.Text = string.Empty;
         }
         else if (control is ComboBox comboBox)
         {
@@ -34,6 +37,9 @@ public static class Util
         else if (control is DataGridView dataGridView)
         {
             dataGridView.ClearSelection();
+        }else if (control is NumericUpDown numericUpDown)
+        {
+            numericUpDown.Value = 0;
         }
     }
 

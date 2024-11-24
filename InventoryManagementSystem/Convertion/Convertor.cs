@@ -1,4 +1,5 @@
-﻿using IMS_Services.EnumUtils;
+﻿using IMS_Services.Entities;
+using IMS_Services.EnumUtils;
 using InventoryManagementSystem.Utils;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -42,6 +43,12 @@ public static class Convertor
         }
         throw new Exception("Problem While Converting ...");
     }
+
+    public static EnumUOM ConvertToEnumUOM(Control control)
+    {
+        return (EnumUOM)Casting.CastCombobox(control).SelectedIndex!;
+    }
+
     public static EnumGender ConvertToEnumGender(Control control)
     {
         return (EnumGender)Casting.CastCombobox(control).SelectedIndex;
@@ -65,4 +72,20 @@ public static class Convertor
     public static bool ConvertToBooleanFromCheckBox(Control control) {
          return Casting.CastCheckbox(control).Checked;
     }
+
+    public static byte ConvertToCategoryID(Control control)
+    {
+        return (Casting.CastCombobox(control).SelectedItem as Category)!.ID;
+    }
+
+    public static short ConvertToHandleByID(Control control)
+    {
+        return (Casting.CastCombobox(control).SelectedItem as Staff)!.StaffId;
+    }
+
+    public static byte ConvertToSupplierID(Control control)
+    {
+        return (Casting.CastCombobox(control).SelectedItem as Supplier)!.ID;
+    }
+
 }

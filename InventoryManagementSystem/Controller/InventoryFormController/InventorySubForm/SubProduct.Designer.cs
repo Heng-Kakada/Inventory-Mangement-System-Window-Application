@@ -28,6 +28,7 @@
             panel3 = new Panel();
             btnSubmit = new Button();
             panel5 = new Panel();
+            cboUOM = new ComboBox();
             txtId = new TextBox();
             nudTotalStock = new NumericUpDown();
             lbTotalStock = new Label();
@@ -35,8 +36,7 @@
             txtBarCode = new TextBox();
             txtSalePrice = new TextBox();
             lbCategoryId = new Label();
-            cboCategoryId = new ComboBox();
-            nudUnitOfMeasure = new NumericUpDown();
+            cboCategory = new ComboBox();
             lbUnitOfMeasure = new Label();
             lbSalePrice = new Label();
             lbName = new Label();
@@ -47,7 +47,6 @@
             panel3.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudTotalStock).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudUnitOfMeasure).BeginInit();
             panel4.SuspendLayout();
             SuspendLayout();
             // 
@@ -95,6 +94,7 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(cboUOM);
             panel5.Controls.Add(txtId);
             panel5.Controls.Add(nudTotalStock);
             panel5.Controls.Add(lbTotalStock);
@@ -102,8 +102,7 @@
             panel5.Controls.Add(txtBarCode);
             panel5.Controls.Add(txtSalePrice);
             panel5.Controls.Add(lbCategoryId);
-            panel5.Controls.Add(cboCategoryId);
-            panel5.Controls.Add(nudUnitOfMeasure);
+            panel5.Controls.Add(cboCategory);
             panel5.Controls.Add(lbUnitOfMeasure);
             panel5.Controls.Add(lbSalePrice);
             panel5.Controls.Add(lbName);
@@ -113,6 +112,17 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(595, 482);
             panel5.TabIndex = 1;
+            // 
+            // cboUOM
+            // 
+            cboUOM.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboUOM.BackColor = SystemColors.Control;
+            cboUOM.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboUOM.FormattingEnabled = true;
+            cboUOM.Location = new Point(121, 285);
+            cboUOM.Name = "cboUOM";
+            cboUOM.Size = new Size(290, 28);
+            cboUOM.TabIndex = 81;
             // 
             // txtId
             // 
@@ -192,26 +202,16 @@
             lbCategoryId.TabIndex = 73;
             lbCategoryId.Text = "Category ID";
             // 
-            // cboCategoryId
+            // cboCategory
             // 
-            cboCategoryId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            cboCategoryId.BackColor = SystemColors.Control;
-            cboCategoryId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboCategoryId.FormattingEnabled = true;
-            cboCategoryId.Location = new Point(121, 407);
-            cboCategoryId.Name = "cboCategoryId";
-            cboCategoryId.Size = new Size(290, 28);
-            cboCategoryId.TabIndex = 74;
-            // 
-            // nudUnitOfMeasure
-            // 
-            nudUnitOfMeasure.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            nudUnitOfMeasure.BackColor = SystemColors.Control;
-            nudUnitOfMeasure.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nudUnitOfMeasure.Location = new Point(121, 286);
-            nudUnitOfMeasure.Name = "nudUnitOfMeasure";
-            nudUnitOfMeasure.Size = new Size(290, 26);
-            nudUnitOfMeasure.TabIndex = 64;
+            cboCategory.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboCategory.BackColor = SystemColors.Control;
+            cboCategory.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboCategory.FormattingEnabled = true;
+            cboCategory.Location = new Point(121, 407);
+            cboCategory.Name = "cboCategory";
+            cboCategory.Size = new Size(290, 28);
+            cboCategory.TabIndex = 74;
             // 
             // lbUnitOfMeasure
             // 
@@ -298,7 +298,6 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudTotalStock).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudUnitOfMeasure).EndInit();
             panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -307,7 +306,6 @@
         private Panel panel1;
         private Panel panel3;
         private Panel panel5;
-        private NumericUpDown nudUnitOfMeasure;
         private Label lbUnitOfMeasure;
         private Label lbSalePrice;
         private Label lbName;
@@ -316,7 +314,7 @@
         private Label label4;
         private DateTimePicker dateTimePicker1;
         private Label lbCategoryId;
-        private ComboBox cboCategoryId;
+        private ComboBox cboCategory;
         private Panel panel6;
         private TextBox txtSalePrice;
         private Label SubProductFormTitle;
@@ -326,5 +324,6 @@
         private Label lbTotalStock;
         private Button btnSubmit;
         private TextBox txtId;
+        private ComboBox cboUOM;
     }
 }

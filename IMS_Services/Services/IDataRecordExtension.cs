@@ -62,6 +62,76 @@ public static class IDataRecordExtension
             StoppedWork = stoppedWork,
         };
     }
+    public static Inventory ToInventory(this IDataRecord record)
+    {
+        int index = record.GetOrdinal("InvID");
+        int id = record.GetInt32(index);
+
+        index = record.GetOrdinal("UnitCost");
+        decimal unitCost = record.GetDecimal(index);
+
+        index = record.GetOrdinal("ExpirationDate");
+        DateTime expDate = record.GetDateTime(index);
+
+        index = record.GetOrdinal("CurrentStock");
+        short curStock = record.GetInt16(index);
+
+        index = record.GetOrdinal("InitialQty");
+        short initQty = record.GetInt16(index);
+
+        index = record.GetOrdinal("ProductID");
+        int proID = record.GetInt32(index);
+
+        index = record.GetOrdinal("ImportID");
+        int impID = record.GetInt32(index);
+
+        return new Inventory()
+        {
+            ID = id,
+            UnitCost = unitCost,
+            ExpirationDate = expDate,
+            CurrentStock = curStock,
+            InitialQty = initQty,
+            ProductID = proID,
+            ImportID = impID,
+        };
+    }
+    public static Product ToProduct(this IDataRecord record)
+    {
+        int index = record.GetOrdinal("ProductID");
+        int id = record.GetInt32(index);
+
+        index = record.GetOrdinal("ProductName");
+        string name = record.GetString(index);
+
+        index = record.GetOrdinal("Barcode");
+        string barcode = record.GetString(index);
+
+        index = record.GetOrdinal("SalePrice");
+        decimal price = record.GetDecimal(index);
+
+        index = record.GetOrdinal("UOM");
+        EnumUOM uom = (EnumUOM)record.GetByte(index);
+
+        index = record.GetOrdinal("TotalStock");
+        short totalStock = record.GetInt16(index);
+
+        index = record.GetOrdinal("CategoryID");
+        byte cateID = record.GetByte(index);
+
+        return new Product()
+        {
+            ID = id,
+            Name = name,
+            Barcode = barcode,
+            SalePrice = price,
+            UOM = uom,
+            TotalStock = totalStock,
+            CategoryID = cateID,
+        };
+    }
+
+
 
     public static Supplier ToSupplier(this IDataRecord record)
     {
@@ -100,7 +170,7 @@ public static class IDataRecordExtension
 
     public static Category ToCategory(this IDataRecord record) {
 
-        int index = record.GetOrdinal("SupplierID");
+        int index = record.GetOrdinal("CategoryID");
         byte id = record.GetByte(index);
 
         index = record.GetOrdinal("CategoryName");
@@ -117,6 +187,37 @@ public static class IDataRecordExtension
         };
     }
 
+    public static Import ToImport(this IDataRecord record)
+    {
 
+        int index = record.GetOrdinal("ImportID");
+        int id = record.GetInt32(index);
+
+        index = record.GetOrdinal("ImportDate");
+        DateTime date = record.GetDateTime(index);
+
+        index = record.GetOrdinal("TotalCost");
+        decimal tc = record.GetDecimal(index);
+
+        index = record.GetOrdinal("TotalItem");
+        short ti = record.GetInt16(index);
+
+        index = record.GetOrdinal("HandledBy");
+        short h = record.GetInt16(index);
+
+        index = record.GetOrdinal("SupplierID");
+        byte s = record.GetByte(index);
+
+
+        return new Import()
+        {
+            ID = id,
+            ImportDate = date,
+            TotalCost = tc,
+            TotalItem = ti,
+            HandledBy = h,
+            SupplierID = s
+        };
+    }
 
 }

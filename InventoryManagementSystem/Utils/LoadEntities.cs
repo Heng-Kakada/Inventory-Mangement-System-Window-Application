@@ -34,6 +34,17 @@ public static class LoadEntities
             MessageBox.Show(ex.Message);
         }
     } 
+    
+    public static void LoadProductFromObject(Control[] controls, Product product)
+    {
+        controls[0].Text = product.ID.ToString();
+        controls[1].Text = product.Name;
+        controls[2].Text = product.Barcode;
+        controls[3].Text = product.SalePrice.ToString();
+        Casting.CastCombobox(controls[4]).SelectedItem = product.UOM;
+        Casting.CastNumericUpDown(controls[5]).Value = product.TotalStock;
+        Casting.CastCombobox(controls[6]).SelectedValue = product.CategoryID;
+    }
 
 
     public static void LoadSupplierFromDataGrid(Control[] controls, DataGridView dgv)
@@ -62,6 +73,55 @@ public static class LoadEntities
 
     }
 
+    public static void LoadCategoryFromDataGrid(Control[] controls, DataGridView dgv)
+    {
+        if (dgv.CurrentRow == null) return;
+        byte selectedId = (byte)dgv.CurrentRow.Cells[0].Value;
+
+        try
+        {
+            Category category = CategoryServices.GetById(selectedId);
+
+            if (category == null) return;
+
+            controls[0].Text = category.ID.ToString();
+            controls[1].Text = category.Name;
+            controls[2].Text = category.Description;
+
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+
+    }
+
+
+    public static void LoadImportFromDataGrid(Control[] controls, DataGridView dgv)
+    {
+        if (dgv.CurrentRow == null) return;
+        int selectedId = (int)dgv.CurrentRow.Cells[0].Value;
+
+        try
+        {
+            Import import = ImportServices.GetById(selectedId);
+
+            if (import == null) return;
+
+            controls[0].Text = import.ID.ToString();
+            Casting.CastDateTimePicker(controls[1]).Value = import.ImportDate;
+            controls[2].Text = import.TotalCost.ToString();
+            Casting.CastNumericUpDown(controls[3]).Value = import.TotalItem;
+            Casting.CastCombobox(controls[4]).SelectedValue = import.HandledBy;
+            Casting.CastCombobox(controls[5]).SelectedValue = import.SupplierID;
+
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+
+    }
 
 
 

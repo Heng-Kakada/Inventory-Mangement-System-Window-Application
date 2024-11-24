@@ -5,7 +5,7 @@ using System.Data;
 
 namespace IMS_Services.Services.Implementation;
 
-internal class CategoryServices : ICRUDServices<Category, byte>
+public class CategoryServices : ICRUDServices<Category, byte>
 {
     private static DatabaseConnection connection = DatabaseConnection.Instance;
 

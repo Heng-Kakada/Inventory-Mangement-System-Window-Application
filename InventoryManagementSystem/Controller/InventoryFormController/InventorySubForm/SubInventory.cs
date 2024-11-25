@@ -42,9 +42,19 @@ namespace InventoryManagementSystem.Controller.InventoryFormController.Inventory
 
 
             btnAdd.Click += DoClickAdd;
+            btnDelete.Click += DoClickDelete;
             btnSubmit.Click += DoClickSubmit;
         }
 
+        private void DoClickDelete(object? sender, EventArgs e)
+        {
+            if (dgvInventory.CurrentRow == null) return;
+
+            DataRowView rowView = (DataRowView)dgvInventory.CurrentRow.DataBoundItem;
+            DataRow row = rowView.Row;
+
+            Table.Rows.Remove(row);
+        }
 
         private void DoClickSubmit(object? sender, EventArgs e)
         {
@@ -134,7 +144,7 @@ namespace InventoryManagementSystem.Controller.InventoryFormController.Inventory
         private bool IsInventoryValid()
         {
             bool isVilid = true;
-            isVilid = Validator.IsValidData(controls.Skip(2).ToArray());
+            isVilid = Validator.IsValidData(controls.Skip(3).ToArray());
             return isVilid;
         }
 

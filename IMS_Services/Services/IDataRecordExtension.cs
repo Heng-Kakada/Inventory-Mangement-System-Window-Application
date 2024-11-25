@@ -257,7 +257,42 @@ public static class IDataRecordExtension
             HandledBy = h,
         };
     }
+    public static ExportDetail ToExportDetail(this IDataRecord record)
+    {
 
+        int index = record.GetOrdinal("ExportDetailID");
+        int id = record.GetInt32(index);
+
+        index = record.GetOrdinal("QtyExported");
+        short qtye = record.GetInt16(index);
+
+        index = record.GetOrdinal("UnitPrice");
+        decimal up = record.GetDecimal(index);
+
+        index = record.GetOrdinal("SubTotal");
+        decimal st = record.GetDecimal(index);
+
+        index = record.GetOrdinal("ExportID");
+        int expid = record.GetInt32(index);
+
+        index = record.GetOrdinal("ProductID");
+        int pid = record.GetInt32(index);
+
+        index = record.GetOrdinal("InvID");
+        int invid = record.GetInt32(index);
+
+
+        return new ExportDetail()
+        {
+            ID = id,
+            QtyExported = qtye,
+            UnitPrice = up,
+            SubTotal = st,
+            ExportID = expid,
+            ProductID = pid,
+            InvID = invid,
+        };
+    }
     public static User ToUser(this IDataRecord record)
     {
 

@@ -32,7 +32,7 @@ public class InventoryServices
     {
         var row = table.NewRow();
         
-        row[INV_COL_ID] = inv.UnitCost;
+        //row[INV_COL_ID] = inv.UnitCost;
         row[INV_COL_UNITCOST] = inv.UnitCost;
         row[INV_COL_EXPDATE] = inv.ExpirationDate;
         row[INV_COL_CURRSTOCK] = inv.CurrentStock;
@@ -47,8 +47,7 @@ public class InventoryServices
     public static SqlBulkCopy Submit(string tableName)
     {
 
-        SqlBulkCopy bulkCopy = new SqlBulkCopy(connection.GetConnection());
-
+        SqlBulkCopy bulkCopy = new SqlBulkCopy(connection.GetConnection(), SqlBulkCopyOptions.FireTriggers, null);
         bulkCopy.DestinationTableName = tableName;
 
         #if COL_MAPPING
@@ -63,7 +62,7 @@ public class InventoryServices
         bulkCopy.ColumnMappings.Add(INV_COL_NOTE, INV_COL_NOTE);
         bulkCopy.ColumnMappings.Add(INV_COL_IMP_ID, INV_COL_IMP_ID);
 
-        #endif
+#endif
 
         return bulkCopy;
         

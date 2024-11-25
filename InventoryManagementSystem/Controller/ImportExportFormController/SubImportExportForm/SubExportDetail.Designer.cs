@@ -29,17 +29,20 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             subExportDetailFormTitle = new Label();
             panel3 = new Panel();
             btnAdd = new Button();
             btnSubmit = new Button();
             panel5 = new Panel();
+            txtSubTotal = new TextBox();
+            label1 = new Label();
+            cboInvID = new ComboBox();
+            lbCategoryId = new Label();
+            cboExportID = new ComboBox();
             txtUnitPrice = new TextBox();
             lbProductId = new Label();
             cboProductId = new ComboBox();
-            nudSubTotal = new NumericUpDown();
             lbSubTotal = new Label();
             nudQuantityExport = new NumericUpDown();
             lbUnitPrice = new Label();
@@ -47,20 +50,12 @@
             panel4 = new Panel();
             panel6 = new Panel();
             panel2 = new Panel();
-            panel7 = new Panel();
             dgvExportDetail = new DataGridView();
-            lbCategoryId = new Label();
-            cboCategoryId = new ComboBox();
-            colId = new DataGridViewTextBoxColumn();
-            colQtyExport = new DataGridViewTextBoxColumn();
-            colUnitPrice = new DataGridViewTextBoxColumn();
-            colSubTotal = new DataGridViewTextBoxColumn();
-            colProductId = new DataGridViewTextBoxColumn();
-            colInventoryId = new DataGridViewTextBoxColumn();
+            panel7 = new Panel();
+            btnDelete = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudSubTotal).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantityExport).BeginInit();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -90,6 +85,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(btnDelete);
             panel3.Controls.Add(btnAdd);
             panel3.Controls.Add(btnSubmit);
             panel3.Dock = DockStyle.Bottom;
@@ -115,7 +111,7 @@
             btnSubmit.Anchor = AnchorStyles.None;
             btnSubmit.BackColor = Color.LightGoldenrodYellow;
             btnSubmit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSubmit.Location = new Point(226, 6);
+            btnSubmit.Location = new Point(364, 6);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(109, 44);
             btnSubmit.TabIndex = 81;
@@ -124,12 +120,14 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(txtSubTotal);
+            panel5.Controls.Add(label1);
+            panel5.Controls.Add(cboInvID);
             panel5.Controls.Add(lbCategoryId);
-            panel5.Controls.Add(cboCategoryId);
+            panel5.Controls.Add(cboExportID);
             panel5.Controls.Add(txtUnitPrice);
             panel5.Controls.Add(lbProductId);
             panel5.Controls.Add(cboProductId);
-            panel5.Controls.Add(nudSubTotal);
             panel5.Controls.Add(lbSubTotal);
             panel5.Controls.Add(nudQuantityExport);
             panel5.Controls.Add(lbUnitPrice);
@@ -140,11 +138,68 @@
             panel5.Size = new Size(463, 544);
             panel5.TabIndex = 1;
             // 
+            // txtSubTotal
+            // 
+            txtSubTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtSubTotal.Font = new Font("Microsoft Sans Serif", 12F);
+            txtSubTotal.Location = new Point(51, 295);
+            txtSubTotal.Margin = new Padding(3, 2, 3, 2);
+            txtSubTotal.Name = "txtSubTotal";
+            txtSubTotal.PlaceholderText = "0.00";
+            txtSubTotal.Size = new Size(330, 26);
+            txtSubTotal.TabIndex = 80;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(50, 340);
+            label1.Name = "label1";
+            label1.Size = new Size(95, 20);
+            label1.TabIndex = 78;
+            label1.Text = "Inventory ID";
+            // 
+            // cboInvID
+            // 
+            cboInvID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboInvID.BackColor = SystemColors.Control;
+            cboInvID.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboInvID.FormattingEnabled = true;
+            cboInvID.Location = new Point(50, 363);
+            cboInvID.Name = "cboInvID";
+            cboInvID.Size = new Size(331, 28);
+            cboInvID.TabIndex = 79;
+            // 
+            // lbCategoryId
+            // 
+            lbCategoryId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbCategoryId.AutoSize = true;
+            lbCategoryId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbCategoryId.ForeColor = Color.Black;
+            lbCategoryId.Location = new Point(52, 458);
+            lbCategoryId.Name = "lbCategoryId";
+            lbCategoryId.Size = new Size(76, 20);
+            lbCategoryId.TabIndex = 76;
+            lbCategoryId.Text = "Export ID";
+            // 
+            // cboExportID
+            // 
+            cboExportID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboExportID.BackColor = SystemColors.Control;
+            cboExportID.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboExportID.FormattingEnabled = true;
+            cboExportID.Location = new Point(52, 481);
+            cboExportID.Name = "cboExportID";
+            cboExportID.Size = new Size(331, 28);
+            cboExportID.TabIndex = 77;
+            // 
             // txtUnitPrice
             // 
             txtUnitPrice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtUnitPrice.Font = new Font("Microsoft Sans Serif", 12F);
-            txtUnitPrice.Location = new Point(51, 173);
+            txtUnitPrice.Location = new Point(52, 232);
             txtUnitPrice.Margin = new Padding(3, 2, 3, 2);
             txtUnitPrice.Name = "txtUnitPrice";
             txtUnitPrice.PlaceholderText = "0.00";
@@ -157,11 +212,11 @@
             lbProductId.AutoSize = true;
             lbProductId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbProductId.ForeColor = Color.Black;
-            lbProductId.Location = new Point(50, 275);
+            lbProductId.Location = new Point(50, 87);
             lbProductId.Name = "lbProductId";
-            lbProductId.Size = new Size(82, 20);
+            lbProductId.Size = new Size(64, 20);
             lbProductId.TabIndex = 73;
-            lbProductId.Text = "Product Id";
+            lbProductId.Text = "Product";
             // 
             // cboProductId
             // 
@@ -169,20 +224,10 @@
             cboProductId.BackColor = SystemColors.Control;
             cboProductId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboProductId.FormattingEnabled = true;
-            cboProductId.Location = new Point(50, 298);
+            cboProductId.Location = new Point(50, 110);
             cboProductId.Name = "cboProductId";
             cboProductId.Size = new Size(331, 28);
             cboProductId.TabIndex = 74;
-            // 
-            // nudSubTotal
-            // 
-            nudSubTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            nudSubTotal.BackColor = SystemColors.Control;
-            nudSubTotal.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nudSubTotal.Location = new Point(50, 237);
-            nudSubTotal.Name = "nudSubTotal";
-            nudSubTotal.Size = new Size(330, 26);
-            nudSubTotal.TabIndex = 66;
             // 
             // lbSubTotal
             // 
@@ -190,7 +235,7 @@
             lbSubTotal.AutoSize = true;
             lbSubTotal.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbSubTotal.ForeColor = Color.Black;
-            lbSubTotal.Location = new Point(50, 214);
+            lbSubTotal.Location = new Point(51, 273);
             lbSubTotal.Name = "lbSubTotal";
             lbSubTotal.Size = new Size(77, 20);
             lbSubTotal.TabIndex = 65;
@@ -201,7 +246,7 @@
             nudQuantityExport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             nudQuantityExport.BackColor = SystemColors.Control;
             nudQuantityExport.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nudQuantityExport.Location = new Point(51, 115);
+            nudQuantityExport.Location = new Point(52, 174);
             nudQuantityExport.Name = "nudQuantityExport";
             nudQuantityExport.Size = new Size(330, 26);
             nudQuantityExport.TabIndex = 64;
@@ -212,7 +257,7 @@
             lbUnitPrice.AutoSize = true;
             lbUnitPrice.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbUnitPrice.ForeColor = Color.Black;
-            lbUnitPrice.Location = new Point(50, 151);
+            lbUnitPrice.Location = new Point(51, 210);
             lbUnitPrice.Name = "lbUnitPrice";
             lbUnitPrice.Size = new Size(77, 20);
             lbUnitPrice.TabIndex = 63;
@@ -224,7 +269,7 @@
             lbQuanityExported.AutoSize = true;
             lbQuanityExported.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbQuanityExported.ForeColor = Color.Black;
-            lbQuanityExported.Location = new Point(51, 92);
+            lbQuanityExported.Location = new Point(52, 151);
             lbQuanityExported.Name = "lbQuanityExported";
             lbQuanityExported.Size = new Size(131, 20);
             lbQuanityExported.TabIndex = 59;
@@ -260,14 +305,6 @@
             panel2.Size = new Size(721, 544);
             panel2.TabIndex = 2;
             // 
-            // panel7
-            // 
-            panel7.Dock = DockStyle.Right;
-            panel7.Location = new Point(707, 0);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(14, 544);
-            panel7.TabIndex = 0;
-            // 
             // dgvExportDetail
             // 
             dgvExportDetail.AllowUserToAddRows = false;
@@ -283,83 +320,34 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvExportDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvExportDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvExportDetail.Columns.AddRange(new DataGridViewColumn[] { colId, colQtyExport, colUnitPrice, colSubTotal, colProductId, colInventoryId });
             dgvExportDetail.Dock = DockStyle.Fill;
             dgvExportDetail.GridColor = SystemColors.Control;
             dgvExportDetail.Location = new Point(0, 0);
             dgvExportDetail.Name = "dgvExportDetail";
             dgvExportDetail.ReadOnly = true;
+            dgvExportDetail.RowHeadersVisible = false;
             dgvExportDetail.Size = new Size(707, 544);
             dgvExportDetail.TabIndex = 1;
             // 
-            // lbCategoryId
+            // panel7
             // 
-            lbCategoryId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbCategoryId.AutoSize = true;
-            lbCategoryId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbCategoryId.ForeColor = Color.Black;
-            lbCategoryId.Location = new Point(51, 340);
-            lbCategoryId.Name = "lbCategoryId";
-            lbCategoryId.Size = new Size(94, 20);
-            lbCategoryId.TabIndex = 76;
-            lbCategoryId.Text = "Category ID";
+            panel7.Dock = DockStyle.Right;
+            panel7.Location = new Point(707, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(14, 544);
+            panel7.TabIndex = 0;
             // 
-            // cboCategoryId
+            // btnDelete
             // 
-            cboCategoryId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            cboCategoryId.BackColor = SystemColors.Control;
-            cboCategoryId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboCategoryId.FormattingEnabled = true;
-            cboCategoryId.Location = new Point(51, 363);
-            cboCategoryId.Name = "cboCategoryId";
-            cboCategoryId.Size = new Size(331, 28);
-            cboCategoryId.TabIndex = 77;
-            // 
-            // colId
-            // 
-            colId.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colId.DefaultCellStyle = dataGridViewCellStyle2;
-            colId.FillWeight = 120F;
-            colId.HeaderText = "ID";
-            colId.Name = "colId";
-            colId.ReadOnly = true;
-            colId.Width = 51;
-            // 
-            // colQtyExport
-            // 
-            colQtyExport.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colQtyExport.HeaderText = "Qty";
-            colQtyExport.Name = "colQtyExport";
-            colQtyExport.ReadOnly = true;
-            // 
-            // colUnitPrice
-            // 
-            colUnitPrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colUnitPrice.HeaderText = "Unit Price";
-            colUnitPrice.Name = "colUnitPrice";
-            colUnitPrice.ReadOnly = true;
-            // 
-            // colSubTotal
-            // 
-            colSubTotal.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colSubTotal.HeaderText = "Sub Total";
-            colSubTotal.Name = "colSubTotal";
-            colSubTotal.ReadOnly = true;
-            // 
-            // colProductId
-            // 
-            colProductId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colProductId.HeaderText = "Product ID";
-            colProductId.Name = "colProductId";
-            colProductId.ReadOnly = true;
-            // 
-            // colInventoryId
-            // 
-            colInventoryId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colInventoryId.HeaderText = "Inventory ID";
-            colInventoryId.Name = "colInventoryId";
-            colInventoryId.ReadOnly = true;
+            btnDelete.Anchor = AnchorStyles.None;
+            btnDelete.BackColor = Color.Salmon;
+            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(234, 6);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(103, 44);
+            btnDelete.TabIndex = 83;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
             // 
             // SubExportDetail
             // 
@@ -380,7 +368,6 @@
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudSubTotal).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantityExport).EndInit();
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -393,7 +380,6 @@
         private Panel panel1;
         private Panel panel3;
         private Panel panel5;
-        private NumericUpDown nudSubTotal;
         private Label lbSubTotal;
         private NumericUpDown nudQuantityExport;
         private Label lbUnitPrice;
@@ -410,12 +396,10 @@
         private Button btnSubmit;
         private DataGridView dgvExportDetail;
         private Label lbCategoryId;
-        private ComboBox cboCategoryId;
-        private DataGridViewTextBoxColumn colId;
-        private DataGridViewTextBoxColumn colQtyExport;
-        private DataGridViewTextBoxColumn colUnitPrice;
-        private DataGridViewTextBoxColumn colSubTotal;
-        private DataGridViewTextBoxColumn colProductId;
-        private DataGridViewTextBoxColumn colInventoryId;
+        private ComboBox cboExportID;
+        private Label label1;
+        private ComboBox cboInvID;
+        private TextBox txtSubTotal;
+        private Button btnDelete;
     }
 }

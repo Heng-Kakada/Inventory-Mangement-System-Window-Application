@@ -55,6 +55,7 @@ public partial class InventoryForm : Form
                 if (isDeleted)
                 {
                     MessageBox.Show($"Inventory with ID {id} has been successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    InventoryServices.RetrieveData(tblInv);
                 }
                 else
                 {

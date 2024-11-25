@@ -86,6 +86,16 @@ public static class Convertor
         }
         throw new Exception("Problem While Converting To ProductID From Combo Box ....");
     }
+    public static int ConvertToInvID(Control control)
+    {
+        if (control is ComboBox)
+        {
+            ComboBox castCbo = (ComboBox)control;
+            string[] arr = ((string)castCbo.SelectedItem!).Split('-');
+            return int.Parse(arr[0]);
+        }
+        throw new Exception("Problem While Converting To ProductID From Combo Box ....");
+    }
 
     public static short ConvertToHandleByID(Control control)
     {

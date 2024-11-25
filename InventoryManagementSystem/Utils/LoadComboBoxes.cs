@@ -169,4 +169,62 @@ public class LoadComboBoxes
         comboBox.SelectedIndex = -1;
     }
 
+    public static void LoadExportID(ComboBox comboBox)
+    {
+        string query = "SELECT ExportID FROM tbExport ORDER BY ExportID DESC";
+        using (SqlCommand cmd = new SqlCommand(query, connection.GetConnection()))
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                comboBox.Items.Clear();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        comboBox.Items.Add(reader.GetInt32("ExportID"));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        comboBox.SelectedIndex = -1;
+    }
+
+    public static void LoadInventoryID(ComboBox comboBox, int proID)
+    {
+
+        string query = @"SELECT InvID, CurrentStock FROM tbInventory 
+                    WHERE ProductID = @proID AND CurrentStock > 0 AND ExpirationDate > GETDATE()
+                    ORDER BY CurrentStock DESC";
+        using (SqlCommand cmd = new SqlCommand(query, connection.GetConnection()))
+        {
+            cmd.Parameters.AddWithValue("@proID", proID);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                comboBox.Items.Clear();
+                try
+                {
+                    if(reader.HasRows)
+                        while (reader.Read())
+                        {
+                            string item = reader.GetInt32("InvID").ToString() + " - " +
+                            reader.GetInt16("CurrentStock").ToString();
+                            comboBox.Items.Add(item);
+                        }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        comboBox.SelectedIndex = -1;
+        
+    }
+
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             SubInventoryFormTitle = new Label();
             panel3 = new Panel();
@@ -56,6 +56,7 @@
             panel2 = new Panel();
             dgvInventory = new DataGridView();
             panel7 = new Panel();
+            btnDelete = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
@@ -89,6 +90,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(btnDelete);
             panel3.Controls.Add(btnAdd);
             panel3.Controls.Add(btnSubmit);
             panel3.Dock = DockStyle.Bottom;
@@ -114,7 +116,7 @@
             btnSubmit.Anchor = AnchorStyles.None;
             btnSubmit.BackColor = Color.LightGoldenrodYellow;
             btnSubmit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSubmit.Location = new Point(226, 6);
+            btnSubmit.Location = new Point(360, 6);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(109, 44);
             btnSubmit.TabIndex = 81;
@@ -352,23 +354,23 @@
             dgvInventory.AllowUserToDeleteRows = false;
             dgvInventory.BackgroundColor = SystemColors.Control;
             dgvInventory.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(0, 192, 0);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 192, 0);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvInventory.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvInventory.DefaultCellStyle = dataGridViewCellStyle2;
             dgvInventory.Dock = DockStyle.Fill;
             dgvInventory.GridColor = SystemColors.Control;
             dgvInventory.Location = new Point(0, 0);
@@ -386,6 +388,18 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(41, 517);
             panel7.TabIndex = 0;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.None;
+            btnDelete.BackColor = Color.Salmon;
+            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(218, 6);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(120, 44);
+            btnDelete.TabIndex = 83;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
             // 
             // SubInventory
             // 
@@ -442,6 +456,6 @@
         private Label label1;
         private ComboBox cboImportID;
         private Label label2;
-
+        private Button btnDelete;
     }
 }

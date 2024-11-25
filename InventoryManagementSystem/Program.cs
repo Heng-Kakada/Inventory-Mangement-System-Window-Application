@@ -8,6 +8,7 @@ namespace InventoryManagementSystem;
 
 public delegate void ProductEventHandler(object? sender);
 public delegate void InventoryEventHandler(object? sender);
+public delegate void ExportDetailHandler(object? sender);
 public delegate void CountEventHandler(object? sender);
 
 

@@ -96,6 +96,17 @@ public static class CreatorEntities
             HandledBy = Convertor.ConvertToHandleByID(controls[4]),
         };
     }
+    public static ExportDetail CreateExportDetail(Control[] controls)
+    {
+        return new ExportDetail()
+        {
+            UnitPrice = Convertor.ConvertToDecimal(controls[0]),
+            QtyExported = Convertor.ConvertToShort(controls[1]),
+            SubTotal = Convertor.ConvertToDecimal(controls[2]),
+            ProductID = Convertor.ConvertToProductID(controls[3]),
+            InvID = Convertor.ConvertToInvID(controls[4]),
+        };
+    }
 
     public static User CreateUser(Control[] controls)
     {

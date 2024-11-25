@@ -224,7 +224,6 @@ public class LoadComboBoxes
         }
 
         comboBox.SelectedIndex = -1;
-        
     }
 
 }

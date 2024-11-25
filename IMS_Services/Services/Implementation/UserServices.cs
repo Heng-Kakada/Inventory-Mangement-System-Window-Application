@@ -173,4 +173,41 @@ public class UserServices : ICRUDServices<User, short>
             }
         }
     }
+
+
+    public static User GetUserByUserName(string userName)
+    {
+        string query = "SELECT * FROM tbUser WHERE Username = '" + userName + "'";
+
+        using (SqlCommand cmd = new SqlCommand(query, connection.GetConnection()))
+        {
+            SqlDataReader? reader = null;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in getting user with Username, {userName} > {ex.Message}");
+            }
+
+            User? result = null;
+            if (reader != null && reader.HasRows == true)
+            {
+                if (reader.Read() == true)
+                {
+                    result = reader.ToUser();
+                }
+            }
+            reader?.Close();
+            return result;
+        }
+    }
+
+
+
+
+
+
+
 }

@@ -19,7 +19,7 @@ namespace InventoryManagementSystem.Controller.ProfilesFormController
 
             LoadData();
             LoadComboBoxes.LoadHandleByCBO(cboStaff);
-            cboStaff.SelectedIndex = 0;
+            cboStaff.SelectedIndex = -1;
 
             controls = new Control[] {
                 txtId,

@@ -8,12 +8,14 @@ namespace InventoryManagementSystem
 {
     public partial class MainForm : Form
     {
+
+        public static event CloseHandler? closeHandler;
+
         public MainForm()
         {
             InitializeComponent();
             //tabform.Padding = new Point(20, 4);
             HomePage();
-
 
             // Tap Click Menu Item
             homeMenuItemBar.Click += DoClickHomeMenu;
@@ -34,6 +36,12 @@ namespace InventoryManagementSystem
 
             tabform.DrawItem += DoDrawItem;
             tabform.MouseDown += DoCloseTab;
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            closeHandler!.Invoke();
+            base.OnFormClosing(e);
         }
 
         private void DoClickSupplierForm(object? sender, EventArgs e)

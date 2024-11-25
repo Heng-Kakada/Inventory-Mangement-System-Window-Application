@@ -11,5 +11,4 @@ public class Inventory
     public int ImportID { get; set; }
     public string? Note { get; set; }
     public DateTime LastUpdate {  get; set; }
-
 }

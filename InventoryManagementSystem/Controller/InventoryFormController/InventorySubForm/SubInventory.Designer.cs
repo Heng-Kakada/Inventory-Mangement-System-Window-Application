@@ -28,37 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            SubInventoryFormTitle = new Label();
             panel3 = new Panel();
-            panel5 = new Panel();
-            lbPosition = new Label();
-            cboPosition = new ComboBox();
-            label4 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            rtxtDesc = new RichTextBox();
-            lbCatDesc = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            numericUpDown2 = new NumericUpDown();
+            btnAdd = new Button();
+            btnSubmit = new Button();
+            cboImportID = new ComboBox();
             label2 = new Label();
-            numericUpDown1 = new NumericUpDown();
+            panel5 = new Panel();
+            nudCurrStock = new NumericUpDown();
             label1 = new Label();
-            lbDate = new Label();
-            dtImportDate = new DateTimePicker();
-            nudTotalItem = new NumericUpDown();
-            lbTotalItem = new Label();
-            lbName = new Label();
-            txtName = new TextBox();
+            txtId = new TextBox();
+            txtUnitCost = new TextBox();
+            rtxtNote = new RichTextBox();
+            lbProductId = new Label();
+            cboProductId = new ComboBox();
+            lbNote = new Label();
+            nudInitQty = new NumericUpDown();
+            lbInitQty = new Label();
+            lbExpireDate = new Label();
+            dtExpireDate = new DateTimePicker();
+            lbUnitCost = new Label();
             panel4 = new Panel();
+            panel6 = new Panel();
+            panel2 = new Panel();
+            dgvInventory = new DataGridView();
+            panel7 = new Panel();
+            btnDelete = new Button();
+            panel1.SuspendLayout();
+            panel3.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudTotalItem).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudCurrStock).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudInitQty).BeginInit();
             panel4.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(SubInventoryFormTitle);
             panel1.Dock = DockStyle.Top;
             panel1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel1.Location = new Point(0, 0);
@@ -66,141 +77,63 @@
             panel1.Size = new Size(1184, 59);
             panel1.TabIndex = 0;
             // 
+            // SubInventoryFormTitle
+            // 
+            SubInventoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SubInventoryFormTitle.AutoSize = true;
+            SubInventoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SubInventoryFormTitle.Location = new Point(85, 13);
+            SubInventoryFormTitle.Name = "SubInventoryFormTitle";
+            SubInventoryFormTitle.Size = new Size(218, 31);
+            SubInventoryFormTitle.TabIndex = 3;
+            SubInventoryFormTitle.Text = "Adding Inventory";
+            // 
             // panel3
             // 
+            panel3.Controls.Add(btnDelete);
+            panel3.Controls.Add(btnAdd);
+            panel3.Controls.Add(btnSubmit);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 603);
+            panel3.Location = new Point(0, 576);
             panel3.Name = "panel3";
             panel3.Size = new Size(1184, 58);
             panel3.TabIndex = 2;
             // 
-            // panel5
+            // btnAdd
             // 
-            panel5.Controls.Add(lbPosition);
-            panel5.Controls.Add(cboPosition);
-            panel5.Controls.Add(label4);
-            panel5.Controls.Add(dateTimePicker1);
-            panel5.Controls.Add(rtxtDesc);
-            panel5.Controls.Add(lbCatDesc);
-            panel5.Controls.Add(label3);
-            panel5.Controls.Add(textBox1);
-            panel5.Controls.Add(numericUpDown2);
-            panel5.Controls.Add(label2);
-            panel5.Controls.Add(numericUpDown1);
-            panel5.Controls.Add(label1);
-            panel5.Controls.Add(lbDate);
-            panel5.Controls.Add(dtImportDate);
-            panel5.Controls.Add(nudTotalItem);
-            panel5.Controls.Add(lbTotalItem);
-            panel5.Controls.Add(lbName);
-            panel5.Controls.Add(txtName);
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(712, 544);
-            panel5.TabIndex = 1;
+            btnAdd.Anchor = AnchorStyles.None;
+            btnAdd.BackColor = Color.LightGreen;
+            btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdd.Location = new Point(86, 6);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(109, 44);
+            btnAdd.TabIndex = 82;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
             // 
-            // lbPosition
+            // btnSubmit
             // 
-            lbPosition.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbPosition.AutoSize = true;
-            lbPosition.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbPosition.ForeColor = Color.Black;
-            lbPosition.Location = new Point(242, 427);
-            lbPosition.Name = "lbPosition";
-            lbPosition.Size = new Size(65, 20);
-            lbPosition.TabIndex = 73;
-            lbPosition.Text = "Position";
+            btnSubmit.Anchor = AnchorStyles.None;
+            btnSubmit.BackColor = Color.LightGoldenrodYellow;
+            btnSubmit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSubmit.Location = new Point(360, 6);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(109, 44);
+            btnSubmit.TabIndex = 81;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = false;
             // 
-            // cboPosition
+            // cboImportID
             // 
-            cboPosition.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            cboPosition.BackColor = SystemColors.Control;
-            cboPosition.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboPosition.FormattingEnabled = true;
-            cboPosition.Location = new Point(242, 450);
-            cboPosition.Name = "cboPosition";
-            cboPosition.Size = new Size(254, 28);
-            cboPosition.TabIndex = 74;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(80, 466);
-            label4.Name = "label4";
-            label4.Size = new Size(44, 20);
-            label4.TabIndex = 72;
-            label4.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CustomFormat = " yyyy/MM/dd";
-            dateTimePicker1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(80, 488);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(158, 26);
-            dateTimePicker1.TabIndex = 71;
-            // 
-            // rtxtDesc
-            // 
-            rtxtDesc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            rtxtDesc.BackColor = SystemColors.Control;
-            rtxtDesc.BorderStyle = BorderStyle.FixedSingle;
-            rtxtDesc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rtxtDesc.Location = new Point(263, 115);
-            rtxtDesc.Name = "rtxtDesc";
-            rtxtDesc.Size = new Size(299, 264);
-            rtxtDesc.TabIndex = 70;
-            rtxtDesc.Text = "";
-            // 
-            // lbCatDesc
-            // 
-            lbCatDesc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbCatDesc.AutoSize = true;
-            lbCatDesc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbCatDesc.Location = new Point(263, 86);
-            lbCatDesc.Name = "lbCatDesc";
-            lbCatDesc.Size = new Size(89, 20);
-            lbCatDesc.TabIndex = 69;
-            lbCatDesc.Text = "Description";
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(80, 392);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 20);
-            label3.TabIndex = 67;
-            label3.Text = "Name";
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = SystemColors.Control;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(80, 418);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(158, 29);
-            textBox1.TabIndex = 68;
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            numericUpDown2.BackColor = SystemColors.Control;
-            numericUpDown2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericUpDown2.Location = new Point(80, 351);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(158, 26);
-            numericUpDown2.TabIndex = 66;
+            cboImportID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboImportID.BackColor = SystemColors.Control;
+            cboImportID.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboImportID.FormattingEnabled = true;
+            cboImportID.Location = new Point(86, 459);
+            cboImportID.MaxDropDownItems = 4;
+            cboImportID.Name = "cboImportID";
+            cboImportID.Size = new Size(223, 28);
+            cboImportID.TabIndex = 84;
             // 
             // label2
             // 
@@ -208,21 +141,44 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(80, 328);
+            label2.Location = new Point(86, 432);
             label2.Name = "label2";
-            label2.Size = new Size(80, 20);
-            label2.TabIndex = 65;
-            label2.Text = "Total Item";
+            label2.Size = new Size(242, 20);
+            label2.TabIndex = 84;
+            label2.Text = "ImportID (Choose before submit)";
             // 
-            // numericUpDown1
+            // panel5
             // 
-            numericUpDown1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            numericUpDown1.BackColor = SystemColors.Control;
-            numericUpDown1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericUpDown1.Location = new Point(80, 281);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(158, 26);
-            numericUpDown1.TabIndex = 64;
+            panel5.Controls.Add(label2);
+            panel5.Controls.Add(cboImportID);
+            panel5.Controls.Add(nudCurrStock);
+            panel5.Controls.Add(label1);
+            panel5.Controls.Add(txtId);
+            panel5.Controls.Add(txtUnitCost);
+            panel5.Controls.Add(rtxtNote);
+            panel5.Controls.Add(lbProductId);
+            panel5.Controls.Add(cboProductId);
+            panel5.Controls.Add(lbNote);
+            panel5.Controls.Add(nudInitQty);
+            panel5.Controls.Add(lbInitQty);
+            panel5.Controls.Add(lbExpireDate);
+            panel5.Controls.Add(dtExpireDate);
+            panel5.Controls.Add(lbUnitCost);
+            panel5.Dock = DockStyle.Left;
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(666, 517);
+            panel5.TabIndex = 1;
+            // 
+            // nudCurrStock
+            // 
+            nudCurrStock.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            nudCurrStock.BackColor = SystemColors.Control;
+            nudCurrStock.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nudCurrStock.Location = new Point(84, 279);
+            nudCurrStock.Name = "nudCurrStock";
+            nudCurrStock.Size = new Size(223, 26);
+            nudCurrStock.TabIndex = 83;
             // 
             // label1
             // 
@@ -230,96 +186,227 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(80, 258);
+            label1.Location = new Point(84, 255);
             label1.Name = "label1";
-            label1.Size = new Size(80, 20);
-            label1.TabIndex = 63;
-            label1.Text = "Total Item";
+            label1.Size = new Size(107, 20);
+            label1.TabIndex = 82;
+            label1.Text = "Current Stock";
             // 
-            // lbDate
+            // txtId
             // 
-            lbDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbDate.AutoSize = true;
-            lbDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbDate.ForeColor = Color.Black;
-            lbDate.Location = new Point(80, 184);
-            lbDate.Name = "lbDate";
-            lbDate.Size = new Size(44, 20);
-            lbDate.TabIndex = 62;
-            lbDate.Text = "Date";
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtId.BackColor = SystemColors.Control;
+            txtId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(86, 6);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(224, 29);
+            txtId.TabIndex = 81;
+            txtId.Visible = false;
             // 
-            // dtImportDate
+            // txtUnitCost
             // 
-            dtImportDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtImportDate.CustomFormat = " yyyy/MM/dd";
-            dtImportDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtImportDate.Format = DateTimePickerFormat.Custom;
-            dtImportDate.Location = new Point(80, 206);
-            dtImportDate.Margin = new Padding(3, 2, 3, 2);
-            dtImportDate.Name = "dtImportDate";
-            dtImportDate.Size = new Size(158, 26);
-            dtImportDate.TabIndex = 61;
+            txtUnitCost.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtUnitCost.Font = new Font("Microsoft Sans Serif", 12F);
+            txtUnitCost.Location = new Point(86, 139);
+            txtUnitCost.Margin = new Padding(3, 2, 3, 2);
+            txtUnitCost.Name = "txtUnitCost";
+            txtUnitCost.PlaceholderText = "0.00";
+            txtUnitCost.Size = new Size(223, 26);
+            txtUnitCost.TabIndex = 75;
             // 
-            // nudTotalItem
+            // rtxtNote
             // 
-            nudTotalItem.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            nudTotalItem.BackColor = SystemColors.Control;
-            nudTotalItem.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nudTotalItem.Location = new Point(80, 144);
-            nudTotalItem.Name = "nudTotalItem";
-            nudTotalItem.Size = new Size(158, 26);
-            nudTotalItem.TabIndex = 60;
+            rtxtNote.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            rtxtNote.BackColor = SystemColors.Control;
+            rtxtNote.BorderStyle = BorderStyle.FixedSingle;
+            rtxtNote.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rtxtNote.Location = new Point(372, 55);
+            rtxtNote.Name = "rtxtNote";
+            rtxtNote.Size = new Size(243, 419);
+            rtxtNote.TabIndex = 70;
+            rtxtNote.Text = "";
             // 
-            // lbTotalItem
+            // lbProductId
             // 
-            lbTotalItem.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbTotalItem.AutoSize = true;
-            lbTotalItem.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbTotalItem.ForeColor = Color.Black;
-            lbTotalItem.Location = new Point(80, 121);
-            lbTotalItem.Name = "lbTotalItem";
-            lbTotalItem.Size = new Size(80, 20);
-            lbTotalItem.TabIndex = 59;
-            lbTotalItem.Text = "Total Item";
+            lbProductId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbProductId.AutoSize = true;
+            lbProductId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbProductId.ForeColor = Color.Black;
+            lbProductId.Location = new Point(86, 47);
+            lbProductId.Name = "lbProductId";
+            lbProductId.Size = new Size(82, 20);
+            lbProductId.TabIndex = 73;
+            lbProductId.Text = "Product Id";
             // 
-            // lbName
+            // cboProductId
             // 
-            lbName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbName.AutoSize = true;
-            lbName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbName.ForeColor = Color.Black;
-            lbName.Location = new Point(80, 51);
-            lbName.Name = "lbName";
-            lbName.Size = new Size(51, 20);
-            lbName.TabIndex = 2;
-            lbName.Text = "Name";
+            cboProductId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboProductId.BackColor = SystemColors.Control;
+            cboProductId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboProductId.FormattingEnabled = true;
+            cboProductId.Location = new Point(86, 70);
+            cboProductId.Name = "cboProductId";
+            cboProductId.Size = new Size(223, 28);
+            cboProductId.TabIndex = 74;
             // 
-            // txtName
+            // lbNote
             // 
-            txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtName.BackColor = SystemColors.Control;
-            txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtName.Location = new Point(80, 77);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(158, 29);
-            txtName.TabIndex = 3;
+            lbNote.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbNote.AutoSize = true;
+            lbNote.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbNote.Location = new Point(372, 32);
+            lbNote.Name = "lbNote";
+            lbNote.Size = new Size(43, 20);
+            lbNote.TabIndex = 69;
+            lbNote.Text = "Note";
+            // 
+            // nudInitQty
+            // 
+            nudInitQty.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            nudInitQty.BackColor = SystemColors.Control;
+            nudInitQty.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nudInitQty.Location = new Point(84, 210);
+            nudInitQty.Name = "nudInitQty";
+            nudInitQty.Size = new Size(223, 26);
+            nudInitQty.TabIndex = 66;
+            // 
+            // lbInitQty
+            // 
+            lbInitQty.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbInitQty.AutoSize = true;
+            lbInitQty.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbInitQty.ForeColor = Color.Black;
+            lbInitQty.Location = new Point(84, 187);
+            lbInitQty.Name = "lbInitQty";
+            lbInitQty.Size = new Size(74, 20);
+            lbInitQty.TabIndex = 65;
+            lbInitQty.Text = "Initial Qty";
+            // 
+            // lbExpireDate
+            // 
+            lbExpireDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbExpireDate.AutoSize = true;
+            lbExpireDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbExpireDate.ForeColor = Color.Black;
+            lbExpireDate.Location = new Point(87, 322);
+            lbExpireDate.Name = "lbExpireDate";
+            lbExpireDate.Size = new Size(92, 20);
+            lbExpireDate.TabIndex = 62;
+            lbExpireDate.Text = "Expire Date";
+            // 
+            // dtExpireDate
+            // 
+            dtExpireDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtExpireDate.CustomFormat = " yyyy/MM/dd";
+            dtExpireDate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtExpireDate.Format = DateTimePickerFormat.Custom;
+            dtExpireDate.Location = new Point(87, 345);
+            dtExpireDate.Margin = new Padding(3, 2, 3, 2);
+            dtExpireDate.Name = "dtExpireDate";
+            dtExpireDate.Size = new Size(223, 26);
+            dtExpireDate.TabIndex = 61;
+            // 
+            // lbUnitCost
+            // 
+            lbUnitCost.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbUnitCost.AutoSize = true;
+            lbUnitCost.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbUnitCost.ForeColor = Color.Black;
+            lbUnitCost.Location = new Point(86, 117);
+            lbUnitCost.Name = "lbUnitCost";
+            lbUnitCost.Size = new Size(75, 20);
+            lbUnitCost.TabIndex = 59;
+            lbUnitCost.Text = "Unit Cost";
             // 
             // panel4
             // 
+            panel4.Controls.Add(panel6);
+            panel4.Controls.Add(panel2);
             panel4.Controls.Add(panel5);
             panel4.Dock = DockStyle.Fill;
             panel4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel4.Location = new Point(0, 59);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1184, 544);
+            panel4.Size = new Size(1184, 517);
             panel4.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            panel6.Dock = DockStyle.Fill;
+            panel6.Location = new Point(666, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(36, 517);
+            panel6.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(dgvInventory);
+            panel2.Controls.Add(panel7);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(702, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(482, 517);
+            panel2.TabIndex = 2;
+            // 
+            // dgvInventory
+            // 
+            dgvInventory.AllowUserToAddRows = false;
+            dgvInventory.AllowUserToDeleteRows = false;
+            dgvInventory.BackgroundColor = SystemColors.Control;
+            dgvInventory.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 192, 0);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvInventory.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvInventory.Dock = DockStyle.Fill;
+            dgvInventory.GridColor = SystemColors.Control;
+            dgvInventory.Location = new Point(0, 0);
+            dgvInventory.Name = "dgvInventory";
+            dgvInventory.ReadOnly = true;
+            dgvInventory.RowHeadersVisible = false;
+            dgvInventory.RowHeadersWidth = 51;
+            dgvInventory.Size = new Size(441, 517);
+            dgvInventory.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            panel7.Dock = DockStyle.Right;
+            panel7.Location = new Point(441, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(41, 517);
+            panel7.TabIndex = 0;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.None;
+            btnDelete.BackColor = Color.Salmon;
+            btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(218, 6);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(120, 44);
+            btnDelete.TabIndex = 83;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
             // 
             // SubInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(1184, 661);
+            ClientSize = new Size(1184, 634);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -327,13 +414,17 @@
             MaximizeBox = false;
             Name = "SubInventory";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Inventory Adding & Updating";
+            Text = "Inventory Adding";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudTotalItem).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudCurrStock).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudInitQty).EndInit();
             panel4.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
             ResumeLayout(false);
         }
 
@@ -342,24 +433,29 @@
         private Panel panel1;
         private Panel panel3;
         private Panel panel5;
-        private RichTextBox rtxtDesc;
-        private Label lbCatDesc;
-        private Label label3;
-        private TextBox textBox1;
-        private NumericUpDown numericUpDown2;
-        private Label label2;
-        private NumericUpDown numericUpDown1;
-        private Label label1;
-        private Label lbDate;
-        private DateTimePicker dtImportDate;
-        private NumericUpDown nudTotalItem;
-        private Label lbTotalItem;
-        private Label lbName;
-        private TextBox txtName;
+        private RichTextBox rtxtNote;
+        private Label lbNote;
+        private NumericUpDown nudInitQty;
+        private Label lbInitQty;
+        private Label lbExpireDate;
+        private DateTimePicker dtExpireDate;
+        private Label lbUnitCost;
         private Panel panel4;
-        private Label label4;
-        private DateTimePicker dateTimePicker1;
-        private Label lbPosition;
-        private ComboBox cboPosition;
+        private Label lbProductId;
+        private ComboBox cboProductId;
+        private Panel panel6;
+        private Panel panel2;
+        private Panel panel7;
+        private DataGridView dgvInventory;
+        private TextBox txtUnitCost;
+        private Label SubInventoryFormTitle;
+        private Button btnAdd;
+        private Button btnSubmit;
+        private TextBox txtId;
+        private NumericUpDown nudCurrStock;
+        private Label label1;
+        private ComboBox cboImportID;
+        private Label label2;
+        private Button btnDelete;
     }
 }

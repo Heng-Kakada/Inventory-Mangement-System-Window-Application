@@ -1,8 +1,17 @@
+using IMS_Services.Entities;
 using IMS_Services.Manager;
 using IMS_Services.Utils;
 using Microsoft.Data.SqlClient;
+using SSRMS_Project.Forms;
+using System;
 
 namespace InventoryManagementSystem;
+
+public delegate void ProductEventHandler(object? sender);
+public delegate void InventoryEventHandler(object? sender);
+public delegate void ExportDetailHandler(object? sender);
+public delegate void CountEventHandler(object? sender);
+public delegate void CloseHandler();
 
 public static class Program
 {
@@ -18,12 +27,12 @@ public static class Program
     {
 
         //// Initialize Database
-        ReadJsonFile.Load("appsetting.json");
+        ReadJsonFile.Load("appsettings.json");
 
 
         // Application Run
         ApplicationConfiguration.Initialize();
-        Application.Run(new MainForm());
+        Application.Run(new LoginForm());
 
     }
 

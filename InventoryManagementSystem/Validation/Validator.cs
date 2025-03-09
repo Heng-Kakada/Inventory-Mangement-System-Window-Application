@@ -28,6 +28,10 @@ public static class Validator
         {
             return !string.IsNullOrWhiteSpace(maskedTextBox.Text);
         }
+        else if (control is RichTextBox richTextBox)
+        {
+            return !string.IsNullOrWhiteSpace(richTextBox.Text);
+        }
         return true;
     }
 

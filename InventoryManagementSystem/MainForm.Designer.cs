@@ -45,7 +45,6 @@
             staffMenuItem = new ToolStripMenuItem();
             userMenuItem = new ToolStripMenuItem();
             settingMenuItemBar = new ToolStripMenuItem();
-            helpMenuItem = new ToolStripMenuItem();
             aboutUsMenuItem = new ToolStripMenuItem();
             menubar.SuspendLayout();
             SuspendLayout();
@@ -166,21 +165,15 @@
             // 
             // settingMenuItemBar
             // 
-            settingMenuItemBar.DropDownItems.AddRange(new ToolStripItem[] { helpMenuItem, aboutUsMenuItem });
+            settingMenuItemBar.DropDownItems.AddRange(new ToolStripItem[] { aboutUsMenuItem });
             settingMenuItemBar.Name = "settingMenuItemBar";
             settingMenuItemBar.Size = new Size(64, 39);
             settingMenuItemBar.Text = "Setting";
             // 
-            // helpMenuItem
-            // 
-            helpMenuItem.Name = "helpMenuItem";
-            helpMenuItem.Size = new Size(136, 24);
-            helpMenuItem.Text = "Help";
-            // 
             // aboutUsMenuItem
             // 
             aboutUsMenuItem.Name = "aboutUsMenuItem";
-            aboutUsMenuItem.Size = new Size(136, 24);
+            aboutUsMenuItem.Size = new Size(180, 24);
             aboutUsMenuItem.Text = "About Us";
             // 
             // MainForm
@@ -213,7 +206,6 @@
         private ToolStripMenuItem productMenuItem;
         private ToolStripMenuItem categoryMenuItem;
         private ToolStripMenuItem settingMenuItemBar;
-        private ToolStripMenuItem helpMenuItem;
         private ToolStripMenuItem aboutUsMenuItem;
         private ToolStripMenuItem importExportMenuItemBar;
         private ToolStripMenuItem importMenuItem;

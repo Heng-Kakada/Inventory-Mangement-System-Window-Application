@@ -35,12 +35,12 @@
             lbSearch = new Label();
             importFormTitle = new Label();
             btnDelete = new Button();
-            btnAdd = new Button();
+            btnInsert = new Button();
             btnUpdate = new Button();
             pBottom = new Panel();
             pBody = new Panel();
             panel3 = new Panel();
-            dgvInventory = new DataGridView();
+            dgvImport = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
             colImportDate = new DataGridViewTextBoxColumn();
             colTotalCost = new DataGridViewTextBoxColumn();
@@ -49,6 +49,7 @@
             colSupplierId = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             panel4 = new Panel();
+            txtId = new TextBox();
             panel5 = new Panel();
             btnClear = new Button();
             cboHandleBy = new ComboBox();
@@ -57,7 +58,7 @@
             lbTotalItem = new Label();
             lbDate = new Label();
             lbTotalCost = new Label();
-            cboSupplierId = new ComboBox();
+            cboSupplier = new ComboBox();
             txtTotalCost = new TextBox();
             lbHandleBy = new Label();
             dtImportDate = new DateTimePicker();
@@ -65,7 +66,7 @@
             pHead.SuspendLayout();
             pBody.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvImport).BeginInit();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
@@ -130,17 +131,17 @@
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             // 
-            // btnAdd
+            // btnInsert
             // 
-            btnAdd.Anchor = AnchorStyles.Left;
-            btnAdd.BackColor = Color.LightGreen;
-            btnAdd.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(659, 215);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(120, 60);
-            btnAdd.TabIndex = 7;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = false;
+            btnInsert.Anchor = AnchorStyles.Left;
+            btnInsert.BackColor = Color.LightGreen;
+            btnInsert.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInsert.Location = new Point(659, 215);
+            btnInsert.Name = "btnInsert";
+            btnInsert.Size = new Size(120, 60);
+            btnInsert.TabIndex = 7;
+            btnInsert.Text = "Insert";
+            btnInsert.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
@@ -176,18 +177,18 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(dgvInventory);
+            panel3.Controls.Add(dgvImport);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(877, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(843, 725);
             panel3.TabIndex = 3;
             // 
-            // dgvInventory
+            // dgvImport
             // 
-            dgvInventory.AllowUserToAddRows = false;
-            dgvInventory.AllowUserToDeleteRows = false;
-            dgvInventory.BackgroundColor = SystemColors.Control;
+            dgvImport.AllowUserToAddRows = false;
+            dgvImport.AllowUserToDeleteRows = false;
+            dgvImport.BackgroundColor = SystemColors.Control;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -195,17 +196,19 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(0, 192, 0);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvInventory.ColumnHeadersHeight = 40;
-            dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvInventory.Columns.AddRange(new DataGridViewColumn[] { colId, colImportDate, colTotalCost, colTotalItem, colHandleBy, colSupplierId });
-            dgvInventory.Dock = DockStyle.Fill;
-            dgvInventory.GridColor = SystemColors.Control;
-            dgvInventory.Location = new Point(0, 0);
-            dgvInventory.Name = "dgvInventory";
-            dgvInventory.ReadOnly = true;
-            dgvInventory.Size = new Size(843, 725);
-            dgvInventory.TabIndex = 0;
+            dgvImport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvImport.ColumnHeadersHeight = 40;
+            dgvImport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvImport.Columns.AddRange(new DataGridViewColumn[] { colId, colImportDate, colTotalCost, colTotalItem, colHandleBy, colSupplierId });
+            dgvImport.Dock = DockStyle.Fill;
+            dgvImport.GridColor = SystemColors.Control;
+            dgvImport.Location = new Point(0, 0);
+            dgvImport.MultiSelect = false;
+            dgvImport.Name = "dgvImport";
+            dgvImport.ReadOnly = true;
+            dgvImport.RowHeadersVisible = false;
+            dgvImport.Size = new Size(843, 725);
+            dgvImport.TabIndex = 0;
             // 
             // colId
             // 
@@ -258,7 +261,7 @@
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(btnUpdate);
-            panel2.Controls.Add(btnAdd);
+            panel2.Controls.Add(btnInsert);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -267,6 +270,7 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(txtId);
             panel4.Controls.Add(panel5);
             panel4.Controls.Add(cboHandleBy);
             panel4.Controls.Add(lbSupplierId);
@@ -274,7 +278,7 @@
             panel4.Controls.Add(lbTotalItem);
             panel4.Controls.Add(lbDate);
             panel4.Controls.Add(lbTotalCost);
-            panel4.Controls.Add(cboSupplierId);
+            panel4.Controls.Add(cboSupplier);
             panel4.Controls.Add(txtTotalCost);
             panel4.Controls.Add(lbHandleBy);
             panel4.Controls.Add(dtImportDate);
@@ -284,6 +288,17 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(562, 725);
             panel4.TabIndex = 54;
+            // 
+            // txtId
+            // 
+            txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtId.BackColor = SystemColors.Control;
+            txtId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(93, 79);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(390, 29);
+            txtId.TabIndex = 81;
+            txtId.Visible = false;
             // 
             // panel5
             // 
@@ -336,6 +351,7 @@
             nudTotalItem.BackColor = SystemColors.Control;
             nudTotalItem.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nudTotalItem.Location = new Point(93, 295);
+            nudTotalItem.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudTotalItem.Name = "nudTotalItem";
             nudTotalItem.Size = new Size(390, 26);
             nudTotalItem.TabIndex = 58;
@@ -376,17 +392,17 @@
             lbTotalCost.TabIndex = 10;
             lbTotalCost.Text = "Total Cost";
             // 
-            // cboSupplierId
+            // cboSupplier
             // 
-            cboSupplierId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            cboSupplierId.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboSupplierId.Font = new Font("Microsoft Sans Serif", 12F);
-            cboSupplierId.FormattingEnabled = true;
-            cboSupplierId.Location = new Point(93, 423);
-            cboSupplierId.Margin = new Padding(3, 2, 3, 2);
-            cboSupplierId.Name = "cboSupplierId";
-            cboSupplierId.Size = new Size(390, 28);
-            cboSupplierId.TabIndex = 52;
+            cboSupplier.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSupplier.Font = new Font("Microsoft Sans Serif", 12F);
+            cboSupplier.FormattingEnabled = true;
+            cboSupplier.Location = new Point(93, 423);
+            cboSupplier.Margin = new Padding(3, 2, 3, 2);
+            cboSupplier.Name = "cboSupplier";
+            cboSupplier.Size = new Size(390, 28);
+            cboSupplier.TabIndex = 52;
             // 
             // txtTotalCost
             // 
@@ -396,7 +412,6 @@
             txtTotalCost.Margin = new Padding(3, 2, 3, 2);
             txtTotalCost.Name = "txtTotalCost";
             txtTotalCost.PlaceholderText = "0.00";
-            txtTotalCost.ReadOnly = true;
             txtTotalCost.Size = new Size(390, 26);
             txtTotalCost.TabIndex = 36;
             // 
@@ -449,7 +464,7 @@
             pHead.PerformLayout();
             pBody.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvImport).EndInit();
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
@@ -463,9 +478,9 @@
         private Panel pHead;
         private Panel pBottom;
         private Panel pBody;
-        private DataGridView dgvInventory;
+        private DataGridView dgvImport;
         private Button btnDelete;
-        private Button btnAdd;
+        private Button btnInsert;
         private Button btnUpdate;
         private Label importFormTitle;
         private Panel panel3;
@@ -481,8 +496,7 @@
         private TextBox textBox1;
         private TextBox txtTotalCost;
         private Label label1;
-        private ComboBox cboSupplierId;
-        private ComboBox cboContractID;
+        private ComboBox cboSupplier;
         private Label label4;
         private Label lbHandleBy;
         private Label lbDate;
@@ -496,5 +510,6 @@
         private TextBox txtSearch;
         private Label lbSearch;
         private Panel panel5;
+        private TextBox txtId;
     }
 }

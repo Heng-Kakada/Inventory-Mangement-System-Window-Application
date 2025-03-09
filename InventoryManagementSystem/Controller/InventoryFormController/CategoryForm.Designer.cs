@@ -26,21 +26,19 @@
             panel1 = new Panel();
             panel3 = new Panel();
             panel10 = new Panel();
-            lbCatID = new Label();
             txtId = new TextBox();
             rtxtDesc = new RichTextBox();
             panel7 = new Panel();
             lbCatName = new Label();
             panel4 = new Panel();
+            categoryFormTitle = new Label();
             lbCatDesc = new Label();
             txtName = new TextBox();
-            txtPaymentID = new TextBox();
             label1 = new Label();
             btnDelete = new Button();
             btnUpdate = new Button();
             btnInsert = new Button();
             btnClear = new Button();
-            categoryFormTitle = new Label();
             panel2 = new Panel();
             dgvCategory = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
@@ -65,18 +63,16 @@
             // panel1
             // 
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(txtPaymentID);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(676, 900);
+            panel1.Size = new Size(676, 826);
             panel1.TabIndex = 0;
             // 
             // panel3
             // 
             panel3.Controls.Add(panel10);
-            panel3.Controls.Add(lbCatID);
             panel3.Controls.Add(txtId);
             panel3.Controls.Add(rtxtDesc);
             panel3.Controls.Add(panel7);
@@ -87,39 +83,29 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(676, 900);
+            panel3.Size = new Size(676, 826);
             panel3.TabIndex = 5;
             // 
             // panel10
             // 
             panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(126, 740);
+            panel10.Location = new Point(126, 666);
             panel10.Name = "panel10";
             panel10.Size = new Size(550, 160);
             panel10.TabIndex = 10;
-            // 
-            // lbCatID
-            // 
-            lbCatID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbCatID.AutoSize = true;
-            lbCatID.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbCatID.Location = new Point(166, 242);
-            lbCatID.Name = "lbCatID";
-            lbCatID.Size = new Size(23, 20);
-            lbCatID.TabIndex = 3;
-            lbCatID.Text = "Id";
             // 
             // txtId
             // 
             txtId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtId.BorderStyle = BorderStyle.FixedSingle;
             txtId.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtId.Location = new Point(166, 269);
+            txtId.Location = new Point(171, 219);
             txtId.Margin = new Padding(3, 2, 3, 2);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(452, 26);
             txtId.TabIndex = 4;
+            txtId.Visible = false;
             // 
             // rtxtDesc
             // 
@@ -127,9 +113,9 @@
             rtxtDesc.BackColor = SystemColors.Control;
             rtxtDesc.BorderStyle = BorderStyle.FixedSingle;
             rtxtDesc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rtxtDesc.Location = new Point(166, 391);
+            rtxtDesc.Location = new Point(171, 384);
             rtxtDesc.Name = "rtxtDesc";
-            rtxtDesc.Size = new Size(452, 264);
+            rtxtDesc.Size = new Size(452, 191);
             rtxtDesc.TabIndex = 8;
             rtxtDesc.Text = "";
             // 
@@ -138,7 +124,7 @@
             panel7.Dock = DockStyle.Left;
             panel7.Location = new Point(0, 94);
             panel7.Name = "panel7";
-            panel7.Size = new Size(126, 806);
+            panel7.Size = new Size(126, 732);
             panel7.TabIndex = 9;
             // 
             // lbCatName
@@ -146,7 +132,7 @@
             lbCatName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbCatName.AutoSize = true;
             lbCatName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbCatName.Location = new Point(166, 301);
+            lbCatName.Location = new Point(171, 265);
             lbCatName.Name = "lbCatName";
             lbCatName.Size = new Size(51, 20);
             lbCatName.TabIndex = 5;
@@ -161,12 +147,23 @@
             panel4.Size = new Size(676, 94);
             panel4.TabIndex = 0;
             // 
+            // categoryFormTitle
+            // 
+            categoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            categoryFormTitle.AutoSize = true;
+            categoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            categoryFormTitle.Location = new Point(70, 30);
+            categoryFormTitle.Name = "categoryFormTitle";
+            categoryFormTitle.Size = new Size(287, 31);
+            categoryFormTitle.TabIndex = 3;
+            categoryFormTitle.Text = "Category's Information";
+            // 
             // lbCatDesc
             // 
             lbCatDesc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbCatDesc.AutoSize = true;
             lbCatDesc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbCatDesc.Location = new Point(166, 362);
+            lbCatDesc.Location = new Point(171, 355);
             lbCatDesc.Name = "lbCatDesc";
             lbCatDesc.Size = new Size(89, 20);
             lbCatDesc.TabIndex = 7;
@@ -177,21 +174,11 @@
             txtName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtName.BorderStyle = BorderStyle.FixedSingle;
             txtName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtName.Location = new Point(166, 328);
+            txtName.Location = new Point(171, 292);
             txtName.Margin = new Padding(3, 2, 3, 2);
             txtName.Name = "txtName";
             txtName.Size = new Size(452, 26);
             txtName.TabIndex = 6;
-            // 
-            // txtPaymentID
-            // 
-            txtPaymentID.Font = new Font("Times New Roman", 12F);
-            txtPaymentID.Location = new Point(242, 167);
-            txtPaymentID.Margin = new Padding(3, 2, 3, 2);
-            txtPaymentID.Name = "txtPaymentID";
-            txtPaymentID.ReadOnly = true;
-            txtPaymentID.Size = new Size(206, 26);
-            txtPaymentID.TabIndex = 4;
             // 
             // label1
             // 
@@ -208,7 +195,7 @@
             btnDelete.Anchor = AnchorStyles.None;
             btnDelete.BackColor = Color.Salmon;
             btnDelete.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(117, 458);
+            btnDelete.Location = new Point(67, 422);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(120, 60);
             btnDelete.TabIndex = 6;
@@ -220,7 +207,7 @@
             btnUpdate.Anchor = AnchorStyles.None;
             btnUpdate.BackColor = Color.LightYellow;
             btnUpdate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(117, 372);
+            btnUpdate.Location = new Point(67, 335);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(120, 60);
             btnUpdate.TabIndex = 5;
@@ -232,7 +219,7 @@
             btnInsert.Anchor = AnchorStyles.None;
             btnInsert.BackColor = Color.LightGreen;
             btnInsert.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInsert.Location = new Point(117, 282);
+            btnInsert.Location = new Point(67, 245);
             btnInsert.Name = "btnInsert";
             btnInsert.Size = new Size(120, 60);
             btnInsert.TabIndex = 4;
@@ -244,23 +231,12 @@
             btnClear.Anchor = AnchorStyles.None;
             btnClear.BackColor = Color.LightSkyBlue;
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(117, 549);
+            btnClear.Location = new Point(67, 512);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(120, 60);
             btnClear.TabIndex = 7;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
-            // 
-            // categoryFormTitle
-            // 
-            categoryFormTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            categoryFormTitle.AutoSize = true;
-            categoryFormTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            categoryFormTitle.Location = new Point(70, 30);
-            categoryFormTitle.Name = "categoryFormTitle";
-            categoryFormTitle.Size = new Size(287, 31);
-            categoryFormTitle.TabIndex = 3;
-            categoryFormTitle.Text = "Category's Information";
             // 
             // panel2
             // 
@@ -269,9 +245,9 @@
             panel2.Controls.Add(panel9);
             panel2.Controls.Add(panel5);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(1071, 0);
+            panel2.Location = new Point(970, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(729, 900);
+            panel2.Size = new Size(729, 826);
             panel2.TabIndex = 1;
             // 
             // dgvCategory
@@ -298,8 +274,7 @@
             dgvCategory.ReadOnly = true;
             dgvCategory.RowHeadersVisible = false;
             dgvCategory.RowHeadersWidth = 51;
-            dgvCategory.RowTemplate.Height = 29;
-            dgvCategory.Size = new Size(617, 584);
+            dgvCategory.Size = new Size(617, 510);
             dgvCategory.TabIndex = 49;
             // 
             // colId
@@ -316,6 +291,7 @@
             colName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             colName.FillWeight = 64.93507F;
             colName.HeaderText = "Name";
+            colName.MinimumWidth = 6;
             colName.Name = "colName";
             colName.ReadOnly = true;
             // 
@@ -324,6 +300,7 @@
             colDesc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             colDesc.FillWeight = 135.064941F;
             colDesc.HeaderText = "Description";
+            colDesc.MinimumWidth = 6;
             colDesc.Name = "colDesc";
             colDesc.ReadOnly = true;
             // 
@@ -332,13 +309,13 @@
             panel6.Dock = DockStyle.Right;
             panel6.Location = new Point(617, 207);
             panel6.Name = "panel6";
-            panel6.Size = new Size(112, 584);
+            panel6.Size = new Size(112, 510);
             panel6.TabIndex = 52;
             // 
             // panel9
             // 
             panel9.Dock = DockStyle.Bottom;
-            panel9.Location = new Point(0, 791);
+            panel9.Location = new Point(0, 717);
             panel9.Name = "panel9";
             panel9.Size = new Size(729, 109);
             panel9.TabIndex = 51;
@@ -383,7 +360,7 @@
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(676, 0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(395, 900);
+            panel8.Size = new Size(294, 826);
             panel8.TabIndex = 2;
             // 
             // CategoryForm
@@ -391,7 +368,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(1800, 900);
+            ClientSize = new Size(1699, 826);
             Controls.Add(panel8);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -420,10 +397,8 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
-        private TextBox txtPaymentID;
         private Label label1;
         private TextBox txtId;
-        private Label lbCatID;
         private Panel panel5;
         private RichTextBox rtxtDesc;
         private Label lbCatDesc;
